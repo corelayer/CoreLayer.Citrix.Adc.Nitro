@@ -13,15 +13,5 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server
             Server = data;
         }
         public dynamic[] Server { get; set; }
-
-        public override string ToString()
-        {
-            string result= "";
-            foreach (var dataItem in Server)
-            {
-                result += dataItem.ToString();
-            }
-            return result.ToString();
-        }
     }
 }

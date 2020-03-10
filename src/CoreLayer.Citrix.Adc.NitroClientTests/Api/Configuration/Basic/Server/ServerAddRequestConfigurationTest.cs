@@ -18,7 +18,6 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
             Assert.Equal(expected["Method"], configuration.Method.ToString());
             Assert.Equal(expected["Method"], configuration.GenerateHttpRequestMessageAsync().Result.Method.ToString());
             Assert.Equal(expected["RequestContent"], configuration.GenerateHttpRequestMessageAsync().Result.Content.ReadAsStringAsync().Result);
-            Assert.Equal(expected["DataRootData"], configuration.DataRoot.ToString());
             Assert.Equal(expected["Options"], configuration.Options.ToString());
         }
     }
@@ -36,7 +35,6 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"ResourcePath", "/nitro/v1/config/server"},
                     {"RequestUri", "/nitro/v1/config/server"},
                     {"RequestContent", "{\"server\":[{\"name\":\"test\",\"domain\":\"testDomain\",\"domainresolveretry\":5,\"td\":0,\"querytype\":\"A\"}]}"},
-                    {"DataRootData", "Name:test"},
                     {"Options", ""}
                 }
             };
@@ -49,7 +47,6 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"ResourcePath", "/nitro/v1/config/server"},
                     {"RequestUri", "/nitro/v1/config/server"},
                     {"RequestContent", "{\"server\":[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"td\":0}]}"},
-                    {"DataRootData", "Name:test"},
                     {"Options", ""}
                 }
             };
@@ -71,7 +68,6 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"ResourcePath", "/nitro/v1/config/server"},
                     {"RequestUri", "/nitro/v1/config/server"},
                     {"RequestContent", "{\"server\":[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"state\":\"Enabled\",\"comment\":\"testComment\",\"td\":0}]}"},
-                    {"DataRootData", "Name:test"},
                     {"Options", ""}
                 }
             };
@@ -100,7 +96,6 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"RequestContent", "{\"server\":" +
                                        "[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"state\":\"Enabled\",\"comment\":\"testComment\",\"td\":0}," +
                                        "{\"name\":\"testByDom\",\"domain\":\"testDom\",\"domainresolveretry\":5,\"comment\":\"domTestComment\",\"td\":0,\"querytype\":\"A\"}]}"},
-                    {"DataRootData", "Name:testName:testByDom"},
                     {"Options", ""} 
                 } 
             };
