@@ -6,7 +6,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Policy.PolicyString
     public class PolicyStringMapBindingGetRequestConfiguration : NitroRequestConfiguration
     {        
         public override HttpMethod Method => HttpMethod.Get;
-        public override string ResourcePath => "/nitro/v1/config/policystringmapbinding";
+        public override string ResourcePath => "/nitro/v1/config/policystringmap_binding";
         public override INitroRequestOptions Options { get; set; } = new PolicyStringMapBindingGetRequestOptions();
         public override INitroRequestDataRoot DataRoot => new PolicyStringMapBindingGetRequestDataRoot();
         

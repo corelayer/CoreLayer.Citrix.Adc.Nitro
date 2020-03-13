@@ -13,7 +13,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Commands.Configuration.System.Sy
         {
             yield return new object[]
             {
-                NitroCommand.Create<SystemBackupCreateCommand>(
+                NitroCommandFactory.Create<SystemBackupCreateCommand>(
                     new NitroHttpClient(
                         new NitroLoginRequestData("nsroot", "nsroot"), 
                         new NitroServiceConnectionSettings(new Uri("http://localhost"),
