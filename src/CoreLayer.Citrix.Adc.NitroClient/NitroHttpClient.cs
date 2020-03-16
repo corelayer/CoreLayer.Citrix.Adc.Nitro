@@ -78,7 +78,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         {
             try
             {
-                var loginCommand = NitroCommand.Create<NitroLoginCommand>(this, _credentials);
+                var loginCommand = NitroCommandFactory.Create<NitroLoginCommand>(this, _credentials);
                 var response = await loginCommand.ExecuteAsync(cancellationToken);
                 if (!response.IsSuccessStatusCode)
                     throw new HttpRequestException("Could not log on.\n" + response);
@@ -107,7 +107,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             try
             {
                 //was var logoutCommand = NitroCommand.Create<NitroLogoutCommand>(this, new NitroLogoutData);
-                var logoutCommand = NitroCommand.Create<NitroLogoutCommand>(this);
+                var logoutCommand = NitroCommandFactory.Create<NitroLogoutCommand>(this);
                 var response = await logoutCommand.ExecuteAsync(cancellationToken);
 
                 if (!response.IsSuccessStatusCode)

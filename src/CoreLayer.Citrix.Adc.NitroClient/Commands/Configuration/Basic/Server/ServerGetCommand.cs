@@ -1,8 +1,9 @@
-﻿using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
+﻿using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server;
+using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Server
 {
-    public class ServerGetCommand : NitroCommand
+    public class ServerGetCommand : NitroCommand<ServerGetResponse>
     {
         public ServerGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
             :base(httpClient, requestConfiguration){}

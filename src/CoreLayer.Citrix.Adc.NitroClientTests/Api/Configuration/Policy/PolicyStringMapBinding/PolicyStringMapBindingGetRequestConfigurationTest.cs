@@ -32,8 +32,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Policy.PolicyS
                 new Dictionary<string, string>
                 {
                     {"Method", "GET"},
-                    {"ResourcePath", "/nitro/v1/config/policystringmapbinding"},
-                    {"RequestUri", "/nitro/v1/config/policystringmapbinding"},
+                    {"ResourcePath", "/nitro/v1/config/policystringmap_binding"},
+                    {"RequestUri", "/nitro/v1/config/policystringmap_binding"},
                     {"Options", ""},
                     {"ValidationResult", "True"}
                 }, 
@@ -53,8 +53,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Policy.PolicyS
                 new Dictionary<string, string>
                 {
                     {"Method", "GET"},
-                    {"ResourcePath", "/nitro/v1/config/policystringmapbinding"},
-                    {"RequestUri", "/nitro/v1/config/policystringmapbinding?attrs=wrongFilter"},
+                    {"ResourcePath", "/nitro/v1/config/policystringmap_binding"},
+                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?attrs=wrongFilter"},
                     {"Options", "?attrs=wrongFilter"},
                     {"ValidationResult", "False"}
                 }
@@ -74,8 +74,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Policy.PolicyS
                 new Dictionary<string, string>
                 {
                     {"Method", "GET"},
-                    {"ResourcePath", "/nitro/v1/config/policystringmapbinding"},
-                    {"RequestUri", "/nitro/v1/config/policystringmapbinding?attrs=Name"},
+                    {"ResourcePath", "/nitro/v1/config/policystringmap_binding"},
+                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?attrs=Name"},
                     {"Options", "?attrs=Name"},
                     {"ValidationResult", "True"}
                 }
