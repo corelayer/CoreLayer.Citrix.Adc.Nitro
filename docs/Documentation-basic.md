@@ -32,14 +32,22 @@ Commands: Add, Get, Remove, Update
         
             The other possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page
 
-            Eg. var command = NitroCommandFactory.Create\<ServerAddCommand> (INitroServiceClient, new ServerAddByIpRequestData(){ });
-    
+            Eg.   
+            
+            ```
+            var command = NitroCommandFactory.Create\<ServerAddCommand> (INitroServiceClient, new ServerAddByIpRequestData(){ });
+              
+            ```  
+                  
     * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for serverAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
+        eg.  
+        ```
+        var response = command.GetResponse(); 
 
+        ```
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
     
 + Get
@@ -75,7 +83,11 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServerGetCommand>(INitroServiceClient, New ServerGetRequestOptions(){ });
+        eg.  
+        ```
+        var command = NitroCommandFactory.Create\<ServerGetCommand>(INitroServiceClient, New ServerGetRequestOptions(){ });
+        ```
+        
         - Options:  
         For Servers, the Options are gathered in an Object ServerGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
@@ -89,7 +101,10 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServerGet, that object is <u>ServerGetResponse</u>.
 
-        eg. var response = command.GetResponse(); 
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
 
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
@@ -103,8 +118,12 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServerRemoveCommand>(INitroServiceClient, new ServerRemoveRequestOptions(){ });
-        - Options:  
+        eg.  
+        ```
+      var command = NitroCommandFactory.Create\<ServerRemoveCommand>(INitroServiceClient, new ServerRemoveRequestOptions(){ });
+        ```
+      
+      - Options:  
         For Servers, the Options are gathered in an Object ServerRemoveRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the Server you wish to remove.  
     
@@ -112,7 +131,10 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServerRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
+        eg.  
+        ```
+      var response = command.GetResponse(); 
+        ```
 
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
@@ -141,15 +163,21 @@ Commands: Add, Get, Remove, Update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page
 
-            Eg. var command = NitroCommandFactory.Create\<ServerUpdateCommand> (INitroServiceClient, new ServerUpdateRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<ServerUpdateCommand> (INitroServiceClient, new ServerUpdateRequestData(){ });
+            ```
+          
             Inside the ServerUpdateRequestData-item, the properties mentioned above will be accessible to change.
 
     * Usage of the command: 
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServerUpdate, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
 
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
@@ -211,25 +239,31 @@ Commands: Add, Get, Remove, Update
         ContentInspectionProfileName|string|-|all
 
 
-    * Creation of the command:  
+   * Creation of the command:  
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to add.
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServiceAddCommand> (INitroServiceClient, new \<ServiceAddRequestData>(){ });
-
+            Eg.
+            ```
+            var command = NitroCommandFactory.Create\<ServiceAddCommand> (INitroServiceClient, new \<ServiceAddRequestData>(){ });
+            ```
+          
             Where \<ServiceAddRequestData> is one of types:
              - ServiceAddHttpRequestData, ServiceAddTcpRequestData, ServiceAddDnsRequestData, ServiceAddDnsTcpRequestData, ServiceAddSslBridgeRequestData, ServiceAddSslRequestData, ServiceAddSslTcpRequestData, ServiceAddSyslogTcpRequestData, ServiceAddSyslogUdpRequestData, ServiceAddUdpRequestData  
             
             These are the premade DataObjects to be used. The applicable properties will be accessible, list above.
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServiceAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg.  
+        ```
+     var response = command.GetResponse();  
+        ```
+     
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
     
 + Get
@@ -329,8 +363,11 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServiceGetCommand>(INitroServiceClient, New ServiceGetRequestOptions(){ });
-
+        eg.  
+        ```
+      var command = NitroCommandFactory.Create\<ServiceGetCommand>(INitroServiceClient, New ServiceGetRequestOptions(){ });
+        ```
+      
         - Options:  
         For Services, the Options are gathered in an Object ServiceGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
@@ -344,8 +381,10 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServiceGet, that object is <u>ServiceResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+         ```
+      var response = command.GetResponse(); 
+         ```
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -359,8 +398,12 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServiceRemoveCommand>(INitroServiceClient, new ServiceRemoveRequestOptions(){ });
-        - Options:  
+        eg.  
+        ```
+        var command = NitroCommandFactory.Create\<ServiceRemoveCommand>(INitroServiceClient, new ServiceRemoveRequestOptions(){ });
+        ```
+      
+      - Options:  
         For this command, the Options are gathered in an Object ServiceRemoveRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -368,8 +411,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServiceRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+         ```
+      var response = command.GetResponse(); 
+         ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -422,8 +468,11 @@ Commands: Add, Get, Remove, Update
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServiceUpdateCommand> (INitroServiceClient, new \<ServiceUpdateRequestData>(){ });
-
+            Eg. 
+             ```
+          var command = NitroCommandFactory.Create\<ServiceUpdateCommand> (INitroServiceClient, new \<ServiceUpdateRequestData>(){ });
+            ```
+          
             Where \<ServiceUpdateRequestData> is one of types:
              - ServiceUpdateHttpRequestData, ServiceUpdateTcpRequestData, ServiceUpdateDnsRequestData, ServiceUpdateDnsTcpRequestData, ServiceUpdateSslBridgeRequestData, ServiceUpdateSslRequestData, ServiceUpdateSslTcpRequestData, ServiceUpdateSyslogTcpRequestData, ServiceUpdateSyslogUdpRequestData, ServiceUpdateUdpRequestData  
             
@@ -433,8 +482,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for UpdateServices, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+         ```
+      var response = command.GetResponse(); 
+         ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -466,7 +518,10 @@ Commands: Add, Get, Remove, Update
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServiceBindingAddLbmonitorCommand> (INitroServiceClient, new \<ServiceBindingAddLbmonitorRequestData>(){ });
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<ServiceBindingAddLbmonitorCommand> (INitroServiceClient, new \<ServiceBindingAddLbmonitorRequestData>(){ });
+            ```
             
             The applicable properties will be accessible, list above.
     
@@ -474,8 +529,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServiceBindingAddLbmonitor, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+      var response = command.GetResponse();  
+        ```
+      
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
     
 + Get - NYI
@@ -487,8 +545,12 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServiceBindingRemoveLbmonitorCommand>(INitroServiceClient, new ServiceBindingRemoveLbmonitorRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<ServiceBindingRemoveLbmonitorCommand>(INitroServiceClient, new ServiceBindingRemoveLbmonitorRequestOptions(){ });
+        ```
+      
+      - Options:  
         For this command, the Options are gathered in an Object ServiceBindingRemoveLbmonitorRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -496,8 +558,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServiceBindingRemoveLbmonitor, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -560,8 +625,11 @@ Commands: Add, Get, Remove, Update
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServicegroupAddCommand> (INitroServiceClient, new \<ServicegroupAddRequestData>(){ });
-
+            Eg. 
+            ```
+            var command = NitroCommandFactory.Create\<ServicegroupAddCommand> (INitroServiceClient, new \<ServicegroupAddRequestData>(){ });
+            ```
+          
             Where \<ServicegroupAddRequestData> is one of types:
              - ServicegroupAddHttpRequestData, ServicegroupAddTcpRequestData, ServicegroupAddDnsRequestData, ServicegroupAddDnsTcpRequestData, ServicegroupAddSslBridgeRequestData, ServicegroupAddSslRequestData, ServicegroupAddSslTcpRequestData, ServicegroupAddSyslogTcpRequestData, ServicegroupAddSyslogUdpRequestData, ServicegroupAddUdpRequestData  
             
@@ -571,8 +639,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for servicegroupsAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+      var response = command.GetResponse();  
+        ```
+      
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
     
 + Get
@@ -665,8 +736,11 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServiceGetCommand>(INitroServiceClient, New ServiceGetRequestOptions(){ });
-
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<ServiceGetCommand>(INitroServiceClient, New ServiceGetRequestOptions(){ });
+        ```
+      
         - Options:  
         For Services, the Options are gathered in an Object ServiceGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
@@ -680,8 +754,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServiceGet, that object is <u>ServiceResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -695,8 +772,12 @@ Commands: Add, Get, Remove, Update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServicegroupRemoveCommand>(INitroServiceClient, new ServicegroupRemoveRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<ServicegroupRemoveCommand>(INitroServiceClient, new ServicegroupRemoveRequestOptions(){ });
+        ```
+        
+      - Options:  
         For this command, the Options are gathered in an Object ServicegroupRemoveRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -704,8 +785,11 @@ Commands: Add, Get, Remove, Update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServicegroupRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -755,24 +839,30 @@ Commands: Add, Get, Remove, Update
         MonConnectionClose|string|Close monitoring connections by sending the service a connection termination message with the specified bit set. Default value: NONE. Possible values = RESET, FIN
 
 
-    * Creation of the Command
+   * Creation of the Command
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to Update.
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServicegroupUpdateCommand> (INitroServiceClient, new \<ServicegroupUpdateRequestData>(){ });
-
+            Eg.
+             ```
+          var command = NitroCommandFactory.Create\<ServicegroupUpdateCommand> (INitroServiceClient, new \<ServicegroupUpdateRequestData>(){ });
+            ```
+          
             Where \<ServicegroupUpdateRequestData> is one of types:
              - ServicegroupUpdateHttpRequestData, ServicegroupUpdateTcpRequestData, ServicegroupUpdateDnsRequestData, ServicegroupUpdateDnsTcpRequestData, ServicegroupUpdateSslBridgeRequestData, ServicegroupUpdateSslRequestData, ServicegroupUpdateSslTcpRequestData, ServicegroupUpdateSyslogTcpRequestData, ServicegroupUpdateSyslogUdpRequestData, ServicegroupUpdateUdpRequestData  
             
             These are the premade DataObjects to be used. The applicable properties will be accessible, list above.
 
-    * Usage of the command: 
+   * Usage of the command: 
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for UpdateServicegroups, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
+        eg. 
+        ```
+     var response = command.GetResponse(); 
+        ```
 
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
@@ -821,7 +911,10 @@ Commands: add, get, remove, update
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServicegroupBindingAddLbmonitorCommand> (INitroServiceClient, new \<ServicegroupBindingAddLbmonitorRequestData>(){ }); 
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<ServicegroupBindingAddLbmonitorCommand> (INitroServiceClient, new \<ServicegroupBindingAddLbmonitorRequestData>(){ }); 
+            ```
             
             These are the premade DataObjects to be used. The applicable properties will be accessible, list above.
     
@@ -829,8 +922,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for servicegroupBindingAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+      var response = command.GetResponse();  
+        ```
+      
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
 
 + Get
@@ -849,7 +945,11 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServicegroupBindingRemoveLbmonitorCommand>(INitroServiceClient, new ServicegroupBindingRemoveLbmonitorRequestOptions(){ });
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<ServicegroupBindingRemoveLbmonitorCommand>(INitroServiceClient, new ServicegroupBindingRemoveLbmonitorRequestOptions(){ });
+        ```
+      
         - Options:  
         For this command, the Options are gathered in an Object ServicegroupBindingRemoveLbmonitorRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
@@ -858,8 +958,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServicegroupBindingRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -900,7 +1003,10 @@ Commands: add, get, remove, update
 
         - with Data
 
-            Eg. var command = NitroCommandFactory.Create\<ServicegroupBindingAddServicegroupMemberCommand> (INitroServiceClient, new \<ServicegroupBindingAddServicegroupMemberRequestData>(){ }); 
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<ServicegroupBindingAddServicegroupMemberCommand> (INitroServiceClient, new \<ServicegroupBindingAddServicegroupMemberRequestData>(){ }); 
+            ```
             
             These are the premade DataObjects to be used. The applicable properties will be accessible, list above.
     
@@ -908,8 +1014,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for servicegroupBindingAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+      var response = command.GetResponse();  
+        ```
+      
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
 
 + Get
@@ -928,8 +1037,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<ServicegroupBindingRemoveServicegroupMemberCommand>(INitroServiceClient, new ServicegroupBindingRemoveServicegroupMemberRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<ServicegroupBindingRemoveServicegroupMemberCommand>(INitroServiceClient, new ServicegroupBindingRemoveServicegroupMemberRequestOptions(){ });
+        ```
+      
+      - Options:  
         For this command, the Options are gathered in an Object ServicegroupBindingRemoveServicegroupMemberRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -937,8 +1050,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For ServicegroupBindingRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
