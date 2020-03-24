@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
     public class CsvserverConfiguration : ICsvserverConfiguration
     {
         public string Name { get; set; }
-        public string TrafficDomain { get; set; }
+        [JsonPropertyName("td")]public string TrafficDomain { get; set; }
         public string Td { get; set; }
         public string ServiceType { get; set; }
         [JsonPropertyName("ipv46")]public string IpVersion4Or6 { get; set; }
