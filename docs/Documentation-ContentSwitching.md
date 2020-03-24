@@ -23,14 +23,20 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page.
 
-            Eg. var command = NitroCommandFactory.Create\<CsactionAddCommand> (INitroServiceClient, new CsactionAddRequestData(){ });
-    
-    * Usage of the Command:
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CsactionAddCommand> (INitroServiceClient, new CsactionAddRequestData(){ });
+            ```
+          
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for CsactionAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+     var response = command.GetResponse();  
+        ```
+     
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
     
 + Get
@@ -56,8 +62,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CsactionGetCommand>(INitroServiceClient, New CsactionGetRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<CsactionGetCommand>(INitroServiceClient, New CsactionGetRequestOptions(){ });
+        ```
+        
+      - Options:  
         For this command, the Options are gathered in an Object CsactionGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
         <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of a server, and the value you want to see in the returned servers.  
@@ -70,8 +80,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsactionGet, that object is <u>CsactionGetResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -84,8 +97,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CsactionRemoveCommand>(INitroServiceClient, new CsactionRemoveRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<CsactionRemoveCommand>(INitroServiceClient, new CsactionRemoveRequestOptions(){ });
+        ```
+      
+      - Options:  
         For this command, the Options are gathered in an Object CsactionRemoveRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -93,8 +110,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsactionRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -113,7 +133,7 @@ Commands: add, get, remove, update
         Comment|string|Comments associated with this cs action.
 
 
-    * Creation of the Command
+   * Creation of the Command
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to Update.
 
@@ -121,16 +141,22 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page
 
-            Eg. var command = NitroCommandFactory.Create\<CsactionUpdateCommand> (INitroServiceClient, new CsactionUpdateRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CsactionUpdateCommand> (INitroServiceClient, new CsactionUpdateRequestData(){ });
+            ```
+          
             Inside the CsactionUpdateRequestData-item, the properties mentioned above will be accessible to change.
 
-    * Usage of the command: 
+   * Usage of the command: 
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsactionUpdate, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+     var response = command.GetResponse(); 
+        ```
+     
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -163,14 +189,20 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page.
 
-            Eg. var command = NitroCommandFactory.Create\<CspolicyAddCommand> (INitroServiceClient, new CspolicyAddRequestData(){ });
-    
-    * Usage of the Command:
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CspolicyAddCommand> (INitroServiceClient, new CspolicyAddRequestData(){ });
+            ```
+          
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for CspolicyAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+     var response = command.GetResponse();  
+        ```
+     
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
 
 + Get
@@ -202,8 +234,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CspolicyGetCommand>(INitroServiceClient, New CspolicyGetRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<CspolicyGetCommand>(INitroServiceClient, New CspolicyGetRequestOptions(){ });
+        ```
+      
+      - Options:  
         For this command, the Options are gathered in an Object CspolicyGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
         <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of a server, and the value you want to see in the returned servers.  
@@ -216,8 +252,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CspolicyGet, that object is <u>CspolicyGetResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -230,8 +269,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CspolicyRemoveCommand>(INitroServiceClient, new CspolicyRemoveRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<CspolicyRemoveCommand>(INitroServiceClient, new CspolicyRemoveRequestOptions(){ });
+        ```
+      
+      - Options:  
         For Servers, the Options are gathered in an Object CspolicyRemoveRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -239,8 +282,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CspolicyRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -260,7 +306,7 @@ Commands: add, get, remove, update
         LogAction|string|The log action associated with the content switching policy.
 
 
-    * Creation of the Command
+   * Creation of the Command
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to Update.
 
@@ -268,16 +314,22 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page
 
-            Eg. var command = NitroCommandFactory.Create\<CspolicyUpdateCommand> (INitroServiceClient, new CspolicyUpdateRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CspolicyUpdateCommand> (INitroServiceClient, new CspolicyUpdateRequestData(){ });
+            ```
+          
             Inside the CspolicyUpdateRequestData-item, the properties mentioned above will be accessible to change.
 
-    * Usage of the command: 
+   * Usage of the command: 
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CspolicyUpdate, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+     var response = command.GetResponse(); 
+        ```
+     
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -360,19 +412,25 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page.
 
-            Eg. var command = NitroCommandFactory.Create\<CsvserverAddCommand> (INitroServiceClient, new CsvserverAddRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CsvserverAddCommand> (INitroServiceClient, new CsvserverAddRequestData(){ });
+            ```
+          
             Where CsvserverAddRequestData is one of:
             - CsvserverAddDnsRequestData, CsvserverAddDnsTcpRequestData, CsvserverAddHttpRequestData, CsvserverAddSslRequestData, CsvserverAddSslTcpRequestData, CsvserverAddTcpRequestData, CsvserverAddUdpRequestData
 
 
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for CsvserverAdd, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+     var response = command.GetResponse();  
+        ```
+     
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
 
 + Get
@@ -482,8 +540,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CsvserverGetCommand>(INitroServiceClient, New CsvserverGetRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+       var command = NitroCommandFactory.Create\<CsvserverGetCommand>(INitroServiceClient, New CsvserverGetRequestOptions(){ });
+        ```
+       
+       - Options:  
         For this command, the Options are gathered in an Object CsvserverGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
         <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of a server, and the value you want to see in the returned servers.  
@@ -496,8 +558,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverGet, that object is <u>CsvserverGetResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -510,8 +575,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CsvserverRemoveCommand>(INitroServiceClient, new CsvserverRemoveRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<CsvserverRemoveCommand>(INitroServiceClient, new CsvserverRemoveRequestOptions(){ });
+        ```
+      
+      - Options:  
         For Servers, the Options are gathered in an Object CsvserverRemoveRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -519,8 +588,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverRemove, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -591,7 +663,7 @@ Commands: add, get, remove, update
         DnsProfileName|string|Name of the DNS profile to be associated with the VServer. DNS profile properties will applied to the transactions processed by a VServer. This parameter is valid only for DNS and DNS-TCP VServers.
 
 
-    * Creation of the Command
+   * Creation of the Command
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to Update.
 
@@ -599,17 +671,23 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page
 
-            Eg. var command = NitroCommandFactory.Create\<CspolicyUpdateCommand> (INitroServiceClient, new CsvserverUpdateRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CspolicyUpdateCommand> (INitroServiceClient, new CsvserverUpdateRequestData(){ });
+            ```
+          
             Where CsvserverUpdateRequestData is one of:
             - CsvserverUpdateDnsRequestData, CsvserverUpdateDnsTcpRequestData, CsvserverUpdateHttpRequestData, CsvserverUpdateSslRequestData, CsvserverUpdateSslTcpRequestData, CsvserverUpdateTcpRequestData, CsvserverUpdateUdpRequestData
 
-    * Usage of the command: 
+   * Usage of the command: 
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverUpdate, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+     var response = command.GetResponse(); 
+        ```
+     
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -647,17 +725,22 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page.
 
-            Eg. var command = NitroCommandFactory.Create\<CsvserverAddCommand> (INitroServiceClient, new CsvserverBindingAddCspolicyRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CsvserverAddCommand> (INitroServiceClient, new CsvserverBindingAddCspolicyRequestData(){ });
+            ```
 
 
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for CsvserverBindingAddCspolicy, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+     var response = command.GetResponse();  
+        ```
+     
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
 
 + Get: NYI
@@ -676,8 +759,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverBindingRemoveCspolicy, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
@@ -708,17 +794,22 @@ Commands: add, get, remove, update
         
             The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page.
 
-            Eg. var command = NitroCommandFactory.Create\<CsvserverAddCommand> (INitroServiceClient, new CsvserverBindingAddLbvserverRequestData(){ });
-
+            Eg. 
+            ```
+          var command = NitroCommandFactory.Create\<CsvserverAddCommand> (INitroServiceClient, new CsvserverBindingAddLbvserverRequestData(){ });
+            ```
 
 
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for CsvserverBindingAddLbvserver, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse();  
-
+        eg. 
+        ```
+     var response = command.GetResponse();  
+        ```
+     
         <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
 
 + Get: NYI
@@ -728,8 +819,12 @@ Commands: add, get, remove, update
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
 
-        eg. var command = NitroCommandFactory.Create\<CsvserverBindingRemoveLbvserverCommand>(INitroServiceClient, new CsvserverBindingRemoveLbvserverRequestOptions(){ });
-        - Options:  
+        eg. 
+        ```
+      var command = NitroCommandFactory.Create\<CsvserverBindingRemoveLbvserverCommand>(INitroServiceClient, new CsvserverBindingRemoveLbvserverRequestOptions(){ });
+        ```
+      
+      - Options:  
         For this command, the Options are gathered in an Object CsvserverBindingRemoveLbvserverRequestOptions, which has following properties to be used as filters:
         <u>ResourceName</u>: The name of the object you wish to remove.  
     
@@ -737,8 +832,11 @@ Commands: add, get, remove, update
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverBindingRemoveLbvserver, that object is <u>NitroResponse</u>.
 
-        eg. var response = command.GetResponse(); 
-
+        eg. 
+        ```
+      var response = command.GetResponse(); 
+        ```
+      
         Response will then hold all the information from the request in following properties:   
         - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
         - ErrorCode: the errorcode of the request, 0 if successful.
