@@ -112,7 +112,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         string DnsVserverName { get; set; }
         string Domain { get; set; }
         string PolicyName { get; set; }
-        string CacheServer { get; set; }
+        string CacheVServer { get; set; }
         string Health { get; set; }
         string GoToPriorityExpression { get; set; }
         string RuleType { get; set; }
