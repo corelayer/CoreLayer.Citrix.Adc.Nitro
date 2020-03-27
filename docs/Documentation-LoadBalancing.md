@@ -126,7 +126,7 @@ Commands: add, get, remove, update
             LbmonitorHttpEcvAddRequestData, LbmonitorHttpInlineAddRequestData, LbmonitorHttpAddRequestData, LbmonitorTcpEcvAddRequestData, LbmonitorTcpAddRequestData
 
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for LbmonitorAdd, that object is <u>NitroResponse</u>.
 
@@ -269,13 +269,13 @@ Commands: add, get, remove, update
         ```
         
         - Options:  
-        For this command, the Options are gathered in an Object CsactionGetRequestOptions, which has following properties to be used as filters:  
-        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
-        <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of a server, and the value you want to see in the returned servers.  
-        eg. ResourceFilter = {{"Comment","Hello"}} will make it so only servers with "Hello" as their Comment will be returned. Not Defining this will return all servers.  
+        For this command, the Options are gathered in an Object LbmonitorGetRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  
+        <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of an object, and the value you want to see in the returned objects.  
+        eg. ResourceFilter = {{"Comment","Hello"}} will make it so only objects with "Hello" as their Comment will be returned. Not Defining this will return all objects.  
         <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
-        eg. PropertyFilter = {"Name"} will make it so only the names of the servers matching the criteria are returned. Not Defining this will return all properties.  
-        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of servers that match your search-criteria.
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria.
 
     * Usage of the Command:
 
@@ -291,7 +291,7 @@ Commands: add, get, remove, update
         - ErrorCode: the errorcode of the request, 0 if successful.
         - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
         - Severity: the severity of the error, "NONE" if successful
-        - Lbmonitors: an array of CsactionConfiguration-objects returned by the Get-Request, all of which contain the properties mentioned above.
+        - Lbmonitors: an array of LbmonitorConfiguration-objects returned by the Get-Request, all of which contain the properties mentioned above.
 
 + Remove: 
     * Creation of the Command:  
@@ -577,7 +577,7 @@ Commands: add, get, remove, update
             LbmonitorDnsAddRequestData, LbmonitorDnsTcpAddRequestData, LbmonitorHttpAddRequestData, LbmonitorSslAddRequestData, LbmonitorSslBridgeAddRequestData, LbmonitorSslTcpBridgeAddRequestData, LbmonitorSyslogTcpAddRequestData, LbmonitorSyslogUdpBridgeAddRequestData, LbmonitorTcpAddRequestData, LbmonitorUdpAddRequestData, 
 
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for LbvserverAdd, that object is <u>NitroResponse</u>.
 
@@ -750,7 +750,7 @@ Commands: add, get, remove, update
         ```
         
         - Options:  
-        For this command, the Options are gathered in an Object CsactionGetRequestOptions, which has following properties to be used as filters:  
+        For this command, the Options are gathered in an Object LbvserverGetRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all servers.  
         <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of a server, and the value you want to see in the returned servers.  
         eg. ResourceFilter = {{"Comment","Hello"}} will make it so only servers with "Hello" as their Comment will be returned. Not Defining this will return all servers.  
@@ -772,7 +772,7 @@ Commands: add, get, remove, update
         - ErrorCode: the errorcode of the request, 0 if successful.
         - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
         - Severity: the severity of the error, "NONE" if successful
-        - Lbmonitors: an array of CsactionConfiguration-objects returned by the Get-Request, all of which contain the properties mentioned above.
+        - Lbvservers: an array of LbvserverConfiguration-objects returned by the Get-Request, all of which contain the properties mentioned above.
 
 + Remove: 
     * Creation of the Command:  
@@ -902,7 +902,7 @@ Commands: add, get, remove, update
         RetainConnectionsOnCluster|string|This option enables you to retain existing connections on a node joining a Cluster system or when a node is being configured for passive timeout. By default, this option is disabled. Default value: NO. Possible values = YES, NO
 
 
-    * Creation of the Command
+   * Creation of the Command
 
         To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to Update.
 
@@ -918,7 +918,7 @@ Commands: add, get, remove, update
             Where LbvserverUpdateRequestData is one of:
             - LbvserverDnsUpdateRequestData, LbvserverDnsTcpUpdateRequestData, LbvserverHttpUpdateRequestData, LbvserverSslBridgeUpdateRequestData, LbvserverSslUpdateRequestData, LbvserverSslTcpUpdateRequestData, LbvserverSslSyslogTcpUpdateRequestData, LbvserverSyslogUdpBridgeUpdateRequestData, LbvserverTcpUpdateRequestData, LbvserverUdpUpdateRequestData
 
-    * Usage of the command: 
+   * Usage of the command: 
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For LbvserverUpdate, that object is <u>NitroResponse</u>.
 
@@ -1038,7 +1038,7 @@ Commands: add, get, remove, update
 
 
     
-    * Usage of the Command:
+   * Usage of the Command:
 
         You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for LbvserverBindingAdd, that object is <u>NitroResponse</u>.
 
