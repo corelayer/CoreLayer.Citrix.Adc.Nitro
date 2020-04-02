@@ -22,9 +22,9 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.NS.NsTcpProfile
         public double? DelayEdAck { get; set; }
         public double? OooQSize { get; set; }
         public double? MaxPktPermss { get; set; }
-        public double? PktPerrextx { get; set; }
-        public double? Minrto { get; set; }
-        public double? SlozStartIncr { get; set; }
+        public double? PktPerretx { get; set; }
+        public double? MinRto { get; set; }
+        public double? SlowStartIncr { get; set; }
         public double? Buffersize { get; set; }
         public string SynCookie { get; set; }
         public string KaProbeUpdateLastActivity { get; set; }
