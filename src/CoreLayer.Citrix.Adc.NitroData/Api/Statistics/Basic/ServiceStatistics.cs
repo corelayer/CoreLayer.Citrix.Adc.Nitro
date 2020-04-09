@@ -29,7 +29,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Basic
         public string State { get; set; }
         [JsonPropertyName("vsvrservicehits")]public string VirtualServerServiceHits { get; set; }
         [JsonPropertyName("totsvrttlbtransactions")]public string TotalServerTimeToLastByteTransactions { get; set; }
-        [JsonPropertyName("frustratingttlbtransactions")]public string FrustratingTImeToLastByteTransactions { get; set; }
+        [JsonPropertyName("frustratingttlbtransactions")]public string FrustratingTimeToLastByteTransactions { get; set; }
         public string TotalResponseBytes { get; set; }
         public int? PrimaryPort { get; set; }
         public double? RequestsRate { get; set; }
