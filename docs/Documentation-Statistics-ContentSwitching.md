@@ -74,7 +74,7 @@
 
     * Usage of the Command:
 
-        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverStat, that object is <u>ServiceStatResponse</u>.
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For CsvserverStat, that object is <u>CsvserverStatResponse</u>.
 
         eg. 
         ```
