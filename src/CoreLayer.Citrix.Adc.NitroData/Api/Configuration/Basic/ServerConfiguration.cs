@@ -39,6 +39,7 @@
         public string Svcitmactsvcs { get; set; }
         public string Svcitmboundsvcs { get; set; }
         public string Weight { get; set; }
+        public string QueryType { get; set; }
         [JsonPropertyName("__count")]public double? Count { get; set; }
     }
 }

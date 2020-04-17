@@ -80,6 +80,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic.Servicegroup
         public string SvcItmactscvs { get; set; }
         public string SvcitmBoundSvcs { get; set; }
         public string ResponseTime { get; set; }
+        public string MonUserStatusMesg { get; set; }
         public double? Count { get; set; }
     }
 }

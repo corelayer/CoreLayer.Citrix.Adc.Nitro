@@ -89,6 +89,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
         public string MonitorTotalFailedProbes { get; set; }
         public string MonitorCurrentFailedProbes { get; set; }
         public bool? Passive { get; set; }
+        public string MonUserStatusMesg { get; set; }
         [JsonPropertyName("__count")]public double? Count { get; set; }
     }
 }
