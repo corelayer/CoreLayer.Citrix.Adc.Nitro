@@ -7,37 +7,37 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic.Servicegroup
         public string ServicegroupName { get; set; }
         public string ServiceType { get; set; }
         public string CacheType { get; set; }
-        [JsonPropertyName("td")]public string TrafficDomain { get; set; }
+        public string Td { get; set; }
         public string MaxClient { get; set; }
-        [JsonPropertyName("maxreq")]public string MaxRequests { get; set; }
+        public string MaxReq { get; set; }
         public string Cacheable { get; set; }
-        [JsonPropertyName("cip")]public string ClientIp { get; set; }
-        [JsonPropertyName("cipheader")]public string ClientIpHeader { get; set; }
-        [JsonPropertyName("usip")]public string UseSourceIp { get; set; }
+        public string Cip { get; set; }
+        public string CipHeader { get; set; }
+        public string Usip { get; set; }
         public string PathMonitor { get; set; }
-        [JsonPropertyName("pathmonitorindv")]public string PathMonitorIndividual { get; set; }
+        public string PathMonitorIndv { get; set; }
         public string UseProxyPort { get; set; }
         public string HealthMonitor { get; set; }
-        [JsonPropertyName("sc")]public string SureConnect { get; set; }
-        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
+        public string Sc { get; set; }
+        public string Sp { get; set; }
         public string RtspSessionIdRemap { get; set; }
-        [JsonPropertyName("clttimeout")]public double? ClientTimeout { get; set; }
-        [JsonPropertyName("svrtimeout")]public double? ServerTimeout { get; set; }
-        [JsonPropertyName("cka")]public string ClientKeepAlive { get; set; }
-        [JsonPropertyName("tcpb")]public string TcpBuffering { get; set; }
-        [JsonPropertyName("cmp")]public string Compression { get; set; }
+        public double? CltTimeout { get; set; }
+        public double? SvrTimeout { get; set; }
+        public string Cka { get; set; }
+        public string TcpB { get; set; }
+        public string Cmp { get; set; }
         public string MaxBandWidth { get; set; }
-        [JsonPropertyName("monthreshold")]public string MonitorWeightThreshold { get; set; }
+        public string MonThreshold { get; set; }
         public string State { get; set; }
         public string DownStateFlush { get; set; }
         public string TcpProfileName { get; set; }
         public string HttpProfileName { get; set; }
         public string Comment { get; set; }
-        [JsonPropertyName("appflowlog")]public string AppFlowLogging { get; set; }
-        [JsonPropertyName("netprofile")]public string NetworkProfileName { get; set; }
+        public string AppFlowLog { get; set; }
+        public string NetProfileName { get; set; }
         public string AutoScale { get; set; }
         public int? MemberPort { get; set; }
-        [JsonPropertyName("monconnectionclose")]public string MonitoringConnectionsClose { get; set; }
+        public string MonConnectionsClose { get; set; }
         public string ServerName { get; set; }
         public int? Port { get; set; }
         public string Weight { get; set; }
@@ -46,29 +46,29 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic.Servicegroup
         public string HashId { get; set; }
         [JsonPropertyName("monitor_name_svc")]public string MonitorNameSvc { get; set; }
         [JsonPropertyName("dup_weight")]public string DupWeight { get; set; }
-        [JsonPropertyName("riseapbrstatsmsgcode")]public int? RiseApbrStatusMessageCode { get; set; }
+        public int? RiseApbrStatsMsgCode { get; set; }
         public double? Delay { get; set; }
         public string Graceful { get; set; }
         public bool? IncludeMembers { get; set; }
         public string NewName { get; set; }
-        [JsonPropertyName("numofconnections")]public int? NumberOfConnections { get; set; }
-        [JsonPropertyName("serviceconftype")]public bool? ServiceConfigurationType { get; set; }
+        public int? NumOfConnections { get; set; }
+        public bool? ServiceConfType { get; set; }
         public string Value { get; set; }
-        [JsonPropertyName("svrstate")]public string ServerState { get; set; }
+        public string SvrState { get; set; }
         public string Ip { get; set; }
-        [JsonPropertyName("monstatcode")]public int? MonitorStatCode { get; set; }
-        [JsonPropertyName("monstatparam1")]public int? MonitorStatParam1 { get; set; }
-        [JsonPropertyName("monstatparam2")]public int? MonitorStatParam2 { get; set; }
-        [JsonPropertyName("monstatparam3")]public int? MonitorStatParam3 { get; set; }
+        public int? MonStatCode { get; set; }
+        public int? MonStatParam1 { get; set; }
+        public int? MonStatParam2 { get; set; }
+        public int? MonStatParam3 { get; set; }
         public string StateChangeTimeMSec { get; set; }
         public string StateUpdateReason { get; set; }
-        [JsonPropertyName("clmonowner")]public string ClMonitorOwner { get; set; }
-        [JsonPropertyName("clmonview")]public string ClMonitorView { get; set; }
+        public string ClMonOwner { get; set; }
+        public string ClMonView { get; set; }
         public string GroupCount { get; set; }
-        [JsonPropertyName("riseapbrstatsmsgcode2")]public int? RiseApbrStatusMessageCode2 { get; set; }
+        public int? RiseApbrStatsMsgCode2 { get; set; }
         public string ServiceIpStr { get; set; }
         public string ServicegroupEffectiveState { get; set; }
-        [JsonPropertyName("monweight")]public string MonitorWeight { get; set; }
+        public string MonWeight { get; set; }
         public string MonitorState { get; set; }
         public string MonitorTotalProbes { get; set; }
         public string MonitorTotalFailedProbes { get; set; }

@@ -50,7 +50,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Objects.Configuration.Basic.Serv
                 {
                     Name = "Test",
                     Port = 100,
-                    ClientTimeout = 10
+                    CltTimeout = 10
                 },
                 new Dictionary<string, string>
                 {
