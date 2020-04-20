@@ -50,7 +50,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Objects.Configuration.LoadBalanc
                 {
                     MonitorName = "Test",
                     DownTime = 100, 
-                    ResponseCodes = new string[]{ "200"}
+                    RespCode = new string[]{ "200"}
                 },
                 new Dictionary<string, string>
                 {

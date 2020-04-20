@@ -6,7 +6,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
     {
         public string Name { get; set; }
         public string ServiceType { get; set; }
-        [JsonPropertyName("ipv46")]public string IpVersion4Or6 { get; set; }
+        public string IpV46 { get; set; }
         public string IpPattern { get; set; }
         public string IpMask { get; set; }
         public int? Port { get; set; }
@@ -15,100 +15,100 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public double? Timeout { get; set; }
         public string PersistenceBackup { get; set; }
         public double? BackupPersistenceTimeout { get; set; }
-        [JsonPropertyName("lbmethod")]public string LoadBalancingMethod { get; set; }
+        public string LbMethod { get; set; }
         public string HashLength { get; set; }
         public string NetMask { get; set; }
         public double? V6NetMaskLen { get; set; }
         public string BackupLbMethod { get; set; }
         public string CookieName { get; set; }
-        [JsonPropertyName("rule")]public string TrafficRule { get; set; }
+        public string Rule { get; set; }
         public string ListenPolicy { get; set; }
         public string ListenPriority { get; set; }
-        [JsonPropertyName("resrule")]public string ResponseRule { get; set; }
+        public string ResRule { get; set; }
         public string PersistMask { get; set; }
         public string V6PersistMaskLen { get; set; }
-        [JsonPropertyName("pq")]public string PriorityQueuing { get; set; }
-        [JsonPropertyName("sc")]public string SureConnect { get; set; }
-        [JsonPropertyName("rtspnat")]public string RtspNetworkAddressTranslation { get; set; }
-        [JsonPropertyName("m")]public string LoadBalancingRedirectMode { get; set; }
+        public string Pq { get; set; }
+        public string Sc { get; set; }
+        public string RtspNat { get; set; }
+        public string M { get; set; }
         public string TosId { get; set; }
         public string DataLength { get; set; }
         public string DataOffSet { get; set; }
         public string Sessionless { get; set; }
         public string TrofsPersistence { get; set; }
         public string State { get; set; }
-        [JsonPropertyName("connfailover")]public string ConnectionFailoverMode { get; set; }
-        [JsonPropertyName("redirurl")]public string RedirectUrl { get; set; }
+        public string ConnFailover { get; set; }
+        public string RedirUrl { get; set; }
         public string Cacheable { get; set; }
-        [JsonPropertyName("clttimeout")]public string ClientTimeoutIdleTime { get; set; }
-        [JsonPropertyName("somethod")]public string SpillOverMethod { get; set; }
-        [JsonPropertyName("sopersistence")]public string SpillOverPersistence { get; set; }
-        [JsonPropertyName("sopersistencetimeout")]public string SpillOverPersistenceTimeout { get; set; }
+        public string CltTimeout{ get; set; }
+        public string SoMethod { get; set; }
+        public string SoPersistence { get; set; }
+        public string SoPersistenceTimeout { get; set; }
         public string HealthThreshold { get; set; }
-        [JsonPropertyName("sothreshold")]public string SpillOverThreshold { get; set; }
-        [JsonPropertyName("sobackupaction")]public string SpillOverBackupAction { get; set; }
+        public string SoThreshold { get; set; }
+        public string SoBackupAction { get; set; }
         public string RedirectPortRewrite { get; set; }
         public string DownstateFlush { get; set; }
-        [JsonPropertyName("backupvserver")]public string BackupVirtualServer { get; set; }
+        public string BackupVServer { get; set; }
         public string DisablePrimaryOnDown { get; set; }
-        [JsonPropertyName("insertvserveripport")]public string InsertVirtualServerIpPort { get; set; }
+        public string InsertVServerIpPort { get; set; }
         public string VipHeader { get; set; }
         public string AuthenticationHost { get; set; }
         public string Authentication { get; set; }
-        [JsonPropertyName("authn401")]public string AuthenticationWith401 { get; set; }
-        [JsonPropertyName("authnvsname")]public string AuthenticationVirtualServerName { get; set; }
+        public string Authn401 { get; set; }
+        public string AuthnVsName { get; set; }
         public string Push { get; set; }
-        [JsonPropertyName("pushvserver")]public string PushVirtualServerName { get; set; }
-        [JsonPropertyName("pushlabel")]public string PushLabelExpression { get; set; }
+        public string PushVServer { get; set; }
+        public string PushLabel { get; set; }
         public string PushMultiClients { get; set; }
         public string TcpProfileName { get; set; }
         public string HttpProfileName { get; set; }
         public string DbProfileName { get; set; }
         public string Comment { get; set; }
-        [JsonPropertyName("l2conn")]public string UseLayer2Parameters { get; set; }
+        public string L2Conn { get; set; }
         public string OracleServerVersion { get; set; }
         public string MsSqlServerVersion { get; set; }
         public string MySqlProtocolVersion { get; set; }
         public string MySqlServerVersion { get; set; }
         public string MySqlCharacterSet { get; set; }
         public string MySqlServerCapabilities { get; set; }
-        [JsonPropertyName("appflowlog")]public string AppFlowLogging { get; set; }
-        [JsonPropertyName("netprofile")]public string NetworkProfile { get; set; }
-        [JsonPropertyName("icmpvsrresponse")]public string PingRequestForCommonIpResponse { get; set; }
-        [JsonPropertyName("rhistate")]public string RouteHealthInjectionState { get; set; }
+        public string AppFlowLog { get; set; }
+        public string NetProfile { get; set; }
+        public string IcmpVsrResponse { get; set; }
+        public string RhiState { get; set; }
         public string NewServiceRequest { get; set; }
         public string NewServiceRequestUnit { get; set; }
         public string NewServiceRequestIncrementInterval { get; set; }
         public string MinAutoScaleMembers { get; set; }
         public string MaxAutoScaleMembers { get; set; }
-        [JsonPropertyName("persistavpno")]public string[] PersistAvpNumber { get; set; }
+        public string[] PersistAvpNo { get; set; }
         public string SkipPersistency { get; set; }
-        [JsonPropertyName("td")]public string TrafficDomain { get; set; }
-        [JsonPropertyName("authnprofile")]public string AuthenticationProfile { get; set; }
+        public string Td { get; set; }
+        public string AuthnProfile { get; set; }
         public string MacModeRetainVlan { get; set; }
-        [JsonPropertyName("dbslb")]public string DatabaseSpecificLoadBalancing { get; set; }
+        public string Dbslb { get; set; }
         public string Dns64 { get; set; }
         public string BypassAaaa { get; set; }
         public string RecursionAvailable { get; set; }
         public string ProcessLocal { get; set; }
         public string DnsProfileName { get; set; }
-        [JsonPropertyName("lbprofilename")]public string LoadBalancingProfileName { get; set; }
+        public string LbProfileName { get; set; }
         public int? RedirectFromPort { get; set; }
         public string HttpsRedirectUrl { get; set; }
         public string RetainConnectionsOnCluster { get; set; }
         public string Weight { get; set; }
         public string DynamicWeight { get; set; }
         public string ServiceName { get; set; }
-        [JsonPropertyName("redirurlflags")]public bool? RedirectUrlFlags { get; set; }
-        [JsonPropertyName("value")]public string ValueSslStatus { get; set; }
+        public bool? RedUrlFlags { get; set; }
+        public string Value { get; set; }
         public string IpMapping { get; set; }
-        [JsonPropertyName("ngname")]public string NodeGroupName { get; set; }
+        public string NgName { get; set; }
         public string Type { get; set; }
-        [JsonPropertyName("curstate")]public string CurrentState { get; set; }
+        public string CurState { get; set; }
         public string EffectiveState { get; set; }
         public int? Status { get; set; }
-        [JsonPropertyName("lbrrreason")]public int? LoadBalancerRoundRobinReason { get; set; }
-        [JsonPropertyName("redirect")]public string CacheRedirectType { get; set; }
+        public int? LbrrReason { get; set; }
+        public string Redirect { get; set; }
         public string Precedence { get; set; }
         public string HomePage { get; set; }
         public string DnsVserverName { get; set; }
@@ -121,23 +121,23 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public string GroupName { get; set; }
         public string CookieDomain { get; set; }
         public string Map { get; set; }
-        [JsonPropertyName("gt2gb")]public string GreaterThan2Gb { get; set; }
-        [JsonPropertyName("consolidatedlconn")]public string ConsolidatedLeastConnection { get; set; }
-        [JsonPropertyName("consolidatedlconngbl")]public string ConsolidatedLeastConnectionGlobal { get; set; }
+        public string Gt2Gb { get; set; }
+        public string ConsolidatedLConn { get; set; }
+        public string ConsolidatedLConnGbl { get; set; }
         public int? ThresholdValue { get; set; }
         public string BindPoint { get; set; }
         public bool? Invoke { get; set; }
         public string LabelType { get; set; }
         public string LabelName { get; set; }
-        [JsonPropertyName("version")]public int? CookieVersion { get; set; }
+        public int? Version { get; set; }
         public string TotalServices { get; set; }
         public string ActiveServices { get; set; }
         public string StateChangeTimeSec { get; set; }
         public string StateChangeTimeSeconds { get; set; }
         public string StateChangeTimeMsec { get; set; }
         public string TicksSinceLastStateChange { get; set; }
-        [JsonPropertyName("isgslb")]public bool? IsGlobalServerLoadBalancingVirtualServer { get; set; }
-        [JsonPropertyName("vsvrdynconnsothreshold")]public string VirtualServerDynamicConnectionSpillOverThreshold { get; set; }
+        public bool? IsGslb { get; set; }
+        public string VsvrDynConnSoThreshold { get; set; }
         public string BackupVserverStatus { get; set; }
         public string CacheType { get; set; }
         public string Hits { get; set; }
