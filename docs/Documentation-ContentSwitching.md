@@ -53,7 +53,7 @@ Commands: add, get, remove, update
         Comment|string|Comments associated with this cs action.
         Hits|string|The number of times the action has been taken.
         ReferrenceCount|string|The number of references to the action.
-        UndefinedHits|string|The number of times the action resulted in UNDEF.
+        UndefHits|string|The number of times the action resulted in UNDEF.
         BuiltIn|string[]|Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL
         Feature|string|-
         Count|double|Count Parameter.
@@ -441,9 +441,9 @@ Commands: add, get, remove, update
         Property|DataType|Description
         ---|---|---
         Name|string|Name for the content switching virtual server. 
-        TrafficDomain|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
         ServiceType|string|Protocol used by the virtual server. Possible values = HTTP, SSL, TCP, FTP, RTSP, SSL_TCP, UDP, DNS, SIP_UDP, SIP_TCP, SIP_SSL, ANY, RADIUS, RDP, MYSQL, MSSQL, DIAMETER, SSL_DIAMETER, DNS_TCP, ORACLE, SMPP, PROXY
-        IpVersion4Or6|string|IP address of the content switching virtual server.
+        IpV46|string|IP address of the content switching virtual server.
         TargetType|string|Virtual server target type. Possible values = GSLB
         DnsRecordType|string|Default value: NSGSLB_IPV4. Possible values = A, AAAA, CNAME, NAPTR
         PersistenceId|double|-
@@ -455,29 +455,29 @@ Commands: add, get, remove, update
         StateUpdate|string|Enable state updates for a specific content switching virtual server. By default, the Content Switching virtual server is always UP, regardless of the state of the Load Balancing virtual servers bound to it. If you want to enable state updates for only some content switching virtual servers, be sure to disable the state update parameter. Default value: DISABLED. Possible values = ENABLED, DISABLED
         Cacheable|string|Use this option to specify whether a virtual server, used for load balancing or content switching, routes requests to the cache redirection virtual server before sending it to the configured servers. Default value: NO. Possible values = YES, NO
         RedirectUrl|string|URL to which traffic is redirected if the virtual server becomes unavailable. The service type of the virtual server should be either HTTP or SSL. Caution: Make sure that the domain in the URL does not match the domain specified for a content switching policy. If it does, requests are continuously redirected to the unavailable virtual server.
-        ClientTimeout|string|Idle time, in seconds, after which the client connection is terminated. The default values are: 180 seconds for HTTP/SSL-based services. 9000 seconds for other TCP-based services. 120 seconds for DNS-based services. 120 seconds for other UDP-based services.
+        CltTimeout|string|Idle time, in seconds, after which the client connection is terminated. The default values are: 180 seconds for HTTP/SSL-based services. 9000 seconds for other TCP-based services. 120 seconds for DNS-based services. 120 seconds for other UDP-based services.
         Precedence|string|Type of precedence to use for both RULE-based and URL-based policies on the content switching virtual server. With the default (RULE) setting, incoming requests are evaluated against the rule-based content switching policies. If none of the rules match, the URL in the request is evaluated against the URL-based content switching policies. Default value: RULE. Possible values = RULE, URL
         CaseSensitive|string|Consider case in URLs (for policies that use URLs instead of RULES). For example, with the ON setting, the URLs /a/1.html and /A/1.HTML are treated differently and can have different targets (set by content switching policies). With the OFF setting, /a/1.html and /A/1.HTML are switched to the same target. Default value: ON. Possible values = ON, OFF
-        SpillOverMethod|string|Type of spillover used to divert traffic to the backup virtual server when the primary virtual server reaches the spillover threshold. Connection spillover is based on the number of connections. Bandwidth spillover is based on the total Kbps of incoming and outgoing traffic. Possible values = CONNECTION, DYNAMICCONNECTION, BANDWIDTH, HEALTH, NONE
-        SpillOverPersistence|string|Maintain source-IP based persistence on primary and backup virtual servers. Default value: DISABLED. Possible values = ENABLED, DISABLED
-        SpillOverPersistenceTimeout|string|Time-out value, in minutes, for spillover persistence.
-        SpillOverThreshold|double|Depending on the spillover method, the maximum number of connections or the maximum total bandwidth (Kbps) that a virtual server can handle before spillover occurs.
-        SpillOverBackupAction|string|Action to be performed if spillover is to take effect, but no backup chain to spillover is usable or exists. Possible values = DROP, ACCEPT, REDIRECT
+        SoMethod|string|Type of spillover used to divert traffic to the backup virtual server when the primary virtual server reaches the spillover threshold. Connection spillover is based on the number of connections. Bandwidth spillover is based on the total Kbps of incoming and outgoing traffic. Possible values = CONNECTION, DYNAMICCONNECTION, BANDWIDTH, HEALTH, NONE
+        SoPersistence|string|Maintain source-IP based persistence on primary and backup virtual servers. Default value: DISABLED. Possible values = ENABLED, DISABLED
+        SoPersistenceTimeout|string|Time-out value, in minutes, for spillover persistence.
+        SoThreshold|double|Depending on the spillover method, the maximum number of connections or the maximum total bandwidth (Kbps) that a virtual server can handle before spillover occurs.
+        SoBackupAction|string|Action to be performed if spillover is to take effect, but no backup chain to spillover is usable or exists. Possible values = DROP, ACCEPT, REDIRECT
         RedirectPortRewrite|string|State of port rewrite while performing HTTP redirect. Default value: DISABLED. Possible values = ENABLED, DISABLED
         DownStateFlush|string|Flush all active transactions associated with a virtual server whose state transitions from UP to DOWN. Do not enable this option for applications that must complete their transactions. Default value: ENABLED. Possible values = ENABLED, DISABLED
-        BackupVirtualServer|string|Name of the backup virtual server that you are configuring.
+        BackupVserver|string|Name of the backup virtual server that you are configuring.
         DisablePrimaryOnDown|string|Continue forwarding the traffic to backup virtual server even after the primary server comes UP from the DOWN state. Default value: DISABLED. Possible values = ENABLED, DISABLED
         InsertVserverIpPort|string|Insert the virtual server's VIP address and port number in the request header. Available values function as follows: VIPADDR - Header contains the vserver's IP address and port number without any translation. OFF - The virtual IP and port header insertion option is disabled. V6TOV4MAPPING - Header contains the mapped IPv4 address corresponding to the IPv6 address of the vserver and the port number. An IPv6 address can be mapped to a user-specified IPv4 address using the set ns ip6 command. Possible values = OFF, VIPADDR, V6TOV4MAPPING
-        VirtualIpHeader|string|Name of virtual server IP and port header, for use with the VServer IP Port Insertion parameter.
-        RtspNetworkAddressTranslation|string|Enable network address translation (NAT) for real-time streaming protocol (RTSP) connections. Default value: OFF Possible values = ON, OFF
-        AuthenticationHost|string|FQDN of the authentication virtual server. The service type of the virtual server should be either HTTP or SSL.
+        VipHeader|string|Name of virtual server IP and port header, for use with the VServer IP Port Insertion parameter.
+        RtspNat|string|Enable network address translation (NAT) for real-time streaming protocol (RTSP) connections. Default value: OFF Possible values = ON, OFF
+        AuthenticationnHost|string|FQDN of the authentication virtual server. The service type of the virtual server should be either HTTP or SSL.
         Authentiction|string|Authenticate users who request a connection to the content switching virtual server. Default value: OFF. Possible values = ON, OFF
         ListenPolicy|string|String specifying the listen policy for the content switching virtual server. Can be either the name of an existing expression or an in-line expression. Default value: "NONE"
         ListenPriority|double|Integer specifying the priority of the listen policy. A higher number specifies a lower priority. If a request matches the listen policies of more than one virtual server the virtual server whose listen policy has the highest priority (the lowest priority number) accepts the request. Default value: 101
-        Authentication401|string|Enable HTTP 401-response based authentication. Default value: OFF. Possible values = ON, OFF
-        AuthenticationVirtualServerName|string|Name of authentication virtual server that authenticates the incoming user requests to this content switching virtual server.
+        Authn401|string|Enable HTTP 401-response based authentication. Default value: OFF. Possible values = ON, OFF
+        AuthnVsName|string|Name of authentication virtual server that authenticates the incoming user requests to this content switching virtual server.
         Push|string|Process traffic with the push virtual server that is bound to this content switching virtual server (specified by the Push VServer parameter). The service type of the push virtual server should be either HTTP or SSL. Default value: DISABLED. Possible values = ENABLED, DISABLED
-        PushVirtualServer|string|Name of the load balancing virtual server, of type PUSH or SSL_PUSH, to which the server pushes updates received on the client-facing load balancing virtual server.
+        PushVserver|string|Name of the load balancing virtual server, of type PUSH or SSL_PUSH, to which the server pushes updates received on the client-facing load balancing virtual server.
         PushLabel|string|Expression for extracting the label from the response received from server. This string can be either an existing rule name or an inline expression. The service type of the virtual server should be either HTTP or SSL. Default value: "none"
         PushMultiClients|string|Allow multiple Web 2.0 connections from the same client to connect to the virtual server and expect updates. Default value: NO. Possible values = YES, NO
         TcpProfileName|string|Name of the TCP profile containing TCP configuration settings for the virtual server.
@@ -486,29 +486,29 @@ Commands: add, get, remove, update
         OracleServerVersion|string|Oracle server version. Default value: 10G. Possible values = 10G, 11G
         Comment|string|Information about this virtual server.
         MsSqlServerVersion|string|The version of the MSSQL server. Default value: 2008R2. Possible values = 70, 2000, 2000SP1, 2005, 2008, 2008R2, 2012, 2014
-        UseL2ParametersConnections|string|Use L2 Parameters to identify a connection. Possible values = ON, OFF
+        L2Conn|string|Use L2 Parameters to identify a connection. Possible values = ON, OFF
         MySqlProtocolVersion|string|The protocol version returned by the mysql vserver. Default value: 10
         MySqlServerVersion|string|The server version string returned by the mysql vserver.
         MySqlCharacterSet|string|The character set returned by the mysql vserver. Default value: 8
         NySqlServerCapabilities|string|The server capabilities returned by the mysql vserver.
-        AppFlowLogging|string|Enable logging appflow flow information. Default value: ENABLED Possible values = ENABLED, DISABLED
+        AppFlowLog|string|Enable logging appflow flow information. Default value: ENABLED Possible values = ENABLED, DISABLED
         NetProfile|string|The name of the network profile.
         IcmpVsrResponse|string|Can be active or passive. Default value: PASSIVE. Possible values = PASSIVE, ACTIVE
-        RouteHostInjectedState|string|A host route is injected according to the setting on the virtual servers * If set to PASSIVE on all the virtual servers that share the IP address, the appliance always injects the hostroute. * If set to ACTIVE on all the virtual servers that share the IP address, the appliance injects even if one virtual server is UP. * If set to ACTIVE on some virtual servers and PASSIVE on the others, the appliance, injects even if one virtual server set to ACTIVE is UP. Default value: PASSIVE. Possible values = PASSIVE, ACTIVE
-        AuthenticationProfile|string|Name of the authentication profile to be used when authentication is turned on.
+        RhiState|string|A host route is injected according to the setting on the virtual servers * If set to PASSIVE on all the virtual servers that share the IP address, the appliance always injects the hostroute. * If set to ACTIVE on all the virtual servers that share the IP address, the appliance injects even if one virtual server is UP. * If set to ACTIVE on some virtual servers and PASSIVE on the others, the appliance, injects even if one virtual server set to ACTIVE is UP. Default value: PASSIVE. Possible values = PASSIVE, ACTIVE
+        AuthnProfile|string|Name of the authentication profile to be used when authentication is turned on.
         DnsProfileName|string|Name of the DNS profile to be associated with the VServer. DNS profile properties will applied to the transactions processed by a VServer. This parameter is valid only for DNS and DNS-TCP VServers.
         DomainName|string|Domain name for which to change the time to live (TTL) and/or backup service IP address.
-        TimeToLive|double|-
+        Ttl|double|-
         BackupIp|string|-
         CookieDomain|string|-
         CookieTimeout|double|-
         SiteDomainTimeToLive|double|-
         Ip|string|The IP address of the virtual server.
         Value|string|The ssl card status for the transparent ssl cs vserver. Possible values = Certkey not bound, SSL feature disabled
-        NodeGroupName|string|Nodegroup devno to which this csvserver belongs to.
+        NgName|string|Nodegroup devno to which this csvserver belongs to.
         Type|string|Virtual server type. Possible values = CONTENT, ADDRESS
-        CurrentState|string|The state of the cs vserver. Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED
-        SureConnect|string|The state of SureConnect the specified virtual server. Possible values = ON, OFF
+        CurState|string|The state of the cs vserver. Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED
+        Sc|string|The state of SureConnect the specified virtual server. Possible values = ON, OFF
         Status|int|Status.
         CacheType|string|Cache type. Possible values = TRANSPARENT, REVERSE, FORWARD
         Redirect|string|Redirect URL string. Possible values = CACHE, POLICY, ORIGIN
