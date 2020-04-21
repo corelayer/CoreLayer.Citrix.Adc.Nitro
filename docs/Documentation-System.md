@@ -252,7 +252,8 @@ Commands: Add, Delete, Get
         ```
         - Options:  
         For this command, the Options are gathered in an Object SystemFileRemoveRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove.
+        <u>Arguments</u>: a dictionary<string, string> to which you will have to add the following data of the object you wish to remove. filelocation:<Filelocation_value>
     
     * Usage of the Command: 
 
