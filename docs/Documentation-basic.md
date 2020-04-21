@@ -552,7 +552,8 @@ Commands: Add, Get, Remove, Update
       
       - Options:  
         For this command, the Options are gathered in an Object ServiceBindingRemoveLbmonitorRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove.
+        <u>Arguments</u>: a dictionary of strings in which you will need to add "monitor_name" as key and the name of the monitor you wish to remove as value.
     
     * Usage of the Command: 
 
@@ -952,7 +953,9 @@ Commands: add, get, remove, update
       
         - Options:  
         For this command, the Options are gathered in an Object ServicegroupBindingRemoveLbmonitorRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove. 
+        <u>Arguments</u>: a dictionary of strings in which you will need to add "monitor_name" as key and the name of the monitor you wish to remove as value, and "port":portNumber in the same fashion.
+     
     
     * Usage of the Command: 
 
@@ -1044,7 +1047,9 @@ Commands: add, get, remove, update
       
       - Options:  
         For this command, the Options are gathered in an Object ServicegroupBindingRemoveServicegroupMemberRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove from.  
+        <u>Arguments</u>: a dictionary<string, string> in which you will need to add some data to specify what to remove. The data to add is as follows: ip: <ip_value> ,servername: <servername_value> ,port: <port_value> 
+    
     
     * Usage of the Command: 
 
