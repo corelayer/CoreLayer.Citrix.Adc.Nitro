@@ -989,7 +989,9 @@ Commands: add, get, remove, update
         ```
         - Options:  
         For this command, the Options are gathered in an Object LbvserverBindingRemoveServiceRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove from.  
+        <u>Arguments</u>: a dictionary<string, string> in which the following data needs to be added based on what you wish to remove.
+        servicename: <servicename_value> ,servicegroupname: <servicegroupname_value> 
     
     * Usage of the Command: 
 
@@ -1062,7 +1064,9 @@ Commands: add, get, remove, update
         ```
         - Options:  
         For this command, the Options are gathered in an Object LbvserverBindingRemoveServicegroupRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove from.  
+        <u>Arguments</u>: a dictionary<string, string> in which the following data needs to be added based on what you wish to remove.
+        servicename: <servicename_value> ,servicegroupname: <servicegroupname_value>   
     
     * Usage of the Command: 
 
