@@ -753,7 +753,9 @@ Commands: add, get, remove, update
         eg. var command = NitroCommandFactory.Create\<CsvserverBindingRemoveCspolicyCommand>(INitroServiceClient, new CsvserverBindingRemoveCspolicyRequestOptions(){ });
         - Options:  
         For this command, the Options are gathered in an Object CsvserverBindingRemoveCspolicyRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove from.
+        <u>Arguments</u>: a dictionary<string, string> that requires the following data based on what you wish to remove. policyname: <policyname_value> ,bindpoint: <bindpoint_value> ,priority: <priority_value> .
+
     
     * Usage of the Command: 
 
@@ -826,7 +828,9 @@ Commands: add, get, remove, update
       
       - Options:  
         For this command, the Options are gathered in an Object CsvserverBindingRemoveLbvserverRequestOptions, which has following properties to be used as filters:
-        <u>ResourceName</u>: The name of the object you wish to remove.  
+        <u>ResourceName</u>: The name of the object you wish to remove from.  
+        <u>Arguments</u>: a dictionary<string, string> that requires the following data based on what you wish to remove. lbvserver: <lbvservername_value> 
+
     
     * Usage of the Command: 
 
