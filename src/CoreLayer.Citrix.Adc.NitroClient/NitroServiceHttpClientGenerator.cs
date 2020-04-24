@@ -8,18 +8,15 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 {
     public static class NitroServiceHttpClientGenerator
     {
-        public static HttpClient Generate(INitroServiceConnectionSettings settings)
+        public static HttpClient Generate(NitroHttpClientCertificateValidation certificateValidation)
         {
-            var httpClient = settings.ValidateServerCertificate
-                ? new HttpClient(GetInSecureHttpMessageHandler(settings))
-                : new HttpClient(GetSecureHttpMessageHandler(settings));
-            httpClient.BaseAddress = settings.BaseAddress;
-            httpClient.Timeout = TimeSpan.FromSeconds(settings.Timeout);
-
+            var httpClient = certificateValidation == NitroHttpClientCertificateValidation.Enabled
+                ? new HttpClient(GetInSecureHttpMessageHandler())
+                : new HttpClient(GetSecureHttpMessageHandler());
             return httpClient;
         }
 
-        private static HttpClientHandler GetInSecureHttpMessageHandler(INitroServiceConnectionSettings settings)
+        private static HttpClientHandler GetInSecureHttpMessageHandler()
         {
             return new HttpClientHandler
             {
@@ -30,7 +27,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             };
         }
         
-        private static HttpClientHandler GetSecureHttpMessageHandler(INitroServiceConnectionSettings settings)
+        private static HttpClientHandler GetSecureHttpMessageHandler()
         {
             return new HttpClientHandler
             {

@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.LoadBalancing.
 {
     public class LbvserverBindingGetServicegroupCommand : NitroCommand<LbvserverBindingServicegroupGetResponse>
     {
-        public LbvserverBindingGetServicegroupCommand(INitroHttpClient httpClient,
-            INitroRequestConfiguration requestConfiguration) : base(httpClient, requestConfiguration)
+        public LbvserverBindingGetServicegroupCommand(INitroServiceClient serviceClient,
+            INitroRequestConfiguration requestConfiguration) : base(serviceClient, requestConfiguration)
         {
             
         }

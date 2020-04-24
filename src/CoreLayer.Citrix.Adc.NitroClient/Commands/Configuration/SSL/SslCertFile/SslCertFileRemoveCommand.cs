@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.SSL.SslCertFil
 {
     public class SslCertFileRemoveCommand : NitroCommand<NitroResponse>
     {
-        public SslCertFileRemoveCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) :
+        public SslCertFileRemoveCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) :
             base(client, requestConfiguration)
         {
             

@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemF
 {
     public class SystemFileRemoveCommand : NitroCommand<NitroResponse>
     {
-        public SystemFileRemoveCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration)
+        public SystemFileRemoveCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration)
         {
             
         }

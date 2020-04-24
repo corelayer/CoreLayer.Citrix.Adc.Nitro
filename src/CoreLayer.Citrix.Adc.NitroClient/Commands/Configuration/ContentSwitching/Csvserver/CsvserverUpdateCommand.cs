@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.ContentSwitchi
 {
     public class CsvserverUpdateCommand : NitroCommand<NitroResponse>
     {
-        public CsvserverUpdateCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration)
+        public CsvserverUpdateCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration)
         {
             
         }

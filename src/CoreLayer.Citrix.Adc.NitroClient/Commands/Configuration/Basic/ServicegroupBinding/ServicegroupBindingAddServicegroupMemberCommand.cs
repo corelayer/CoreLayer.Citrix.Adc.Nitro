@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Serviceg
 {
     public class ServicegroupBindingAddServicegroupMemberCommand : NitroCommand<NitroResponse>
     {
-        public ServicegroupBindingAddServicegroupMemberCommand(INitroHttpClient httpClient,
-            INitroRequestConfiguration requestConfiguration) : base(httpClient, requestConfiguration)
+        public ServicegroupBindingAddServicegroupMemberCommand(INitroServiceClient serviceClient,
+            INitroRequestConfiguration requestConfiguration) : base(serviceClient, requestConfiguration)
         {
             
         }

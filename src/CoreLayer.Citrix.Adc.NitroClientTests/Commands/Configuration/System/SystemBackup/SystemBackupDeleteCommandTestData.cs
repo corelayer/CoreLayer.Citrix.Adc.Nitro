@@ -14,12 +14,13 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Commands.Configuration.System.Sy
             yield return new object[]
             {
                 NitroCommandFactory.Create<SystemBackupDeleteCommand>(
-                    new NitroHttpClient(
+                    new NitroServiceClient(
                         new NitroLoginRequestData("nsroot", "nsroot"), 
-                        new NitroServiceConnectionSettings(new Uri("http://localhost"),
-                            false,
+                        new NitroServiceConnectionSettings(
+                            new Uri("http://localhost"),
                             360,
-                            NitroServiceConnectionAuthenticationMethod.AutomaticHeaderInjection)
+                            NitroServiceConnectionAuthenticationMethod.AutomaticHeaderInjection),
+                        NitroHttpClientCertificateValidation.Disabled
                     ),
                     new SystemBackupDeleteRequestOptions("test.tgz")
                     {

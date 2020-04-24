@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Policy.PolicyS
 {
     public class PolicyStringMapPatternBindingGetCommand : NitroCommand<PolicyStringMapPatternBindingGetResponse>
     {
-        public PolicyStringMapPatternBindingGetCommand(INitroHttpClient httpClient,
-            INitroRequestConfiguration requestConfiguration) : base(httpClient, requestConfiguration)
+        public PolicyStringMapPatternBindingGetCommand(INitroServiceClient serviceClient,
+            INitroRequestConfiguration requestConfiguration) : base(serviceClient, requestConfiguration)
         {
             
         }

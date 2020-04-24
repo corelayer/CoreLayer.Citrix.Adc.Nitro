@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.ContentSwitchi
 {
     public class CsvserverBindingAddCsPolicyCommand : NitroCommand<NitroResponse>
     {
-        public CsvserverBindingAddCsPolicyCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
-            : base(httpClient, requestConfiguration) { }
+        public CsvserverBindingAddCsPolicyCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration)
+            : base(serviceClient, requestConfiguration) { }
     }
 }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Interfaces
 {
-    public interface INitroHttpClient
+    public interface INitroServiceClient
     {
         Task Login(CancellationToken cancellationToken);
         Task Logout(CancellationToken cancellationToken);

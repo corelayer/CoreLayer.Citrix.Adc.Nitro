@@ -70,31 +70,31 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             return targetDataRootInstance;
         }
 
-        private static dynamic GetTargetCommandInstance(Type type, INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
+        private static dynamic GetTargetCommandInstance(Type type, INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration)
         {
-            return Activator.CreateInstance(type, new object[]{httpClient, requestConfiguration});
+            return Activator.CreateInstance(type, new object[]{serviceClient, requestConfiguration});
         }
         
-        public static T Create<T>(INitroHttpClient httpClient)
+        public static T Create<T>(INitroServiceClient serviceClient)
         {
             return GetTargetCommandInstance(
                 typeof(T), 
-                httpClient, 
+                serviceClient, 
                 GetTargetConfigurationInstance(typeof(T)));
         }
 
-        public static T Create<T>(INitroHttpClient httpClient, INitroRequestOptions options)
+        public static T Create<T>(INitroServiceClient serviceClient, INitroRequestOptions options)
         {
             var targetConfigurationInstance = GetTargetConfigurationInstance(typeof(T));
             targetConfigurationInstance.Options = options;
 
             return GetTargetCommandInstance(
                 typeof(T),
-                httpClient,
+                serviceClient,
                 targetConfigurationInstance);
         }
 
-        public static T Create<T>(INitroHttpClient httpClient, INitroRequestData data)
+        public static T Create<T>(INitroServiceClient serviceClient, INitroRequestData data)
         {
             var targetDataRoot = GetTargetConfigurationDataRootInstance(typeof(T), data);
             var targetConfigurationInstance = GetTargetConfigurationInstance(typeof(T), targetDataRoot);
@@ -102,11 +102,11 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
             return GetTargetCommandInstance(
                 typeof(T),
-                httpClient,
+                serviceClient,
                 targetConfigurationInstance);
         }
 
-        public static T Create<T>(INitroHttpClient httpClient, INitroRequestData[] dataList)
+        public static T Create<T>(INitroServiceClient serviceClient, INitroRequestData[] dataList)
         {
             dynamic[] data = dataList.Cast<dynamic>().ToArray();
             var targetDataRoot = GetTargetConfigurationDataRootInstance(typeof(T), data);
@@ -115,12 +115,12 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
             return GetTargetCommandInstance(
                 typeof(T),
-                httpClient,
+                serviceClient,
                 targetConfigurationInstance);
             
         }
 
-        public static T Create<T>(INitroHttpClient httpClient, INitroRequestData data, INitroRequestOptions options)
+        public static T Create<T>(INitroServiceClient serviceClient, INitroRequestData data, INitroRequestOptions options)
         {
             var targetDataRoot = GetTargetConfigurationDataRootInstance(typeof(T), data);
             var targetConfigurationInstance = GetTargetConfigurationInstance(typeof(T), targetDataRoot);
@@ -130,7 +130,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
             return GetTargetCommandInstance(
                 typeof(T),
-                httpClient,
+                serviceClient,
                 targetConfigurationInstance);
         }
     }

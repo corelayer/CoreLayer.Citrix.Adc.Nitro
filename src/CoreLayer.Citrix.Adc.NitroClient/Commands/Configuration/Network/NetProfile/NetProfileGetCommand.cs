@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Network.NetPro
 {
     public class NetProfileGetCommand : NitroCommand<NetProfileGetResponse>
     {
-        public NetProfileGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) : base(
-            httpClient, requestConfiguration)
+        public NetProfileGetCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) : base(
+            serviceClient, requestConfiguration)
         {
             
         }

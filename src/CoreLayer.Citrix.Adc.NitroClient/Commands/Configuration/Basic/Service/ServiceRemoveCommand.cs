@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Service
 {
     public class ServiceRemoveCommand : NitroCommand<NitroResponse>
     {
-        public ServiceRemoveCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) : base(
-            httpClient, requestConfiguration)
+        public ServiceRemoveCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) : base(
+            serviceClient, requestConfiguration)
         {
             
         }

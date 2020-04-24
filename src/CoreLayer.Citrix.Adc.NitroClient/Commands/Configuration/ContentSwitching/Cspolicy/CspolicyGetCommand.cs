@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.ContentSwitchi
 {
     public class CspolicyGetCommand : NitroCommand<CspolicyGetResponse>
     {
-        public CspolicyGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) : base(
-            httpClient, requestConfiguration)
+        public CspolicyGetCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) : base(
+            serviceClient, requestConfiguration)
         {
             
         }

@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.LoadBalancing.
 {
     public class LbmonitorGetCommand : NitroCommand<LbmonitorGetResponse>
     {
-        public LbmonitorGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) 
-            :base(httpClient, requestConfiguration) { }
+        public LbmonitorGetCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) 
+            :base(serviceClient, requestConfiguration) { }
     }
 }

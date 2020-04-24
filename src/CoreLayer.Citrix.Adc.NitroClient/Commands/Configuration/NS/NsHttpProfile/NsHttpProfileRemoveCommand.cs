@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.NS.NsHttpProfi
 {
     public class NsHttpProfileRemoveCommand : NitroCommand<NitroResponse>
     {
-        public NsHttpProfileRemoveCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration)
+        public NsHttpProfileRemoveCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration)
         {
             
         }

@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemS
 {
     public class SystemSshKeyImportCommand : NitroCommand<NitroResponse>
     {
-        public SystemSshKeyImportCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) :
+        public SystemSshKeyImportCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) :
             base(client, requestConfiguration)
         {
             

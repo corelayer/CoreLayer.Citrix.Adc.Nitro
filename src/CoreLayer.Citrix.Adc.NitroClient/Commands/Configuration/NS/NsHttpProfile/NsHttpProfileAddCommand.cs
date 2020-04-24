@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.NS.NsHttpProfi
 {
     public class NsHttpProfileAddCommand : NitroCommand<NitroResponse>
     {
-        public NsHttpProfileAddCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration)
+        public NsHttpProfileAddCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration)
         {
             
         }

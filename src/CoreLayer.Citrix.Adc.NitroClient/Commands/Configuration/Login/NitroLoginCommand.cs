@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Login
 {
     public class NitroLoginCommand : NitroCommand<NitroLoginResponse>
     {
-        public NitroLoginCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration) { }
+        public NitroLoginCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration) { }
     }
 }

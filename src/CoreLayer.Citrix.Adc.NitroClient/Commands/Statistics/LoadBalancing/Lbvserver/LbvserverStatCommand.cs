@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Statistics.LoadBalancing.Lbv
 {
     public class LbvserverStatCommand: NitroCommand<LbvserverStatResponse>
     {
-        public LbvserverStatCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) : 
-            base(httpClient, requestConfiguration) { }
+        public LbvserverStatCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) : 
+            base(serviceClient, requestConfiguration) { }
     }
 }

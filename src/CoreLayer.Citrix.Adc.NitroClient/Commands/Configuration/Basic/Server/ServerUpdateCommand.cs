@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Server
 {
     public class ServerUpdateCommand : NitroCommand<NitroResponse>
     {
-        public ServerUpdateCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) : base(httpClient,
+        public ServerUpdateCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) : base(serviceClient,
             requestConfiguration)
         {
             

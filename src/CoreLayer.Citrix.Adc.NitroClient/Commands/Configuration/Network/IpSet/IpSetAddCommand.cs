@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Network.IpSet
 {
     public class IpSetAddCommand : NitroCommand<NitroResponse>
     {
-        public IpSetAddCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) : base(
-            httpClient, requestConfiguration)
+        public IpSetAddCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) : base(
+            serviceClient, requestConfiguration)
         {
             
         }

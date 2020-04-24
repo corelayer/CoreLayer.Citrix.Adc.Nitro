@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemB
 {
     public class SystemBackupCreateCommand : NitroCommand<NitroResponse>
     {
-        public SystemBackupCreateCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration) { }
+        public SystemBackupCreateCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration) { }
     }
 }

@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemU
 {
     public class SystemUserSystemCmdPolicyBindingAddCommand : NitroCommand<NitroResponse>
     {
-        public SystemUserSystemCmdPolicyBindingAddCommand(INitroHttpClient client,
+        public SystemUserSystemCmdPolicyBindingAddCommand(INitroServiceClient client,
             INitroRequestConfiguration requestConfiguration) : base(client, requestConfiguration)
         {
             

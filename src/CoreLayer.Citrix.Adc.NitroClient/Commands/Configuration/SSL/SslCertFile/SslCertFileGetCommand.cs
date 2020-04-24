@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.SSL.SslCertFil
 {
     public class SslCertFileGetCommand : NitroCommand<SslCertFileGetResponse>
     {
-        public SslCertFileGetCommand(INitroHttpClient httpClient, 
-            INitroRequestConfiguration requestConfiguration) : base(httpClient, requestConfiguration)
+        public SslCertFileGetCommand(INitroServiceClient serviceClient, 
+            INitroRequestConfiguration requestConfiguration) : base(serviceClient, requestConfiguration)
         {
                                                 
         }

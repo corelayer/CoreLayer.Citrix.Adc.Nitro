@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemU
 {
     public class SystemUserBindingGetCommand : NitroCommand<SystemUserBindingGetResponse>
     {
-        public SystemUserBindingGetCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) :
+        public SystemUserBindingGetCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) :
             base(client, requestConfiguration)
         {
             

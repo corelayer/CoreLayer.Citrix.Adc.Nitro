@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.ContentSwitchi
 {
     public class CsvserverBindingAddLbvserverCommand : NitroCommand<NitroResponse>
     {
-        public CsvserverBindingAddLbvserverCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
-            :base(httpClient, requestConfiguration) { }
+        public CsvserverBindingAddLbvserverCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration)
+            :base(serviceClient, requestConfiguration) { }
     }
 }

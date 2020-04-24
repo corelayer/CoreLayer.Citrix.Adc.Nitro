@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Serviceg
 {
     public class ServicegroupGetCommand :NitroCommand<ServicegroupGetResponse>
     {
-        public ServicegroupGetCommand (INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
-            :base(httpClient, requestConfiguration){}
+        public ServicegroupGetCommand (INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration)
+            :base(serviceClient, requestConfiguration){}
     }
 }

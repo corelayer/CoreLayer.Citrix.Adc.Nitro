@@ -12,13 +12,13 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 {
     public abstract class NitroCommand<T> : INitroCommand<T>
     {
-        private readonly INitroHttpClient _httpClient;
+        private readonly INitroServiceClient _serviceClient;
         private readonly INitroRequestConfiguration _request;
         protected NitroCommand() { }
 
-        protected NitroCommand(INitroHttpClient httpClient, INitroRequestConfiguration request)
+        protected NitroCommand(INitroServiceClient serviceClient, INitroRequestConfiguration request)
         {
-            _httpClient = httpClient;
+            _serviceClient = serviceClient;
             _request = request;
         }
         
@@ -39,8 +39,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 //            return targetCommand;
 //        }
 
-        public INitroHttpClient HttpClient {
-            get => _httpClient;
+        public INitroServiceClient ServiceClient {
+            get => _serviceClient;
             //set { _client = value; }
         }
         public INitroRequestConfiguration Data {
@@ -69,7 +69,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         
         public async Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
         {
-             return await _httpClient.SendAsync(
+             return await _serviceClient.SendAsync(
                 await _request.GenerateHttpRequestMessageAsync(),
                 cancellationToken);
         }
@@ -87,7 +87,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             if (validateCommand)
                 await ValidateAsync(cancellationToken);
 
-            return await _httpClient.SendAsync(
+            return await _serviceClient.SendAsync(
                 await _request.GenerateHttpRequestMessageAsync(),
                 cancellationToken);
         }

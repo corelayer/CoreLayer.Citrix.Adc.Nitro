@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemU
 {
     public class SystemUserRemoveCommand : NitroCommand<NitroResponse>
     {
-        public SystemUserRemoveCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) : base(
+        public SystemUserRemoveCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) : base(
             client, requestConfiguration)
         {
             

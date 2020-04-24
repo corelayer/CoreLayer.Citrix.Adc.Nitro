@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.NS.NsTcpProfil
 {
     public class NsTcpProfileGetCommand : NitroCommand<NsTcpProfileGetResponse>
     {
-        public NsTcpProfileGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration)
+        public NsTcpProfileGetCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration)
         {
             
         }

@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Policy.PolicyS
 {
     public class PolicyStringMapGetCommand : NitroCommand<NitroResponse>
     {
-        public PolicyStringMapGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
-            :base(httpClient, requestConfiguration) {}
+        public PolicyStringMapGetCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration)
+            :base(serviceClient, requestConfiguration) {}
     }
 }

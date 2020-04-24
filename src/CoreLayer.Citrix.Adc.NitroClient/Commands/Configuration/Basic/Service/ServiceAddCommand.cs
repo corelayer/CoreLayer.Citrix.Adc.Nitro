@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Service
 {
     public class ServiceAddCommand : NitroCommand<NitroResponse>
     {
-        public ServiceAddCommand(INitroHttpClient httpClient, ServiceAddRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration) { }
+        public ServiceAddCommand(INitroServiceClient serviceClient, ServiceAddRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration) { }
     }
 }

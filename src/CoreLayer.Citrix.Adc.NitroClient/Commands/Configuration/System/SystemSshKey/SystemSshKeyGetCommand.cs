@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemS
 {
     public class SystemSshKeyGetCommand : NitroCommand<SystemSshKeyGetResponse>
     {
-        public SystemSshKeyGetCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) : base(
+        public SystemSshKeyGetCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) : base(
             client, requestConfiguration)
         {
             

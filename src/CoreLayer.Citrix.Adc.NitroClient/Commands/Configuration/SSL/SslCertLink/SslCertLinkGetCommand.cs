@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.SSL.SslCertLin
 {
     public class SslCertLinkGetCommand : NitroCommand<SslCertLinkGetResponse>
     {
-        public SslCertLinkGetCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) : base(
+        public SslCertLinkGetCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) : base(
             client, requestConfiguration)
         {
             

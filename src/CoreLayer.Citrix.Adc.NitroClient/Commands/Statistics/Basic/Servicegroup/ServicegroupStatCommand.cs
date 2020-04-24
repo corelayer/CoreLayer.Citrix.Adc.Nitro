@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Statistics.Basic.Servicegrou
 {
     public class ServicegroupStatCommand : NitroCommand<ServicegroupStatResponse>
     {
-        public ServicegroupStatCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration) :
-            base(httpClient, requestConfiguration)
+        public ServicegroupStatCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration) :
+            base(serviceClient, requestConfiguration)
         {
             
         }

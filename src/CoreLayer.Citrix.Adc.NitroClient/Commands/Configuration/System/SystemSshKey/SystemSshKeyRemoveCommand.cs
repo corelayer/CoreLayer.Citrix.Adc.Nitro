@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.System.SystemS
 {
     public class SystemSshKeyRemoveCommand : NitroCommand<NitroResponse>
     {
-        public SystemSshKeyRemoveCommand(INitroHttpClient client, INitroRequestConfiguration requestConfiguration) :
+        public SystemSshKeyRemoveCommand(INitroServiceClient client, INitroRequestConfiguration requestConfiguration) :
             base(client, requestConfiguration)
         {
             

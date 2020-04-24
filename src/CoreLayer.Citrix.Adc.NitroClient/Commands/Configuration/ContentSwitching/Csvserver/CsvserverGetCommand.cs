@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.ContentSwitchi
 {
     public class CsvserverGetCommand : NitroCommand<CsvserverGetResponse>
     {
-        public CsvserverGetCommand(INitroHttpClient httpClient, INitroRequestConfiguration requestConfiguration)
-            :base(httpClient, requestConfiguration){}
+        public CsvserverGetCommand(INitroServiceClient serviceClient, INitroRequestConfiguration requestConfiguration)
+            :base(serviceClient, requestConfiguration){}
     }
 }

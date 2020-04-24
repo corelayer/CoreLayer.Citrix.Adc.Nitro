@@ -11,21 +11,42 @@ using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient
 {
-    public class NitroHttpClient : INitroHttpClient
+    public class NitroServiceClient : INitroServiceClient
     {
         private const string NitroTokenCookie = "NITRO_AUTH_TOKEN=";
         private readonly INitroLoginRequestData _credentials;
         private readonly INitroServiceConnectionSettings _settings;
         private readonly HttpClient _httpClient;
 
-        public NitroHttpClient(
+        public NitroServiceClient(
             INitroLoginRequestData credentials,
-            INitroServiceConnectionSettings settings)
+            INitroServiceConnectionSettings settings,
+            NitroHttpClientCertificateValidation certificateValidation)
         {
             _credentials = credentials;
             _settings = settings;
-            _httpClient = NitroServiceHttpClientGenerator.Generate(settings);
+            _httpClient = NitroServiceHttpClientGenerator.Generate(certificateValidation);
+            
+            ConfigureHttpClient();
+        }
 
+        public NitroServiceClient(
+            INitroLoginRequestData credentials,
+            INitroServiceConnectionSettings settings,
+            HttpClient httpClient)
+        {
+            _credentials = credentials;
+            _settings = settings;
+            _httpClient = httpClient;
+            
+            ConfigureHttpClient();
+        }
+
+        private void ConfigureHttpClient()
+        {
+            _httpClient.BaseAddress = _settings.BaseAddress;
+            _httpClient.Timeout = TimeSpan.FromSeconds(_settings.Timeout);
+            
             var task = ConfigureAutomaticLogin();
             task.Wait();
         }
@@ -39,6 +60,10 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                     break;
                 case NitroServiceConnectionAuthenticationMethod.AutomaticLogin:
                     await Login(new CancellationToken());
+                    break;
+                case NitroServiceConnectionAuthenticationMethod.ManualLogin:
+                    break;
+                default:
                     break;
             }
         }
