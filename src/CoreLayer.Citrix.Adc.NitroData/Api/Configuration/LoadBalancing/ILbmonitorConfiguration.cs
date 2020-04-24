@@ -5,16 +5,16 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         string MonitorName { get; set; }
         string Type { get; set; }
         string Action { get; set; }
-        string[] ResponseCodes { get; set; } //[JsonPropertyName("respcode")]
+        string[] RespCode { get; set; } 
         string HttpRequest { get; set; }
         string RtspRequest { get; set; }
         string CustomHeaders { get; set; }
         string MaxForwards { get; set; }
         string SipMethod { get; set; } 
         string SipUri { get; set; }
-        string SipRegisterUri { get; set; } //[JsonPropertyName("sipreguri")]
+        string SipRegUri { get; set; }
         string Send { get; set; }
-        string Receive { get; set; } //[JsonPropertyName("recv")]
+        string Recv { get; set; } 
         string Query { get; set; }
         string QueryType { get; set; }
         string ScriptName { get; set; }
@@ -27,49 +27,49 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         string LogonPointName { get; set; }
         string LasVersion { get; set; }
         string RadKey { get; set; }
-        string RadNetworkAccessServerId { get; set; } //[JsonPropertyName("radnasid")]
-        string RadNetworkAccessServerIp { get; set; } //[JsonPropertyName("radnasip")]
+        string RadNasId { get; set; } 
+        string RadNasIp { get; set; } 
         string RadAccountType { get; set; }
         string RadFramedIp { get; set; }
         string RadApn { get; set; }
         string RadMsisdn { get; set; }
         string RadAccountSession { get; set; }
-        string LeastResponseTimes { get; set; } //[JsonPropertyName("lrtm")]
+        string Lrtm { get; set; } 
         string Deviation { get; set; }
-        string UnitsDeviation { get; set; } //[JsonPropertyName("units1")]
+        string Units1 { get; set; } 
         int? Interval { get; set; }
-        string UnitsInterval { get; set; } //[JsonPropertyName("units3")]
-        int? ResponseTimeout { get; set; } //[JsonPropertyName("resptimeout")]
-        string UnitsResponseTimeout { get; set; } //[JsonPropertyName("units4")]
-        string ResponseTimeoutThreshold { get; set; } //[JsonPropertyName("resptimeoutthresh")]
+        string Units3 { get; set; } 
+        int? RespTimeout { get; set; } 
+        string Units4 { get; set; } 
+        string RespTimeoutThresh { get; set; } 
         int? Retries { get; set; }
         int? FailureRetries { get; set; }
         int? AlertRetries { get; set; }
         int? SuccessRetries { get; set; }
         int? DownTime { get; set; }
-        string UnitsDownTime { get; set; } //[JsonPropertyName("units2")]
-        string DestinationIp { get; set; } //[JsonPropertyName("destip")]
-        int? DestinationPort { get; set; } //[JsonPropertyName("destport")]
+        string Units2 { get; set; } 
+        string DestIp { get; set; } 
+        int? DestPort { get; set; }
         string State { get; set; }
         string Reverse { get; set; }
         string Transparent { get; set; }
         string IpTunnel { get; set; }
-        string TypeOfService { get; set; } //[JsonPropertyName("tos")]
-        double? TypeOfServiceId { get; set; } //[JsonPropertyName("tosid")]
+        string Tos { get; set; } 
+        double? TosId { get; set; } 
         string Secure { get; set; }
         string ValidateCred { get; set; }
         string Domain { get; set; }
         string[] IpAddress { get; set; }
         string Group { get; set; }
         string FileName { get; set; }
-        string BaseDistinguishedName { get; set; } //[JsonPropertyName("basedn")]
-        string BindDistinguishedName { get; set; } //[JsonPropertyName("binddn")]
+        string BaseDn { get; set; } 
+        string BindDn { get; set; } 
         string Filter { get; set; }
         string Attribute { get; set; }
         string DataBase { get; set; }
-        string OracleServiceId { get; set; } //[JsonPropertyName("oraclesid")]
+        string OracleSId { get; set; } 
         string SqlQuery { get; set; }
-        string EvaluationRule { get; set; } //[JsonPropertyName("evalrule")]
+        string EvalRule { get; set; } 
         string MsSqlProtocolVersion { get; set; }
         string SnmpOid { get; set; }
         string SnmpCommunity { get; set; }
@@ -88,15 +88,15 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         string VendorId { get; set; }
         string ProductName { get; set; }
         string FirmwareVersion { get; set; }
-        double[] AuthenticationApplicationId { get; set; } //[JsonPropertyName("authapplicationId")]
-        double[] AccountApplicationId { get; set; } //[JsonPropertyName("acctapplicationid")]
+        double[] AuthApplicationId { get; set; }
+        double[] AcctApplicationId { get; set; } 
         string InBandSecurityId { get; set; }
         double[] SupportedVendorIds { get; set; }
         string VendorSpecificVendorId { get; set; }
         double[] VendorSpecificAuthApplicationIds { get; set; }
         double[] VendorSpecificAcctApplicationIds { get; set; }
         string KdcAccount { get; set; }
-        string StoreDatabase { get; set; } //[JsonPropertyName("storedb")]
+        string StoreDb { get; set; }
         string StoreFrontCheckBackendServices { get; set; }
         string TrofsCode { get; set; }
         string TrofsString { get; set; }
@@ -106,8 +106,8 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         string MetricWeight { get; set; }
         string ServiceName { get; set; }
         string ServicegroupName { get; set; }
-        int? LeastResponseTimesConfigurationState { get; set; } //[JsonPropertyName("lrtmconf")]
-        string LeastResponseTimesConfigurationString { get; set; } //[JsonPropertyName("lrtmconfstr")]
+        int? LrtmConf { get; set; } 
+        string LrtmConfStr { get; set; } 
         int? DynamicResponseTimeout { get; set; }
         int? DynamicInterval { get; set; }
         string[] MultiMetricTable { get; set; }

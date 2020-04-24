@@ -13,9 +13,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup.
         }
         
         
-        //public string PathMonitor { get; set; }
-        //public string PathMonitorIndv { get; set; }
-        
 //        public string CacheType { get; set; } 
 //        public double? Td { get; set; }
 //        public double? MaxClient { get; set; } 
@@ -40,13 +37,13 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup.
 //        public double? MonThreshold { get; set; } 
 //        public string State { get; set; }
 //        public string DownstateFlush { get; set; }
-//        //public string TcpProfileName { get; set; } = "NielsTestTcpProfile";
-//        //public string HttpProfileName { get; set; } = "NielsTestHttpProfile";
+//        public string TcpProfileName { get; set; }
+//        public string HttpProfileName { get; set; } 
 //        public string Comment { get; set; }
 //        public string AppFlowLog { get; set; }
 //        public string NetProfile { get; set; }
 //        public string AutoScale { get; set; }
-//        //public int MemberPort { get; set; } =1;
+//        public int MemberPort { get; set; } =1;
 //        public double? AutoDisableDelay { get; set; }
 //        public string AutoDisableGraceful { get; set; }
 //        public string MonConnectionClose { get; set; }
