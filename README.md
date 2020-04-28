@@ -7,20 +7,23 @@ Creating the will look something like this:
 
             var command = NitroCommandFactory.Create<YourCommand>(<YourClient>);  
 
-You will notice 2 required parameters still to be specified. \<YourCommand> is where you would enter any of the pre-made commands (eg. ServerGetCommand, LbvserverAddCommand,...). \<YourClient> is an instance of the NitroHttpClient, which will hold the information specific to your connection. The client requires another 2 objects to be initialized: credentials in the form of NitroLoginRequestData, and connectionsettings in the form of NitroServiceConnectionSettings. Creating these and the client would look something like this:
+You will notice 2 required parameters still to be specified. \<YourCommand> is where you would enter any of the pre-made commands (eg. ServerGetCommand, LbvserverAddCommand,...). \<YourClient> is an instance of the NitroServiceClient, which will hold the information specific to your connection. The client requires another 3 objects to be initialized: credentials in the form of NitroLoginRequestData, connectionsettings in the form of NitroServiceConnectionSettings, and NitroHttpClientCertificateValidation set to enabled or disabled. Creating these and the client would look something like this:
 
 
             var credentials = new NitroLoginRequestData("username", "password");
 
-            var connectionSettings = new NitroServiceConnectionSettings(<YourUri>, true,
+            var connectionSettings = new NitroServiceConnectionSettings(<YourUri>,
             3600, NitroServiceConnectionAuthenticationMethod.AutomaticHeaderInjection);
 
-            var client = new NitroHttpClient(credentials, connectionSettings);  
-As You can see, NitroLoginRequestData only requires your username and password, while NitroServiceConnectionSettings requires 4 parameters.  
+            var client = new NitroServiceClient(credentials, connectionSettings, NitroHttpClientCertificateValidation.<enabled/disabled_value>);  
+As You can see, NitroLoginRequestData only requires your username and password, while NitroServiceConnectionSettings requires 3 parameters.  
 - \<YourUri> : The Uri pointing to your citrix ADC.
-- validateServerCertificate: a bool representing wether or not to validate the server certificate when connecting.
 - TimeOut: TimeOut in seconds.
-- NitroServiceConnectionAuthenticationMethod: the authentication method, choice of: AutomaticHeaderInjection, AutomaticLogin and ManualLogin.  
+- NitroServiceConnectionAuthenticationMethod: the authentication method, choice of: AutomaticHeaderInjection, AutomaticLogin and ManualLogin.   
+
+The extra parameter NitroHttpClientCertificateValidation determines wether or not to validate the certificate. Setting this to Disabled is only advised when you are certain you trust what you are connecting to. 
+
+
 
 Once your client is made, you can start making commands with it. The most straightforward command to make would be a GET(ALL) command, because it needs no extra information.  
 eg.
