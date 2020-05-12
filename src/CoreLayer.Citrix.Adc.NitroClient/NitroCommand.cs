@@ -109,7 +109,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
             
             var response = NitroRequestResponseDeserializer.GenerateObject<T>(
-                "{ \"statuscode\":\"" + result.StatusCode+ "\" }" );
+                "{ \"statuscode\": \"" + result.StatusCode+ "\" }" );
             if (resultString != string.Empty)
             {
                 response= NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
