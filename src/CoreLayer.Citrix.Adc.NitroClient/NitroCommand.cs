@@ -94,7 +94,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         
         public async Task<T> GetResponse()
         {
-            string resultString = "";
+            string resultString = string.Empty;
             var result = await this.ExecuteAsync(new CancellationToken());
             if (!result.Content.Headers.ContentLength.Value.Equals(0))
             {
