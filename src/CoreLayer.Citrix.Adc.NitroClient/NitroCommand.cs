@@ -94,14 +94,18 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         
         public async Task<T> GetResponse()
         {
-            string resultString;
+            string resultString = "";
             var result = await this.ExecuteAsync(new CancellationToken());
-            await using (var contentStream = await result.Content.ReadAsStreamAsync())
+            if (!result.Content.Headers.ContentLength.Value.Equals(0))
             {
-                var reader = new StreamReader(contentStream);
-
-                resultString = reader.ReadToEnd();
+                await using (var contentStream = await result.Content.ReadAsStreamAsync())
+                {
+                    var reader = new StreamReader(contentStream);
+                
+                    resultString = reader.ReadToEnd();
+                }
             }
+            
 
             
             var response = NitroRequestResponseDeserializer.GenerateObject<T>("{}" );
