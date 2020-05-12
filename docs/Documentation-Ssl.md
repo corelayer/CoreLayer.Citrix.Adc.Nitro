@@ -1,5 +1,168 @@
 ### Ssl
 
+#### SslCertFile
+
+Commands: get, Import, remove
+
++ Import:  
+    * Properties:
+
+        Property   | DataType |  Description 
+        ---|---|---
+        Name|string|Name to assign to the imported certificate file. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the Citrix ADC CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my file" or 'my file'). 
+        Src|string|URL specifying the protocol, host, and path, including file name, to the certificate file to be imported. For example, http://www.example.com/cert_file. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access. 
+
+
+   * Creation of the command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Data to add.
+
+        - with Data
+        
+            The possible parameters can be freely accessed on the Data-item, for a refference guide on these parameters and their usage, please refer to the guide at the top of this page.
+
+            Eg. 
+            ```
+            var command = NitroCommandFactory.Create\<SslCertFileImportCommand> (INitroServiceClient, new SslCertFileImportRequestData(){ });
+            ```
+
+    
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For commands for SslCertFileImport, that object is <u>NitroResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse();  
+        ```
+
+        <u>Reponse</u> will now have its property <u>StatusCode</u> filled with information about the request. Status Code on Success: 201 Created, Status Code on Failure: 4xx (for general HTTP errors) or 5xx (for NetScaler-specific errors).
+    
++ Get
+    * Properties  
+
+        The following properties van be found in each SslCertFileConfiguration found in the array "SslCertFiles" inside of a SslCertFileGetResponse.
+
+        Property|DataType|Description
+        ---|---|---
+        Name|string|Name to assign to the imported certificate file. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the Citrix ADC CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my file" or 'my file'). 
+        Src|string|URL specifying the protocol, host, and path, including file name, to the certificate file to be imported. For example, http://www.example.com/cert_file. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<SslCertFileGetCommand>(INitroServiceClient, New SslCertFileGetRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object IpSetGetRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  
+        <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of an object, and the value you want to see in the returned objects.  
+        eg. ResourceFilter = {{"Comment","Hello"}} will make it so only objects with "Hello" as their Comment will be returned. Not Defining this will return all objects.  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria.
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For SslCertFileGet, that object is <u>SslCertFileGetResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - SslCertFiles: an array of SslCertFileConfiguration-objects returned by the Get-Request, all of which contain the properties mentioned above.
+
++ Remove: 
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<SslCertFileRemoveCommand>(INitroServiceClient, new SslCertFileRemoveRequestOptions(){ });
+        ```
+        - Options:  
+        For this command, the Options are gathered in an Object SslProfileRemoveRequestOptions, which has following properties to be used as filters:
+        <u>ResourceName</u>: The name of the object you wish to remove. 
+        <u>Arguments</u>: Dictionary<string, string> of extra arguments to be added to the delete command. The following are required to use the command: 
+            + name:<name_value> : the name of the certfile to delete.
+    
+    * Usage of the Command: 
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For SslCertFileRemove, that object is <u>NitroResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful  
+
+#### SslCertLink
+
+Commands: get
+
++ Get
+    * Properties  
+
+        The following properties van be found in each SslCertLinkConfiguration found in the array "SslCertLinks" inside of a SslCertLinkGetResponse.
+
+        Property|DataType|Description
+        ---|---|---
+        CertKeyName|string|Certificate key name. 
+        LinkCertKeyName|string|Name of the Certificate-Authority. 
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<SslCertLinkGetCommand>(INitroServiceClient, New SslCertLinkGetRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object IpSetGetRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  
+        <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of an object, and the value you want to see in the returned objects.  
+        eg. ResourceFilter = {{"Comment","Hello"}} will make it so only objects with "Hello" as their Comment will be returned. Not Defining this will return all objects.  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria.
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For SslCertLinkGet, that object is <u>SslCertLinkGetResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - SslCertLinks: an array of SslCertLinkConfiguration-objects returned by the Get-Request, all of which contain the properties mentioned above.
+
+
 #### SslProfile
 
 Commands: add, get, remove, update
