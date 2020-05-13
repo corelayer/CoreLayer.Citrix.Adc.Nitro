@@ -4,6 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ServicegroupB
 {
     public class ServicegroupBindingAddLbmonitorRequestData  : INitroRequestData
     {
+        //TODO add undocumented required params
         public string ServicegroupName { get; }
         public int? Port { get; set; }
         public string Monitor_Name { get; set; }

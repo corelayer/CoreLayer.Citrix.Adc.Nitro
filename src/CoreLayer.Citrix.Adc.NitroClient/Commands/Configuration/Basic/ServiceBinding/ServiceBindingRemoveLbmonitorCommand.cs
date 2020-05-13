@@ -1,8 +1,9 @@
+using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ServiceBinding;
 using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.ServiceBinding
 {
-    public class ServiceBindingRemoveLbmonitorCommand : NitroCommand<NitroResponse>
+    public class ServiceBindingRemoveLbmonitorCommand : NitroCommand<ServiceBindingRemoveResponse>
     {
         public ServiceBindingRemoveLbmonitorCommand(INitroServiceClient serviceClient,
             INitroRequestConfiguration requestConfiguration) : base(serviceClient, requestConfiguration)

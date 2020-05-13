@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic.Servicegroup
+namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
 {
     public class ServicegroupConfiguration : IServicegroupConfiguration
     {

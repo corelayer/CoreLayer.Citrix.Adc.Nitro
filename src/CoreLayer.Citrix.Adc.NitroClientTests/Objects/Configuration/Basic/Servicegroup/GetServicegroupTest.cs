@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.Json;
 using CoreLayer.Citrix.Adc.NitroClient;
-using CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic.Servicegroup;
+using CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic;
 using Xunit;
 
 namespace CoreLayer.Citrix.Adc.NitroClientTests.Objects.Configuration.Basic.Servicegroup
