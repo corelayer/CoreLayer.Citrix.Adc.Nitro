@@ -159,10 +159,9 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         {
             try
             {
-                var task = _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                    .ConfigureAwait(false);
+                var task = _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
 
-                return await task;
+                return await task.ConfigureAwait(false);
             }
             catch (SocketException ex)
             {
@@ -171,7 +170,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             }
             catch (HttpRequestException ex)
             {
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("HttpRequestException in {0}: {1}", ex.TargetSite, ex.Message);
                 throw;
             }
             catch (InvalidOperationException ex)
