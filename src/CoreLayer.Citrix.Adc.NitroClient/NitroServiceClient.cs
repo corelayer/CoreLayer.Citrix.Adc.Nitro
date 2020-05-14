@@ -104,16 +104,16 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             try
             {
                 var loginCommand = NitroCommandFactory.Create<NitroLoginCommand>(this, _credentials);
-                var response = await loginCommand.ExecuteAsync(cancellationToken);
+                var response = await loginCommand.ExecuteAsync(cancellationToken).ConfigureAwait(false);
                 if (!response.IsSuccessStatusCode)
                     throw new HttpRequestException("Could not log on.\n" + response);
 
-                await using var contentStream = await response.Content.ReadAsStreamAsync();
+                await using var contentStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
                 var content =
                     await JsonSerializer.DeserializeAsync<NitroLoginResponse>(
                         contentStream, 
                         NitroServiceSerializerOptions.JsonSerializerOptions
-                    );
+                    ).ConfigureAwait(false);
                     
                 ConfigureAuthenticationCookieHeader(content.SessionId);
             }
@@ -133,7 +133,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             {
                 //was var logoutCommand = NitroCommand.Create<NitroLogoutCommand>(this, new NitroLogoutData);
                 var logoutCommand = NitroCommandFactory.Create<NitroLogoutCommand>(this);
-                var response = await logoutCommand.ExecuteAsync(cancellationToken);
+                var response = await logoutCommand.ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
                 if (!response.IsSuccessStatusCode)
                     throw new HttpRequestException("Could not log off.\n" + response);
@@ -156,7 +156,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout</exception>
         public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            return await _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
+            return await _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+                .ConfigureAwait(false);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public async Task<ValidationResult> ValidateAsync(CancellationToken cancellationToken)
         {
-            var validationResult = await Data.ValidateAsync();
+            var validationResult = await Data.ValidateAsync().ConfigureAwait(false);
             
             if (!validationResult.IsValid)
                 throw new ArgumentOutOfRangeException(
@@ -61,16 +61,9 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout</exception>
         public async Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
         {
-            try
-            {
-                return await _serviceClient.SendAsync(
-                    await _request.GenerateHttpRequestMessageAsync(),
-                    cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             return await _serviceClient.SendAsync(
+                await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
+                cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -84,20 +77,20 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             CancellationToken cancellationToken)
         {
             if (validateCommand)
-                await ValidateAsync(cancellationToken);
+                await ValidateAsync(cancellationToken).ConfigureAwait(false);
 
             return await _serviceClient.SendAsync(
                 await _request.GenerateHttpRequestMessageAsync(),
-                cancellationToken);
+                cancellationToken).ConfigureAwait(false);
         }
         
         public async Task<T> GetResponse()
         {
             string resultString = string.Empty;
-            var result = await this.ExecuteAsync(new CancellationToken());
+            var result = await this.ExecuteAsync(new CancellationToken()).ConfigureAwait(false);
             //if (!result.Content.Headers.ContentLength.Value.Equals(0))
             //{
-                await using (var contentStream = await result.Content.ReadAsStreamAsync())
+                await using (var contentStream = await result.Content.ReadAsStreamAsync().ConfigureAwait(false))
                 {
                     var reader = new StreamReader(contentStream);
                 
@@ -109,7 +102,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                 "{ \"statuscode\": \"" + result.StatusCode+ "\" }" );
             if (resultString != string.Empty)
             {
-                response= NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
+                response = NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
             }
             
             
