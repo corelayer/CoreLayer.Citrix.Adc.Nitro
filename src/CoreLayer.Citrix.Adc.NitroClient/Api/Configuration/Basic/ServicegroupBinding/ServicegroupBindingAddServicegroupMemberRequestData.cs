@@ -4,6 +4,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ServicegroupB
 {
     public class ServicegroupBindingAddServicegroupMemberRequestData : INitroRequestData
     {
+        //TODO add undocumented required params
         public string ServicegroupName { get; }
         public string Ip { get; set; }
         public string ServerName { get; set; }

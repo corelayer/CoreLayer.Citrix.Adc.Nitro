@@ -3,7 +3,7 @@ using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Commands.Configuration.Basic.Service
 {
-    public class ServiceAddCommand : NitroCommand<NitroResponse>
+    public class ServiceAddCommand : NitroCommand<ServiceAddResponse>
     {
         public ServiceAddCommand(INitroServiceClient serviceClient, ServiceAddRequestConfiguration requestConfiguration) :
             base(serviceClient, requestConfiguration) { }
