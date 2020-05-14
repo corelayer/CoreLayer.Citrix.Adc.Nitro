@@ -96,18 +96,16 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         {
             string resultString = string.Empty;
             var result = await this.ExecuteAsync(new CancellationToken());
-            if (!result.Content.Headers.ContentLength.Value.Equals(0))
-            {
+            //if (!result.Content.Headers.ContentLength.Value.Equals(0))
+            //{
                 await using (var contentStream = await result.Content.ReadAsStreamAsync())
                 {
                     var reader = new StreamReader(contentStream);
                 
                     resultString = reader.ReadToEnd();
                 }
-            }
-            
+            //}
 
-            
             var response = NitroRequestResponseDeserializer.GenerateObject<T>(
                 "{ \"statuscode\": \"" + result.StatusCode+ "\" }" );
             if (resultString != string.Empty)

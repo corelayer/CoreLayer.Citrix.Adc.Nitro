@@ -1,4 +1,4 @@
-﻿namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.System.SystemBackup
+namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.System.SystemBackup
 {
     public class SystemBackupDeleteResponse : NitroResponse
     {

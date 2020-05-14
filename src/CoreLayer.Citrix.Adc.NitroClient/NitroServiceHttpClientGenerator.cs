@@ -11,8 +11,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         public static HttpClient Generate(NitroHttpClientCertificateValidation certificateValidation)
         {
             var httpClient = certificateValidation == NitroHttpClientCertificateValidation.Enabled
-                ? new HttpClient(GetInSecureHttpMessageHandler())
-                : new HttpClient(GetSecureHttpMessageHandler());
+                ? new HttpClient(GetSecureHttpMessageHandler())
+                : new HttpClient(GetInSecureHttpMessageHandler());
             return httpClient;
         }
 
