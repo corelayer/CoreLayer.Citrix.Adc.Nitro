@@ -51,8 +51,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
             return validationResult;
         }
-        
-        
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -63,34 +63,11 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout</exception>
         public async Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
         {
-            try
-            {
-                var task = _serviceClient.SendAsync(
-                    await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
-                    cancellationToken);
-                return await task.ConfigureAwait(false);
-            }
-            catch (SocketException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (HttpRequestException ex)
-            {
-                Debug.WriteLine("HttpRequestException in {0}: {1}", ex.TargetSite, ex.Message);
 
-                throw;
-            }
-            catch (InvalidOperationException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                Debug.Write(ex.Message);
-                throw;
-            }
+            var task = _serviceClient.SendAsync(
+                await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
+                cancellationToken);
+            return await task.ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,81 +77,39 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public async Task<HttpResponseMessage> ExecuteAsync(
-            bool validateCommand, 
+            bool validateCommand,
             CancellationToken cancellationToken)
         {
-            try
-            {
-                if (validateCommand)
-                    await ValidateAsync(cancellationToken).ConfigureAwait(false);
 
-                return await _serviceClient.SendAsync(
-                    await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
-                    cancellationToken).ConfigureAwait(false);
-            }
-            catch (SocketException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (HttpRequestException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (InvalidOperationException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                Debug.Write(ex.Message);
-                throw;
-            }
+            if (validateCommand)
+                await ValidateAsync(cancellationToken).ConfigureAwait(false);
+
+            return await _serviceClient.SendAsync(
+                await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
+                cancellationToken).ConfigureAwait(false);
         }
-        
+
         public async Task<T> GetResponse()
         {
             string resultString = string.Empty;
-            try
-            {
-                var result = await this.ExecuteAsync(new CancellationToken()).ConfigureAwait(false);
-                //if (!result.Content.Headers.ContentLength.Value.Equals(0))
-                //{
-                await using var contentStream = await result.Content.ReadAsStreamAsync().ConfigureAwait(false);
-                var reader = new StreamReader(contentStream);
 
-                resultString = await reader.ReadToEndAsync().ConfigureAwait(false);
-                //}
-                var response = NitroRequestResponseDeserializer.GenerateObject<T>(
-                    "{ \"statuscode\": \"" + result.StatusCode+ "\" }" );
-                if (resultString != string.Empty)
-                {
-                    response = NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
-                }
-                return (T)response;
-            }
-            catch (SocketException ex)
+            var task = this.ExecuteAsync(new CancellationToken());
+            var result = await task.ConfigureAwait(false);
+            //if (!result.Content.Headers.ContentLength.Value.Equals(0))
+            //{
+            await using var contentStream = await result.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            var reader = new StreamReader(contentStream);
+
+            resultString = await reader.ReadToEndAsync().ConfigureAwait(false);
+            //}
+            var response = NitroRequestResponseDeserializer.GenerateObject<T>(
+                "{ \"statuscode\": \"" + result.StatusCode + "\" }");
+            if (resultString != string.Empty)
             {
-                Debug.WriteLine(ex.Message);
-                throw;
+                response = NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
             }
-            catch (HttpRequestException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (InvalidOperationException ex)
-            {
-                Debug.WriteLine(ex.Message);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                Debug.Write(ex.Message);
-                throw;
-            }
+
+            return (T) response;
         }
     }
 }
