@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -162,6 +163,11 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                     .ConfigureAwait(false);
 
                 return await task;
+            }
+            catch (SocketException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
             }
             catch (HttpRequestException ex)
             {

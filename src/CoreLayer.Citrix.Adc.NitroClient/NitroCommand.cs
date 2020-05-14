@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -68,6 +69,11 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                     await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
                     cancellationToken).ConfigureAwait(false);
             }
+            catch (SocketException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
             catch (HttpRequestException ex)
             {
                 Debug.WriteLine(ex.Message);
@@ -103,6 +109,11 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                 return await _serviceClient.SendAsync(
                     await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
                     cancellationToken).ConfigureAwait(false);
+            }
+            catch (SocketException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
             }
             catch (HttpRequestException ex)
             {
@@ -141,6 +152,11 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                     response = NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
                 }
                 return (T)response;
+            }
+            catch (SocketException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
             }
             catch (HttpRequestException ex)
             {
