@@ -21,24 +21,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             _serviceClient = serviceClient;
             _request = request;
         }
-        
        
-
-//        public static INitroCommand Create<T>(INitroServiceClient client, INitroRequestOptions requestOptions)
-//        {
-//            var targetConfigurationInstance = GetTargetConfigurationInstance(typeof(T));
-//            targetConfigurationInstance.Options = requestOptions;
-//
-//            var targetCommand = (INitroCommand) Activator.CreateInstance(
-//                typeof(T),
-//                new object[]
-//                {
-//                    client,
-//                    targetConfigurationInstance
-//                });
-//            return targetCommand;
-//        }
-
         public INitroServiceClient ServiceClient {
             get => _serviceClient;
             //set { _client = value; }
@@ -67,11 +50,27 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             return validationResult;
         }
         
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">The request is null.</exception>
+        /// <exception cref="InvalidOperationException">The request message was already sent by the HttpClient instance.</exception>
+        /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout</exception>
         public async Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
         {
-             return await _serviceClient.SendAsync(
-                await _request.GenerateHttpRequestMessageAsync(),
-                cancellationToken);
+            try
+            {
+                return await _serviceClient.SendAsync(
+                    await _request.GenerateHttpRequestMessageAsync(),
+                    cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         /// <summary>
