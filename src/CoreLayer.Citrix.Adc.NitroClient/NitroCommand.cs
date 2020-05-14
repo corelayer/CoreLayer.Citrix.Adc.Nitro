@@ -80,7 +80,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                 await ValidateAsync(cancellationToken).ConfigureAwait(false);
 
             return await _serviceClient.SendAsync(
-                await _request.GenerateHttpRequestMessageAsync(),
+                await _request.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
                 cancellationToken).ConfigureAwait(false);
         }
         
@@ -90,12 +90,10 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             var result = await this.ExecuteAsync(new CancellationToken()).ConfigureAwait(false);
             //if (!result.Content.Headers.ContentLength.Value.Equals(0))
             //{
-                await using (var contentStream = await result.Content.ReadAsStreamAsync().ConfigureAwait(false))
-                {
-                    var reader = new StreamReader(contentStream);
+            await using var contentStream = await result.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            var reader = new StreamReader(contentStream);
                 
-                    resultString = reader.ReadToEnd();
-                }
+            resultString = await reader.ReadToEndAsync().ConfigureAwait(false);
             //}
 
             var response = NitroRequestResponseDeserializer.GenerateObject<T>(

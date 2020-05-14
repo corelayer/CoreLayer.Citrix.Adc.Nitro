@@ -16,7 +16,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                 requestDataRoot, 
                 requestDataRoot.GetType(), 
                 NitroServiceSerializerOptions.JsonSerializerOptions, 
-                CancellationToken.None);
+                CancellationToken.None).ConfigureAwait(false);
             
             dataStream.Seek(0, SeekOrigin.Begin);
         }
@@ -27,7 +27,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         public static async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync(INitroRequestConfiguration requestConfiguration)
         {
             var dataStream = new MemoryStream();
-            await SerializeRequestData(dataStream, requestConfiguration.DataRoot);
+            await SerializeRequestData(dataStream, requestConfiguration.DataRoot).ConfigureAwait(false);
             
             var request = new HttpRequestMessage(
                 requestConfiguration.Method, 

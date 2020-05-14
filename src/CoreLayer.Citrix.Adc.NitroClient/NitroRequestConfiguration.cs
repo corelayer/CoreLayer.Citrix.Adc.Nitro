@@ -41,12 +41,15 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
             // Cast the task into Task<ValidationResult>
             var result = (Task<ValidationResult>) task;
-            return result.Result;
+            // Old version
+            // return result.Result;
+            return await result.ConfigureAwait(false);
         }
 
         public async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync()
         {
-            return await NitroRequestConfigurationSerializer.GenerateHttpRequestMessageAsync(this);
+            return await NitroRequestConfigurationSerializer.GenerateHttpRequestMessageAsync(this)
+                .ConfigureAwait(false);
         }
     }
 }
