@@ -163,9 +163,20 @@ namespace CoreLayer.Citrix.Adc.NitroClient
 
                 return await task;
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
-                throw new Exception(ex.Message);
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            catch (ArgumentNullException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
             }
         }
     }
