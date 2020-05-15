@@ -1,3 +1,4 @@
+using System.Net;
 using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient
@@ -7,6 +8,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         public int ErrorCode { get; set; }
         public string Message { get; set; }
         public string Severity { get; set; }
-        public string StatusCode { get; set; }
+        public HttpStatusCode StatusCode { get; set; }
     }
 }
