@@ -89,26 +89,33 @@ namespace CoreLayer.Citrix.Adc.NitroClient
                 cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">The request is null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">The number of characters is larger than MaxValue.</exception>
+        /// <exception cref="InvalidOperationException">The request message was already sent by the HttpClient instance.</exception>
+        /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout</exception>
+        /// <exception cref="ObjectDisposedException">The stream has been disposed.</exception>
         public async Task<T> GetResponse()
         {
-            string resultString = string.Empty;
-
             var task = this.ExecuteAsync(new CancellationToken());
             var result = await task.ConfigureAwait(false);
-            //if (!result.Content.Headers.ContentLength.Value.Equals(0))
-            //{
+            
             await using var contentStream = await result.Content.ReadAsStreamAsync().ConfigureAwait(false);
             var reader = new StreamReader(contentStream);
 
-            resultString = await reader.ReadToEndAsync().ConfigureAwait(false);
-            //}
+            var resultString = await reader.ReadToEndAsync().ConfigureAwait(false);
+            
             var response = NitroRequestResponseDeserializer.GenerateObject<T>(
-                "{ \"statuscode\": \"" + result.StatusCode + "\" }");
+                "{ \"errorcode\": \"0\" }");
+            
             if (resultString != string.Empty)
             {
                 response = NitroRequestResponseDeserializer.GenerateObject<T>(resultString);
             }
-
             return (T) response;
         }
     }
