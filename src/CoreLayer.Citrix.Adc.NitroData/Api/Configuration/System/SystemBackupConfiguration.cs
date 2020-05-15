@@ -6,7 +6,7 @@
         public string Level { get; set; }
         public string IncludeKernel { get; set; }
         public string Comment { get; set; }
-        public string Size { get; set; }
+        public double Size { get; set; }
         public bool UseLocalTimeZone { get; set; }
         public string CreationTime { get; set; }
         public string Version { get; set; }
