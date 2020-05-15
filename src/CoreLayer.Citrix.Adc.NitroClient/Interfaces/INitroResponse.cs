@@ -9,7 +9,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Interfaces
         string Message { get; set; }
         string Severity { get; set; }
         
-        [JsonConverter(typeof(string))]
-        HttpStatusCode StatusCode { get; set; }
+        string StatusCode { get; set; }
     }
 }
