@@ -110,7 +110,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             var resultString = await reader.ReadToEndAsync().ConfigureAwait(false);
             
             var response = NitroRequestResponseDeserializer.GenerateObject<T>(
-                "{ \"errorcode\": \"0\" }");
+                "{ \"errorcode\": 0 }");
             
             if (resultString != string.Empty)
             {
