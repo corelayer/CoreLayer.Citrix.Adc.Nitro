@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.Adc.NitroD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.Adc.NitroClientTests", "CoreLayer.Citrix.Adc.NitroClientTests\CoreLayer.Citrix.Adc.NitroClientTests.csproj", "{53378467-3B29-4829-B5C6-B172540927A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.Adc.NitroDataTests", "CoreLayer.Citrix.Adc.NitroDataTests\CoreLayer.Citrix.Adc.NitroDataTests.csproj", "{22DF98EA-48A6-4E18-94C2-00478F8C4877}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{53378467-3B29-4829-B5C6-B172540927A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53378467-3B29-4829-B5C6-B172540927A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53378467-3B29-4829-B5C6-B172540927A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22DF98EA-48A6-4E18-94C2-00478F8C4877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22DF98EA-48A6-4E18-94C2-00478F8C4877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22DF98EA-48A6-4E18-94C2-00478F8C4877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22DF98EA-48A6-4E18-94C2-00478F8C4877}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
