@@ -9,8 +9,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server
         public override string ResourcePath => "/nitro/v1/config/server";
         public override INitroRequestDataRoot DataRoot { get; } 
         public override INitroRequestOptions Options => new ServerAddRequestOptions();
-
-
+        
         public ServerAddRequestConfiguration(ServerAddRequestDataRoot dataRoot)
         {
             DataRoot = dataRoot;
