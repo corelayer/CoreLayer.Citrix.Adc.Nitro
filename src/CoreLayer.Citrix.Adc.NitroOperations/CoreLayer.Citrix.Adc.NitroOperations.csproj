@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CoreLayer.Citrix.Adc.NitroClient\CoreLayer.Citrix.Adc.NitroClient.csproj" />
+      <ProjectReference Include="..\CoreLayer.Citrix.Adc.NitroData\CoreLayer.Citrix.Adc.NitroData.csproj" />
+    </ItemGroup>
+
+</Project>
