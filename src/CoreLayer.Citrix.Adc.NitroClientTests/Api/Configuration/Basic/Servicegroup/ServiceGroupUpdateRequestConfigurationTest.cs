@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup;
-using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup.ServicegroupUpdateRequestDatas;
 using Xunit;
 
 namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Servicegroup

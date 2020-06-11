@@ -13,13 +13,26 @@ namespace CoreLayer.Citrix.Adc.NitroOperations
 {
     public static class NitroBackup
     {
-        public static async Task<SystemBackupGetResponse> ListAsync(INitroServiceClient client)
+        public static async Task<SystemBackupGetResponse> GetAsync(INitroServiceClient client,
+            string fileName)
+        {
+            var systemBackupGetCommand = NitroCommandFactory.Create<SystemBackupGetCommand>(client,
+                new SystemBackupGetRequestOptions
+                {
+                    ResourceName = fileName
+                });
+
+            return await systemBackupGetCommand.GetResponse();
+        }
+        
+        public static async Task<SystemBackupGetResponse> GetAllAsync(INitroServiceClient client)
         {
             var systemBackupGetCommand = NitroCommandFactory.Create<SystemBackupGetCommand>(
                 client);
 
             return await systemBackupGetCommand.GetResponse();
         }
+        
         public static async Task<SystemBackupCreateResponse> CreateAsync(INitroServiceClient client, string fileName,
             string level = "full")
         {
@@ -27,7 +40,7 @@ namespace CoreLayer.Citrix.Adc.NitroOperations
                 client,
                 new SystemBackupCreateRequestData(level)
                 {
-                    Filename = fileName
+                    Filename = fileName.Replace(".tgz", "")
                 });
             
             return await systemBackupCreateCommand.GetResponse();
@@ -37,12 +50,12 @@ namespace CoreLayer.Citrix.Adc.NitroOperations
         {
             var systemBackupDeleteCommand = NitroCommandFactory.Create<SystemBackupDeleteCommand>(
                 client,
-                new SystemBackupDeleteRequestOptions(fileName + ".tgz")
+                new SystemBackupDeleteRequestOptions(fileName)
             );
 
             return await systemBackupDeleteCommand.GetResponse();
         }
-        
+
         public static async Task<SystemFileConfiguration> DownloadAsBase64Async(INitroServiceClient client, string fileName)
         {
             var systemFileGetCommand = NitroCommandFactory.Create<SystemFileGetCommand>(
@@ -52,12 +65,13 @@ namespace CoreLayer.Citrix.Adc.NitroOperations
                     Arguments = new Dictionary<string, string>
                     {
                         {"FileLocation", "/var/ns_sys_backup"},
-                        {"FileName", fileName + ".tgz"}
+                        {"FileName", fileName}
                     }
                 });
 
             var response = await systemFileGetCommand.GetResponse();
-            return response.SystemFiles.Single(file => file.FileName.Equals(fileName + ".tgz"));
+            
+            return response.SystemFiles.Single(file => file.FileName.Equals(fileName));
         }
         
         

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmonitor;
-using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmonitor.LbmonitorUpdateRequestDatas;
 using Xunit;
 
 namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.LoadBalancing.Lbmonitor

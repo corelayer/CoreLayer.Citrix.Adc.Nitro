@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server;
-using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server.ServerAddRequestDatas;
 using Xunit;
 
 namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
