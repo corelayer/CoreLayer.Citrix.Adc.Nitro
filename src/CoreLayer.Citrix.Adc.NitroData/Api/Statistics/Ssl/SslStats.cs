@@ -20,7 +20,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslcryptoutilizationasymstat")]public string SslCryptoUtilizationAsymmetricStat { get; set; }    
         [JsonPropertyName("sslcryptoutilizationstat2nd")]public double? SslCryptoUtilizationStat { get; set; }    
         [JsonPropertyName("sslcryptoutilizationstat")]public double? SslCryptoUtilizationStatNitrox { get; set; }    
-        public string Sslnumcardsupsecondary { get; set; }    
+        [JsonPropertyName("sslnumcardsupsecondary")]public string SslNumberOfCardsUpSecondary { get; set; }    
         public string Sslcardssecondary { get; set; }    
         public string Sslnumcardsup { get; set; }    
         public string Sslcardstatus { get; set; }    

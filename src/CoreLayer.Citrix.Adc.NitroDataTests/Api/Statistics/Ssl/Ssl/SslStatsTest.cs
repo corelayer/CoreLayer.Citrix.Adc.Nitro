@@ -52,7 +52,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ssl.Ssl
                 }, 
                 new Dictionary<string, string>
                 {
-                    {"ContentString", "{\"sslcursessions\":\"Test\",\"pipolicylabelhitsrate\":5}"}
+                    {"ContentString", "{\"sslcursessions\":\"Test\",\"sslcursessionsrate\":5}"}
                 }
             };
         }
