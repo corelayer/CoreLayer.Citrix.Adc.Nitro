@@ -1,0 +1,71 @@
+﻿namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.System
+{
+    public class SystemStats
+    {
+        public double? Voltagev12n { get; set; }
+        public double? Voltagev5n { get; set; }
+        public string Cpuusage { get; set; }
+        public string Rescpuusage { get; set; }
+        public string Slavecpuusage { get; set; }
+        public string Mastercpuusage { get; set; }
+        public double? Auxvolt7 { get; set; }
+        public double? Auxvolt6 { get; set; }
+        public double? Auxvolt5 { get; set; }
+        public double? Auxvolt4 { get; set; }
+        public double? Auxvolt3 { get; set; }
+        public double? Auxvolt2 { get; set; }
+        public double? Auxvolt1 { get; set; }
+        public double? Auxvolt0 { get; set; }
+        public double? Voltagevsen2 { get; set; }
+        public double? Voltagev5sb { get; set; }
+        public double? Voltagevtt { get; set; }
+        public double? Voltagevbat { get; set; }
+        public double? Voltagev12p { get; set; }
+        public double? Voltagev5p { get; set; }
+        public double? Voltagev33stby { get; set; }
+        public double? Voltagev33main { get; set; }
+        public double? Voltagevcc1 { get; set; }
+        public double? Voltagevcc0 { get; set; }
+        public string Numcpus { get; set; }
+        public double? Memusagepcnt { get; set; }
+        public string Memuseinmb { get; set; }
+        public double? Addimgmtcpuusagepcnt { get; set; }
+        public double? Mgmtcpu0usagepcnt { get; set; }
+        public double? Mgmtcpuusagepcnt { get; set; }
+        public double? Pktcpuusagepcnt { get; set; }
+        public double? Cpuusagepcnt { get; set; }
+        public double? Rescpuusagepcnt { get; set; }
+        public string Starttimelocal { get; set; }
+        public string Starttime { get; set; }
+        public double? Disk0perusage { get; set; }
+        public double? Disk1perusage { get; set; }
+        public double? Cpufan0speed { get; set; }
+        public double? Cpufan1speed { get; set; }
+        public double? Systemfanspeed { get; set; }
+        public double? Fan0speed { get; set; }
+        public double? Fanspeed { get; set; }
+        public double? Cpu0temp { get; set; }
+        public double? Cpu1temp { get; set; }
+        public double? Internaltemp { get; set; }
+        public string Powersupply1status { get; set; }
+        public string Powersupply2status { get; set; }
+        public string Powersupply3status { get; set; }
+        public string Powersupply4status { get; set; }
+        public double? Disk0size { get; set; }
+        public double? Disk0used { get; set; }
+        public double? Disk0avail { get; set; }
+        public double? Disk1size { get; set; }
+        public double? Disk1used { get; set; }
+        public double? Disk1avail { get; set; }
+        public double? Fan2speed { get; set; }
+        public double? Fan3speed { get; set; }
+        public double? Fan4speed { get; set; }
+        public double? Fan5speed { get; set; }
+        public double? Auxtemp0 { get; set; }
+        public double? Auxtemp1 { get; set; }
+        public double? Auxtemp2 { get; set; }
+        public double? Auxtemp3 { get; set; }
+        public string Timesincestart { get; set; }
+        public string Memsizemb { get; set; }
+    }
+}
