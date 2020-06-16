@@ -52,7 +52,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.SystemCpu
                 }, 
                 new Dictionary<string, string>
                 {
-                    {"ContentString", "{\"id\":\"Test\",\"percpuuse\":5}"}
+                    {"ContentString", "{\"id\":\"Test\",\"percpuuse\":\"5\"}"}
                 }
             };
         }

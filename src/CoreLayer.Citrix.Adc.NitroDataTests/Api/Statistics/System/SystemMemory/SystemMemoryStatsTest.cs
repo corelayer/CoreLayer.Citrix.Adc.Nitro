@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using System.Text.Json;
 using CoreLayer.Citrix.Adc.NitroClient;
-using CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ns;
+using CoreLayer.Citrix.Adc.NitroData.Api.Statistics.System;
 using Xunit;
 
-namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ns.Ns
+namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.SystemMemory
 {
-    public class NsStatsTest
+    public class SystemMemoryStatsTest
     {
         [Theory]
-        [ClassData(typeof(NsStatsTestData))]
-        public void NsStatsTests(NsStats nsStats, Dictionary<string, string> expected)
+        [ClassData(typeof(SystemMemoryStatsTestData))]
+        public void SystemMemoryStatsTests(SystemMemoryStats systemMemoryStats, Dictionary<string, string> expected)
         {
-            Assert.Equal(expected["ContentString"], JsonSerializer.Serialize(nsStats, typeof(NsStats), NitroServiceSerializerOptions.JsonSerializerOptions));
+            Assert.Equal(expected["ContentString"], JsonSerializer.Serialize(systemMemoryStats, typeof(SystemMemoryStats), NitroServiceSerializerOptions.JsonSerializerOptions));
         }
     }
 
-    public class NsStatsTestData : IEnumerable<object[]>
+    public class SystemMemoryStatsTestData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {
             yield return new object[]
             {
-                new NsStats()
+                new SystemMemoryStats()
                 {
                     
                 }, 
@@ -34,25 +34,25 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ns.Ns
             };
             yield return new object[]
             {
-                new NsStats()
+                new SystemMemoryStats()
                 {
-                    AverageCpuUsage = "test"
+                    Memtotinmb = "test"
                 }, 
                 new Dictionary<string, string>
                 {
-                    {"ContentString", "{\"rescpuusage\":\"test\"}"}
+                    {"ContentString", "{\"memtotinmb\":\"test\"}"}
                 }
             };
             yield return new object[]
             {
-                new NsStats()
+                new SystemMemoryStats()
                 {
-                    AverageCpuUsage = "Test",
-                    CacheHitsRate = 5
+                    Memtotfree = "Test",
+                    Memtotallocpcnt = 5
                 }, 
                 new Dictionary<string, string>
                 {
-                    {"ContentString", "{\"rescpuusage\":\"Test\",\"cachehitsrate\":5}"}
+                    {"ContentString", "{\"memtotfree\":\"Test\",\"memtotallocpcnt\":5}"}
                 }
             };
         }

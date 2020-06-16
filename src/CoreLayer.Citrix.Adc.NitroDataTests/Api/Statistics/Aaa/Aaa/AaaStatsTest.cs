@@ -1,29 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security;
 using System.Text.Json;
 using CoreLayer.Citrix.Adc.NitroClient;
-using CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Network;
+using CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Aaa;
 using Xunit;
 
-namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Network.Interface
+namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Aaa.Aaa
 {
-    public class InterfaceStatsTest
+    public class AaaStatsTest
     {
         [Theory]
-        [ClassData(typeof(InterfaceStatsTestData))]
-        public void InterfaceStatsTests(InterfaceStats interfaceStats, Dictionary<string, string> expected)
+        [ClassData(typeof(AaaStatsTestData))]
+        public void AaaStatsTests(AaaStats aaaStats, Dictionary<string, string> expected)
         {
-            Assert.Equal(expected["ContentString"], JsonSerializer.Serialize(interfaceStats, typeof(InterfaceStats), NitroServiceSerializerOptions.JsonSerializerOptions));
+            Assert.Equal(expected["ContentString"], JsonSerializer.Serialize(aaaStats, typeof(AaaStats), NitroServiceSerializerOptions.JsonSerializerOptions));
         }
     }
 
-    public class InterfaceStatsTestData : IEnumerable<object[]>
+    public class AaaStatsTestData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
-        { 
+        {
             yield return new object[]
             {
-                new InterfaceStats()
+                new AaaStats()
                 {
                     
                 }, 
@@ -34,25 +35,25 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Network.Interface
             };
             yield return new object[]
             {
-                new InterfaceStats()
+                new AaaStats()
                 {
-                    Id = "test"
+                    AaaCurrentTmSessions = "test"
                 }, 
                 new Dictionary<string, string>
                 {
-                    {"ContentString", "{\"id\":\"test\"}"}
+                    {"ContentString", "{\"aaacurtmsessions\":\"test\"}"}
                 }
             };
             yield return new object[]
             {
-                new InterfaceStats()
+                new AaaStats()
                 {
-                    Id = "Test",
-                    ReceiveBytesRate = 5
+                    AaaCurrentTmSessions = "Test",
+                    AaaCurrentTmSessionsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {
-                    {"ContentString", "{\"id\":\"Test\",\"rxbytesrate\":5}"}
+                    {"ContentString", "{\"aaacurtmsessions\":\"Test\",\"aaacurtmsessionsrate\":5}"}
                 }
             };
         }

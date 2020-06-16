@@ -36,7 +36,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ha.HaNode
             {
                 new HaNodeStats()
                 {
-                    HaCurState = "test"
+                    HaCurrentState = "test"
                 }, 
                 new Dictionary<string, string>
                 {
@@ -47,8 +47,8 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ha.HaNode
             {
                 new HaNodeStats()
                 {
-                    HaCurState = "Test",
-                    HaPktRxRate = 5
+                    HaCurrentState = "Test",
+                    HaPacketRxRate = 5
                 }, 
                 new Dictionary<string, string>
                 {
