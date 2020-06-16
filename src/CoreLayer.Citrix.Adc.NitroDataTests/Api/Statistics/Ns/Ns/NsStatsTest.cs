@@ -36,7 +36,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ns.Ns
             {
                 new NsStats()
                 {
-                    ResCpuUsage = "test"
+                    AverageCpuUsage = "test"
                 }, 
                 new Dictionary<string, string>
                 {
@@ -47,7 +47,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ns.Ns
             {
                 new NsStats()
                 {
-                    ResCpuUsage = "Test",
+                    AverageCpuUsage = "Test",
                     CacheHitsRate = 5
                 }, 
                 new Dictionary<string, string>

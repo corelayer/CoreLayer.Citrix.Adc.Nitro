@@ -48,7 +48,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Network.Interface
                 new InterfaceStats()
                 {
                     Id = "Test",
-                    RxBytesRate = 5
+                    ReceiveBytesRate = 5
                 }, 
                 new Dictionary<string, string>
                 {

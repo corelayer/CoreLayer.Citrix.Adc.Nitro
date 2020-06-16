@@ -1,9 +1,11 @@
-﻿namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Basic
+﻿using System.Text.Json.Serialization;
+
+namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Basic
 {
     public class ServicegroupMemberStatistics
     {
         public string ServicegroupName { get; set; }
-        public string AvgSvrTtfb { get; set; }
+        [JsonPropertyName("avgsvrttfb")]public string AvgServerTimeToFirstByte { get; set; }
         public string PrimaryIpAddress { get; set; }
         public int? PrimaryPort { get; set; }
         public string ServiceType { get; set; }
@@ -16,11 +18,11 @@
         public double? RequestBytesRate { get; set; }
         public string TotalResponseBytes { get; set; }
         public double? ResponseBytesRate { get; set; }
-        public string CurClntConnections { get; set; }
+        [JsonPropertyName("curcltconnections")]public string CurrentClientConnections { get; set; }
         public string SurgeCount { get; set; }
-        public string CurSrvrConnections { get; set; }
-        public string SvrEstablishedConn { get; set; }
-        public string CurReusePool { get; set; }
+        [JsonPropertyName("cursrvrconnections")]public string CurrentServerConnections { get; set; }
+        [JsonPropertyName("svrestablishedconn")]public string ServerEstablishedConnections { get; set; }
+        [JsonPropertyName("curreusepool")]public string CurrentReusePool { get; set; }
         public string MaxClients { get; set; }
         public string TotalConnReassemblyQueue75 { get; set; }
         public string TotalConnReassemblyQueueFlush { get; set; }
@@ -28,8 +30,8 @@
         public string ToleratingTtlbTransactions { get; set; }
         public string FrustratingTtlbTransactions { get; set; }
         public string CurLoad { get; set; }
-        public string HttpMaxHdrSzPkts { get; set; }
-        public string TcpMaxOooPkts { get; set; }
+        [JsonPropertyName("httpmaxhdrszpkts")]public string HttpMaxHeaderSizePacketsParseFailure { get; set; }
+        [JsonPropertyName("tcpmaxooopkts")]public string TcpMaxOutOfOrderPackets { get; set; }
 
     }
 }

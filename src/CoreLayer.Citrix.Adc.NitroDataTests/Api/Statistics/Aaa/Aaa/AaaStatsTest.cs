@@ -37,7 +37,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Aaa.Aaa
             {
                 new AaaStats()
                 {
-                    Aaacurtmsessions = "test"
+                    AaaCurrentTmSessions = "test"
                 }, 
                 new Dictionary<string, string>
                 {
@@ -48,8 +48,8 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Aaa.Aaa
             {
                 new AaaStats()
                 {
-                    Aaacurtmsessions = "Test",
-                    Aaacurtmsessionsrate = 5
+                    AaaCurrentTmSessions = "Test",
+                    AaaCurrentTmSessionsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {

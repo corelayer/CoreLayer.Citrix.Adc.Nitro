@@ -1,34 +1,36 @@
-﻿namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Aaa
+﻿using System.Text.Json.Serialization;
+
+namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Aaa
 {
     public class AaaStats
     {
-        public string Aaaauthsuccess { get; set; }    
-        public double? Aaaauthsuccessrate { get; set; }    
-        public string Aaaauthfail { get; set; }    
-        public double? Aaaauthfailrate { get; set; }    
-        public string Aaaauthonlyhttpsuccess { get; set; }    
-        public double? Aaaauthonlyhttpsuccessrate { get; set; }    
-        public string Aaaauthonlyhttpfail { get; set; }    
-        public double? Aaaauthonlyhttpfailrate { get; set; }    
-        public string Aaaauthnonhttpsuccess { get; set; }    
-        public double? Aaaauthnonhttpsuccessrate { get; set; }    
-        public string Aaaauthnonhttpfail { get; set; }    
-        public double? Aaaauthnonhttpfailrate { get; set; }    
-        public string Aaacursessions { get; set; }    
-        public double? Aaacursessionsrate { get; set; }    
-        public string Aaatotsessions { get; set; }    
-        public double? Aaasessionsrate { get; set; }    
-        public string Aaatotsessiontimeout { get; set; }    
-        public double? Aaasessiontimeoutrate { get; set; }    
-        public string Aaacuricasessions { get; set; }    
-        public double? Aaacuricasessionsrate { get; set; }    
-        public string Aaacuricaonlyconn { get; set; }    
-        public double? Aaacuricaonlyconnrate { get; set; }    
-        public string Aaacuricaconn { get; set; }    
-        public double? Aaacuricaconnrate { get; set; }    
-        public string Aaacurtmsessions { get; set; }    
-        public double? Aaacurtmsessionsrate { get; set; }    
-        public string Aaatottmsessions { get; set; }    
-        public double? Aaatmsessionsrate { get; set; }
+        [JsonPropertyName("aaaauthsuccess")]public string AaaAuthenticationSuccesses { get; set; }    
+        [JsonPropertyName("aaaauthsuccessrate")]public double? AaaAuthenticationSuccessesRate { get; set; }    
+        [JsonPropertyName("aaaauthfail")]public string AaaAuthenticationFailures { get; set; }    
+        [JsonPropertyName("aaaauthfailrate")]public double? AaaAuthenticationFailuresRate { get; set; }    
+        public string AaaAuthOnlyHttpSuccess { get; set; }    
+        public double? AaaAuthOnlyHttpSuccessRate { get; set; }    
+        public string AaaAuthOnlyHttpFail { get; set; }    
+        public double? AaaAuthOnlyHttpFailRate { get; set; }    
+        public string AaaAuthNonHttpSuccess { get; set; }    
+        public double? AaaAuthNonHttpSuccessRate { get; set; }    
+        public string AaaAuthNonHttpFail { get; set; }    
+        public double? AaaAuthNonHttpFailRate { get; set; }    
+        [JsonPropertyName("aaacursessions")]public string AaaCurrentSessions { get; set; }    
+        [JsonPropertyName("aaacursessionsrate")]public double? AaaCurrentSessionsRate { get; set; }    
+        [JsonPropertyName("aaatotsessions")]public string AaaTotalSessions { get; set; }    
+        [JsonPropertyName("aaasessionsrate")]public double? AaaSessionsRate { get; set; }    
+        [JsonPropertyName("aaatotsessiontimeout")]public string AaaTotalSessionsTimedOut { get; set; }    
+        [JsonPropertyName("aaasessiontimeoutrate")]public double? AaaSessionsTimedOutRate { get; set; }    
+        [JsonPropertyName("aaacuricasessions")]public string AaaCurrentIcaSessions { get; set; }    
+        [JsonPropertyName("aaacuricasessionsrate")]public double? AaaCurrentIcaSessionsRate { get; set; }    
+        [JsonPropertyName("aaacuriceonlyconn")]public string AaaCurrentIcaOlyConnections { get; set; }    
+        [JsonPropertyName("aaacuricaonlyconnrate")]public double? AaaCurrentIcaOlyConnectionsRate { get; set; }    
+        [JsonPropertyName("aaacuricaconn")]public string AaaCurrentIcaConnections { get; set; }    
+        [JsonPropertyName("aaacuricaconnrate")]public double? AaaCurrentIcaConnectionsRate { get; set; }    
+        [JsonPropertyName("aaacurtmsessions")]public string AaaCurrentTmSessions { get; set; }    
+        [JsonPropertyName("aaacurtmsessionsrate")]public double? AaaCurrentTmSessionsRate { get; set; }    
+        [JsonPropertyName("aaatottmsessions")]public string AaaTotalTmSessions { get; set; }    
+        [JsonPropertyName("aaatmsessionsrate")]public double? AaaTmSessionsRate { get; set; }
     }
 }

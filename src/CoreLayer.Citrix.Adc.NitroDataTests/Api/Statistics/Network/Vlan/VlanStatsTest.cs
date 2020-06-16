@@ -48,7 +48,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Network.Vlan
                 new VlanStats()
                 {
                     Id = "Test",
-                    VlanTxPktsRate = 5
+                    VlanTransmitPktsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {

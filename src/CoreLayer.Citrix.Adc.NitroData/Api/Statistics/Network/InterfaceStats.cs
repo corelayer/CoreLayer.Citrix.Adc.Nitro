@@ -1,19 +1,21 @@
-﻿namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Network
+﻿using System.Text.Json.Serialization;
+
+namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Network
 {
     public class InterfaceStats
     {
         public string Id { get; set; }
-        public string CurIntfState { get; set; }
+        [JsonPropertyName("curintfstate")]public string CurInterfaceState { get; set; }
         public string CurLinkUptime { get; set; }
         public string CurLinkDowntime { get; set; }
-        public string TotRxBytes { get; set; }
-        public double? RxBytesRate { get; set; }
-        public string TotTxBytes { get; set; }
-        public double? TxBytesRate { get; set; }
-        public string TotRxPkts { get; set; }
-        public double? RxPktsRate { get; set; }
-        public string TotTxPkts { get; set; }
-        public double? TxPktsRate { get; set; }
+        [JsonPropertyName("totrxbytes")]public string TotReceiveBytes { get; set; }
+        [JsonPropertyName("rxbytesrate")]public double? ReceiveBytesRate { get; set; }
+        [JsonPropertyName("tottxbytes")]public string TotTransmitBytes { get; set; }
+        [JsonPropertyName("txbytesrate")]public double? TransmitBytesRate { get; set; }
+        [JsonPropertyName("totrxpkts")]public string TotReceivePackets { get; set; }
+        [JsonPropertyName("rxpktsrate")]public double? ReceivePacketsRate { get; set; }
+        [JsonPropertyName("tottxpkts")]public string TotTransmitPackets { get; set; }
+        [JsonPropertyName("txpktsrate")]public double? TransmitPacketsRate { get; set; }
         public string JumboPktsReceived { get; set; }
         public double? JumboPktsReceivedRate { get; set; }
         public string JumboPktsTransmitted { get; set; }
@@ -26,33 +28,33 @@
         public double? NicMultiCastPktsRate { get; set; }
         public string TotNetscalerPkts { get; set; }
         public double? NetscalerPktsRate { get; set; }
-        public string RxLacpdu { get; set; }
-        public double? RxLacpduRate { get; set; }
-        public string TxLacpdu { get; set; }
-        public double? TxLacpduRate { get; set; }
-        public string ErrPktRx { get; set; }
-        public double? ErrPktRxRate { get; set; }
-        public string ErrPktTx { get; set; }
-        public double? ErrPktTxRate { get; set; }
-        public string ErrIfindiscards { get; set; }
-        public double? ErrIfindiscardsRate { get; set; }
-        public string NicErrIfoutdiscards { get; set; }
-        public double? NicErrIfoutdiscardsRate { get; set; }
-        public string ErrDroppedRxPkts { get; set; }
-        public double? ErrDroppedRxPktsRate { get; set; }
-        public string ErrDroppedTxPkts { get; set; }
-        public double? ErrDroppedTxPktsRate { get; set; }
+        [JsonPropertyName("rxlacpdu")]public string ReceiveLacpdu { get; set; }
+        [JsonPropertyName("rxlacpdurate")]public double? ReceiveLacpduRate { get; set; }
+        [JsonPropertyName("txlacpdu")]public string TransmitLacpdu { get; set; }
+        [JsonPropertyName("txlacpdurate")]public double? TransmitLacpduRate { get; set; }
+        [JsonPropertyName("errpktrx")]public string ErrorPacketReceive { get; set; }
+        [JsonPropertyName("errpktrxrate")]public double? ErrorPacketReceiveRate { get; set; }
+        [JsonPropertyName("errpkttx")]public string ErrorPacketTransmit { get; set; }
+        [JsonPropertyName("errpkttxrat")]public double? ErrorPacketTransmitRate { get; set; }
+        public string ErrIfInDiscards { get; set; }
+        public double? ErrIfInDiscardsRate { get; set; }
+        public string NicErrIfOutDiscards { get; set; }
+        public double? NicErrIfOutDiscardsRate { get; set; }
+        [JsonPropertyName("errdroppedrxpkts")]public string ErrDroppedReceivePkts { get; set; }
+        [JsonPropertyName("errdroppedrxpktsrate")]public double? ErrDroppedReceivePktsRate { get; set; }
+        [JsonPropertyName("errdroppedtxpkts")]public string ErrDroppedTransmitPkts { get; set; }
+        [JsonPropertyName("errdroppedtxpktsrate")]public double? ErrDroppedTransmitPktsRate { get; set; }
         public string ErrLinkHangs { get; set; }
-        public string NicTsStalls { get; set; }
-        public string NicTxStalls { get; set; }
-        public string NicRxStalls { get; set; }
+        [JsonPropertyName("nicstsstalls")]public string NicStatusStalls { get; set; }
+        [JsonPropertyName("nixtxstalls")]public string NicTransmitStalls { get; set; }
+        [JsonPropertyName("nicrxstalls")]public string NicReceiveStalls { get; set; }
         public string NicerrDisables { get; set; }
         public string LinkReinits { get; set; }
         public string TotMacMoved { get; set; }
         public double? MacMovedRate { get; set; }
         public string ErrNicMuted { get; set; }
-        public string RxcrcErrors { get; set; }
-        public double? RxcrcErrorsRate { get; set; }
+        public string RxCrcErrors { get; set; }
+        public double? RxCrcErrorsRate { get; set; }
         public string InterfaceAlias { get; set; }
         public string CurLinkState { get; set; }
         
