@@ -48,7 +48,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.SystemCpu
                 new SystemCpuStats()
                 {
                     Id = "Test",
-                    PerCpuUse = "5"
+                    CpuUsagePercent = "5"
                 }, 
                 new Dictionary<string, string>
                 {

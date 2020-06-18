@@ -36,7 +36,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.SystemMemory
             {
                 new SystemMemoryStats()
                 {
-                    Memtotinmb = "test"
+                    MemoryTotalInMb = "test"
                 }, 
                 new Dictionary<string, string>
                 {
@@ -47,8 +47,8 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.SystemMemory
             {
                 new SystemMemoryStats()
                 {
-                    Memtotfree = "Test",
-                    Memtotallocpcnt = 5
+                    MemoryTotalFree = "Test",
+                    MemoryTotalAllocatedPercent = 5
                 }, 
                 new Dictionary<string, string>
                 {

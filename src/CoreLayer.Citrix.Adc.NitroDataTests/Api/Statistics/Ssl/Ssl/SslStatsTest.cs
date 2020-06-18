@@ -36,7 +36,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ssl.Ssl
             {
                 new SslStats()
                 {
-                    Sslcursessions = "test"
+                    SslCurrentSessions =  "test"
                 }, 
                 new Dictionary<string, string>
                 {
@@ -47,8 +47,8 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ssl.Ssl
             {
                 new SslStats()
                 {
-                    Sslcursessions = "Test",
-                    Sslcursessionsrate = 5
+                    SslCurrentSessions = "Test",
+                    SslCurrentSessionsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {
