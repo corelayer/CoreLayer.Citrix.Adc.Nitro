@@ -48,7 +48,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Ssl.SslvServer
                 new SslvServerStats()
                 {
                     State = "Test",
-                    SslClientAuthSuccessRate = 5
+                    SslClientAuthenticationSuccessRate = 5
                 }, 
                 new Dictionary<string, string>
                 {
