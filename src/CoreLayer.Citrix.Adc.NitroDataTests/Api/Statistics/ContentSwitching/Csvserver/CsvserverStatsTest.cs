@@ -48,7 +48,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.ContentSwitching.Cs
                 new CsvserverStats()
                 {
                     Name = "Test",
-                    CurrentMultipathTcpSessions = "5"
+                    CurrentMultiPathTcpSessions = "5"
                 }, 
                 new Dictionary<string, string>
                 {

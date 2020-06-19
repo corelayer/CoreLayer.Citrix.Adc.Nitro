@@ -34,9 +34,9 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Basic
         public int? PrimaryPort { get; set; }
         public double? RequestsRate { get; set; }
         [JsonPropertyName("vsvrservicehitsrate")]public double? VirtualServerServiceHitsRate { get; set; }
-        public string TotalConnReassemblyQueue75 { get; set; }
-        public string TotalConnReassemblyQueueFlush { get; set; }
+        [JsonPropertyName("totalconnreassemblyqueue75")]public string TotalConnectionReassemblyQueue75 { get; set; }
+        [JsonPropertyName("totalconnreassemblyqueueflush")]public string TotalConnectionReassemblyQueueFlush { get; set; }
         [JsonPropertyName("httpmaxhdrszpkts")]public string HttpMaxHeaderSizePackets { get; set; }
-        [JsonPropertyName("tcpmaxooopkts")]public string TcpMaxOooPackets { get; set; }
+        [JsonPropertyName("tcpmaxooopkts")]public string TcpMaxOutOfOrderPackets { get; set; }
     }
 }

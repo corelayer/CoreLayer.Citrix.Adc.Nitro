@@ -36,7 +36,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.System
             {
                 new SystemStats()
                 {
-                    Numcpus = "test"
+                    NumberOfCpus = "test"
                 }, 
                 new Dictionary<string, string>
                 {
@@ -47,8 +47,8 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.System.System
             {
                 new SystemStats()
                 {
-                    Numcpus = "Test",
-                    Disk1size = 5
+                    NumberOfCpus = "Test",
+                    Disk1Size = 5
                 }, 
                 new Dictionary<string, string>
                 {
