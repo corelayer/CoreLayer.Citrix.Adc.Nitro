@@ -48,7 +48,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Responder.Responder
                 new ResponderPolicyStats()
                 {
                     Name = "Test",
-                    PiPolicyHitsRate = 5
+                    PolicyHitsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {

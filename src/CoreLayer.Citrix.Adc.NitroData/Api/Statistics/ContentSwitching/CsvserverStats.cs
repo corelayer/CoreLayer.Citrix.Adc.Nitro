@@ -20,7 +20,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.ContentSwitching
         [JsonPropertyName("avgcltttlb")]public string AverageClientTimeToLastByte { get; set; }
         public string Type { get; set; }
         public double? HitsRate { get; set; }
-        [JsonPropertyName("cursrvrconnections")]public string CurrentserverConnections { get; set; }
+        [JsonPropertyName("cursrvrconnections")]public string CurrentServerConnections { get; set; }
         [JsonPropertyName("cltresponsetimeapdex")]public double? ClientResponseTimeApdex { get; set; }
         [JsonPropertyName("totcltttlbtransactions")]public string TotalClientTimeToLastByteTransactions { get; set; }
         [JsonPropertyName("pktsrecvdrate")]public double? PacketsReceivedRate { get; set; }
@@ -29,7 +29,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.ContentSwitching
         [JsonPropertyName("toleratingttlbtransactions")]public string ToleratingTimeToLastByteTransactions { get; set; }
         public double? ResponsesRate { get; set; }
         [JsonPropertyName("deferredreq")]public string DeferredRequests { get; set; }
-        [JsonPropertyName("curmptcpsessions")]public string CurrentMultipathTcpSessions { get; set; }
+        [JsonPropertyName("curmptcpsessions")]public string CurrentMultiPathTcpSessions { get; set; }
         [JsonPropertyName("totspillovers")]public string TotalSpillovers { get; set; }
         public string TotalRequestBytes { get; set; }
         public string InvalidRequestResponse { get; set; }
@@ -43,7 +43,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.ContentSwitching
         public double? RequestsRate { get; set; }
         [JsonPropertyName("totvserverdownbackuphits")]public string TotalVirtualServerDownBackupHits { get; set; }
         [JsonPropertyName("httpmaxhdrszpkts")]public string HttpMaxHeaderSizePackets { get; set; }
-        [JsonPropertyName("tcpmaxooopkts")]public string TcpMaxOooPackets { get; set; }
+        [JsonPropertyName("tcpmaxooopkts")]public string TcpMaxOutOfOrderPackets { get; set; }
         [JsonPropertyName("frustratingttlbtransactionsrate")]public double? FrustratingTimeToLastByteTransactionsRate { get; set; }
         [JsonPropertyName("toleratingttlbtransactionsrate")]public double? ToleratingTimeToLastByteTransactionsRate { get; set; }
     }

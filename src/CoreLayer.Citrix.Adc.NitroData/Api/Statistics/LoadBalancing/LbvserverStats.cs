@@ -8,7 +8,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.LoadBalancing
         [JsonPropertyName("avgcltttlb")]public string AverageClientTimeToLastByte { get; set; }
         [JsonPropertyName("cltresponsetimeapdex")]public double? ClientResponseTimeApdexIndex { get; set; }
         [JsonPropertyName("vsvrsurgecount")]public string VirtualServerSurgeCount { get; set; }
-        public string EstablishedConn { get; set; }
+        [JsonPropertyName("establishedconn")]public string EstablishedConnections { get; set; }
         [JsonPropertyName("inactsvcs")]public string InactiveServices { get; set; }
         [JsonPropertyName("vslbhealth")]public string VirtualServerHealth { get; set; }
         public string PrimaryIpAddress { get; set; }
@@ -43,20 +43,20 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.LoadBalancing
         [JsonPropertyName("deferredreqrate")]public double? DeferredRequestRate { get; set; }
         public string InvalidRequestResponse { get; set; }
         public string InvalidRequestResponseDropped { get; set; }
-        [JsonPropertyName("totvserverdownbackuphits")]public string TotalVirtualserverDownBackupHits { get; set; }
+        [JsonPropertyName("totvserverdownbackuphits")]public string TotalVirtualServerDownBackupHits { get; set; }
         [JsonPropertyName("curmptcpsessions")]public string CurrentMultiPathTcpSessions { get; set; }
         [JsonPropertyName("cursubflowconn")]public string CurrentMultiPathTcpSubFlowConnections { get; set; }
         [JsonPropertyName("totcltttlbtransactions")]public string TotalClientTimeToLastByteTransactions { get; set; }
         [JsonPropertyName("cltttlbtransactionsrate")]public double? TotalClientTimeToLastByteTransactionsRate { get; set; }
-        public string ToleratingTtlbTransactions { get; set; }
-        public double? ToleratingTtlbTransactionsRate { get; set; }
-        public string FrustratingTtlbTransactions { get; set; }
-        public double? FrustratingTtlbTransactionsRate { get; set; }
-        public string TotalConnReassemblyQueue75 { get; set; }
-        public string TotalConnReassemblyQueueFlush { get; set; }
-        public string TotalSvrBusyerr { get; set; }
-        public double? SvrBusyerrRate { get; set; }
-        public string HttpMaxHdrszPkts { get; set; }
-        public string TcpMaxOooPkts { get; set; }
+        [JsonPropertyName("toleratingttlbtransactions")]public string ToleratingTimeToLastByteTransactions { get; set; }
+        [JsonPropertyName("toleratingttlbtransactionsrate")]public double? ToleratingTimeToLastByteTransactionsRate { get; set; }
+        [JsonPropertyName("frustratingttlbtransactions")]public string FrustratingTimeToLastByteTransactions { get; set; }
+        [JsonPropertyName("frustratingttlbtransactionsrate")]public double? FrustratingTimeToLastByteTransactionsRate { get; set; }
+        [JsonPropertyName("totalconnreassemblyqueue75")]public string TotalConnectionReassemblyQueue75 { get; set; }
+        [JsonPropertyName("totalconnreassemblyqueueflush")]public string TotalConnectionReassemblyQueueFlush { get; set; }
+        [JsonPropertyName("totalsvrbusyerr")]public string TotalServerBusyError { get; set; }
+        [JsonPropertyName("svrbusyerrrate")]public double? ServerBusyErrorRate { get; set; }
+        [JsonPropertyName("httpmaxhdrszpkts")]public string HttpMaxHeaderSizePackets { get; set; }
+        [JsonPropertyName("tcpmaxooopkts")]public string TcpMaxOutOfOrderPackets { get; set; }
     }
 }
