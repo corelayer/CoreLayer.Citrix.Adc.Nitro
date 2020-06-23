@@ -37,7 +37,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Configuration.ContentSwitching
                 new CspolicyConfiguration()
                 {
                     PolicyName = "test",
-                    PiPolicyHits = "0"
+                    PolicyHits = "0"
                 },
                 new Dictionary<string, string>
                 {
@@ -49,7 +49,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Configuration.ContentSwitching
                 new CspolicyConfiguration()
                 {
                     PolicyName = "Test",
-                    CspolicyType = "testPolicy"
+                    ContentSwitchingPolicyType = "testPolicy"
                 },
                 new Dictionary<string, string>
                 {

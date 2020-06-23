@@ -2,14 +2,14 @@
 
   namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
 {
-    public class ServerConfiguration : IServerConfiguration
+    public class ServerConfiguration //: IServerConfiguration
     {
         public string Name { get; set; }
-        public string SvcType { get; set; }
-        public string Dup_SvcType { get; set; }
+        [JsonPropertyName("svctype")]public string ServiceType { get; set; }
+        [JsonPropertyName("dup_svctype")]public string DuplicateServiceType { get; set; }
         public int? Port { get; set; }
-        public int? Dup_Port { get; set; }
-        public string SvrState { get; set; }
+        [JsonPropertyName("dup_port")]public int? DuplicatePort { get; set; }
+        [JsonPropertyName("svrstate")]public string ServerState { get; set; }
         public bool? Internal { get; set; }
         public string IpAddress { get; set; }
         public string State { get; set; }
@@ -24,20 +24,20 @@
         public string StateChangeTimeSec { get; set; }
         public string TicksSinceLastStateChange { get; set; }
         public string IpV6Address { get; set; }
-        public string Td { get; set; }
+        [JsonPropertyName("td")]public string TrafficDomain { get; set; }
         public string AutoScale { get; set; }
-        public string Usip { get; set; }
-        public string Cka { get; set; }
-        public string TcpB { get; set; }
-        public string Cmp { get; set; }
+        [JsonPropertyName("usip")]public string UseSourceIp { get; set; }
+        [JsonPropertyName("cka")]public string ClientKeepAlive { get; set; }
+        [JsonPropertyName("tcpb")]public string TcpBuffering { get; set; }
+        [JsonPropertyName("cmp")]public string Compression { get; set; }
         public string Cacheable { get; set; }
-        public string Sc { get; set; }
-        public string Sp { get; set; }
-        public string SvrCfgFlags { get; set; }
-        public string MaxReq { get; set; }
+        [JsonPropertyName("sc")]public string SureConnect { get; set; }
+        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
+        [JsonPropertyName("svrcfgflags")]public string ServerCfgFlags { get; set; }  //todo
+        public string MaxReq { get; set; } //todo
         public string MaxBandWidth { get; set; }
-        public string Svcitmactsvcs { get; set; }
-        public string Svcitmboundsvcs { get; set; }
+        public string Svcitmactsvcs { get; set; } //todo
+        public string Svcitmboundsvcs { get; set; } //todo
         public string Weight { get; set; }
         public string QueryType { get; set; }
         [JsonPropertyName("__count")]public double? Count { get; set; }

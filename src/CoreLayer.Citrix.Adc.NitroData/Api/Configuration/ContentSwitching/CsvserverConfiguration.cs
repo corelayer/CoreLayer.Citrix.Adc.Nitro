@@ -2,12 +2,12 @@ using System.Text.Json.Serialization;
 
 namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
 {
-    public class CsvserverConfiguration : ICsvserverConfiguration
+    public class CsvserverConfiguration //: ICsvserverConfiguration
     {
         public string Name { get; set; }
-        public string Td { get; set; }
+        [JsonPropertyName("td")]public string TrafficDomain { get; set; }
         public string ServiceType { get; set; }
-        public string IpV46 { get; set; }
+        [JsonPropertyName("ipv46")]public string IpVersion4Or6 { get; set; }
         public string TargetType { get; set; }
         public string DnsRecordType { get; set; }
         public string PersistenceId { get; set; }
@@ -19,29 +19,29 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
         public string StateUpdate { get; set; }
         public string Cacheable { get; set; }
         public string RedirectUrl { get; set; }
-        public string CltTimeout { get; set; }
+        [JsonPropertyName("clttimeout")]public string ClientTimeout { get; set; }
         public string Precedence { get; set; }
         public string CaseSensitive { get; set; }
-        public string SoMethod { get; set; }
-        public string SoPersistence { get; set; }
-        public string SoPersistenceTimeout { get; set; }
-        public string SoThreshold { get; set; }
-        public string SoBackupAction { get; set; }
+        [JsonPropertyName("somethod")]public string SpillOverMethod { get; set; }
+        [JsonPropertyName("sopersistence")]public string SpillOverPersistence { get; set; }
+        [JsonPropertyName("sopersistencetimeout")]public string SpillOverPersistenceTimeout { get; set; }
+        [JsonPropertyName("sothreshold")]public string SpillOverThreshold { get; set; }
+        [JsonPropertyName("sobackupaction")]public string SpillOverBackupAction { get; set; }
         public string RedirectPortRewrite { get; set; }
         public string DownStateFlush { get; set; }
-        public string BackupVserver { get; set; }
+        [JsonPropertyName("backupvserver")]public string BackupVirtualServer { get; set; }
         public string DisablePrimaryOnDown { get; set; }
-        public string InsertVserverIpPort { get; set; }
-        public string VipHeader { get; set; }
-        public string RtspNat { get; set; }
+        [JsonPropertyName("insertvserveripport")]public string InsertVirtualServerIpPort { get; set; }
+        [JsonPropertyName("vipheader")]public string VirtualServerIpAndPortHeader { get; set; }
+        [JsonPropertyName("rtspnat")]public string RealTimeStreamingProtocolNetworkAddressTranslation { get; set; }
         public string AuthenticationHost { get; set; }
         public string Authentication { get; set; }
         public string ListenPolicy { get; set; }
         public string ListenPriority { get; set; }
-        public string Authn401 { get; set; }
-        public string AuthnVsName { get; set; }
+        [JsonPropertyName("authn401")]public string AuthenticationWithHttp401 { get; set; }
+        [JsonPropertyName("authnvsname")]public string AuthenticationVirtualServerName { get; set; }
         public string Push { get; set; }
-        public string PushVServer { get; set; }
+        [JsonPropertyName("pushvserver")]public string PushVirtualServer { get; set; }
         public string PushLabel { get; set; }
         public string PushMultiClients { get; set; }
         public string TcpProfileName { get; set; }
@@ -50,41 +50,41 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
         public string OracleServerVersion { get; set; }
         public string Comment { get; set; }
         public string MsSqlServerVersion { get; set; }
-        public string L2Conn { get; set; }
+        [JsonPropertyName("l2conn")]public string L2ConnectionParameters { get; set; }
         public string MySqlProtocolVersion { get; set; }
         public string MySqlServerVersion { get; set; }
         public string MySqlCharacterSet { get; set; }
         public string MySqlServerCapabilities { get; set; }
-        public string AppFlowLog { get; set; }
+        [JsonPropertyName("appflowlog")]public string AppFlowLogging { get; set; }
         public string NetProfile { get; set; }
-        public string IcmpVsrResponse { get; set; }
-        public string RhiState { get; set; }
-        public string AuthnProfile { get; set; }
+        [JsonPropertyName("icmpvsrresponse")]public string IcmpVirtualServerResponse { get; set; } //todo
+        [JsonPropertyName("rhistate")]public string RouteHostInjectionState { get; set; }
+        [JsonPropertyName("authnprofile")]public string AuthenticationProfile { get; set; }
         public string DnsProfileName { get; set; }
         public string DomainName { get; set; }
-        public double? Ttl { get; set; }
+        [JsonPropertyName("ttl")]public double? Ttl { get; set; } //todo
         public string BackupIp { get; set; }
         public string CookieDomain { get; set; }
         public double? CookieTimeout { get; set; }
-        public double? SiteDomainTtl { get; set; }
+        public double? SiteDomainTtl { get; set; } //ttl
         public string NewName { get; set; }
         public string Ip { get; set; }
         public string Value { get; set; }
-        public string NgName { get; set; }
+        [JsonPropertyName("ngname")]public string NodeGroupName { get; set; }
         public string Type { get; set; }
-        public string CurState { get; set; }
-        public string Sc { get; set; }
+        [JsonPropertyName("curstate")]public string CurrentState { get; set; }
+        [JsonPropertyName("sc")]public string SureConnect { get; set; }
         public int? Status { get; set; }
         public string CacheType { get; set; }
         public string Redirect { get; set; }
         public string HomePage { get; set; }
-        public string DnsVserverName { get; set; }
+        [JsonPropertyName("dnsvservername")]public string DnsVirtualServerName { get; set; }
         public string Domain { get; set; }
         public string PolicyName { get; set; }
         public string ServiceName { get; set; }
         public string Weight { get; set; }
-        public string CacheVserver { get; set; }
-        public string TargetVserver { get; set; }
+        [JsonPropertyName("cachevserver")]public string CacheVirtualServer { get; set; }
+        [JsonPropertyName("targetvserver")]public string TargetVirtualServer { get; set; }
         public string Priority { get; set; }
         public string Url { get; set; }
         public string GoToPriorityExpression { get; set; }
@@ -92,13 +92,13 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
         public bool? Invoke { get; set; }
         public string LabelType { get; set; }
         public string LabelName { get; set; }
-        public string Gt2Gb { get; set; }
+        [JsonPropertyName("gt2gb")]public string GreaterThan2GigaBytes { get; set; }
         public string StateChangeTimeSec { get; set; }
         public string StateChangeTimeMSec { get; set; }
         public string TicksSinceLastStateChange { get; set; }
         public string RuleType { get; set; }
-        public string LbvServer { get; set; }
-        public string TargetLbvserver { get; set; }
+        [JsonPropertyName("lbvserver")]public string LoadBalancingVirtualServer { get; set; }
+        [JsonPropertyName("targetlbvserver")]public string TargetLoadBalancingVirtualServer { get; set; }
         [JsonPropertyName("__count")]public double? Count { get; set; }
     }
 }

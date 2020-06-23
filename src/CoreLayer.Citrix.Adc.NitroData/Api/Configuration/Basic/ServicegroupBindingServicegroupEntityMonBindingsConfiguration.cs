@@ -16,7 +16,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
         public string CustomServerId { get; set; }
         public double? Weight { get; set; }
         [JsonPropertyName("monitor_name")]public string MonitorName { get; set; }
-        public double? DbsTtl { get; set; }
+        [JsonPropertyName("dbsttl")]public double? DomainBasedServiceTtl { get; set; }
         public bool? Passive { get; set; }
         public double? ResponseTime { get; set; }
         public string LastResponse { get; set; }

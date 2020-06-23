@@ -1,4 +1,6 @@
-﻿namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.System
+﻿using System.Text.Json.Serialization;
+
+namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.System
 {
     public class SystemUserConfiguration
     {
@@ -6,7 +8,7 @@
         public string Password { get; set; }
         public bool Encrypted { get; set; }
         public string HashMethod { get; set; }
-        public string ExternalAuth { get; set; }
+        [JsonPropertyName("externalauth")]public string ExternalAuthentication { get; set; }
         public string PromptString { get; set; }
         public string PromptInheritedFrom { get; set; }
         public double Timeout { get; set; }
