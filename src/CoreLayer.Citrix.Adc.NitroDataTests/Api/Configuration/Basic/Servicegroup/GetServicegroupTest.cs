@@ -50,7 +50,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Configuration.Basic.Servicegro
                 {
                     ServicegroupName = "Test",
                     Port = 100,
-                    CltTimeout = 10
+                    ClientTimeout = 10
                 },
                 new Dictionary<string, string>
                 {
