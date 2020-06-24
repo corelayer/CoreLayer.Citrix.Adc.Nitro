@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup
 {
     public class ServicegroupAddSyslogTcpRequestData : ServicegroupAddRequestData
@@ -9,32 +11,32 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup
         public override string ServiceType { get; } = "SYSLOGTCP";
 
         public string CacheType { get; set; } 
-        public double? Td { get; set; }
+        [JsonPropertyName("td")]public double? TrafficDomain { get; set; }
         public double? MaxClient { get; set; } 
-        public double? MaxReq { get; set; }
+        [JsonPropertyName("maxreq")]public double? MaxRequests { get; set; }
         public string Cacheable { get; set; } 
-        public string Cip { get; set; }
-        public string CipHeader { get; set; }
-        public string Usip { get; set; }
+        [JsonPropertyName("cip")]public string InjectClientIp { get; set; }
+        [JsonPropertyName("cipheader")]public string ClientIpHeader { get; set; }
+        [JsonPropertyName("usip")]public string UseSourceIp { get; set; }
         public string UseProxyPort { get; set; } 
         public string HealthMonitor { get; set; }
-        public string Sc { get; set; } 
-        public string Sp { get; set; }
-        public double? CltTimeout { get; set; } 
-        public double? SvrTimeout { get; set; }
-        public string Cka { get; set; }
-        public string Tcpb { get; set; }
+        [JsonPropertyName("sc")]public string SureConnect { get; set; } 
+        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
+        [JsonPropertyName("clttimeout")]public double? ClientTimeout { get; set; } 
+        [JsonPropertyName("svrtimeout")]public double? ServerTimeout { get; set; } 
+        [JsonPropertyName("cka")]public string ClientKeepAlive { get; set; }
+        [JsonPropertyName("tcpb")]public string TcpBuffering { get; set; }
         public double? MaxBandwidth { get; set; } 
-        public double? MonThreshold { get; set; } 
+        [JsonPropertyName("monthreshold")]public double? MonitorWeightThreshold { get; set; } 
         public string State { get; set; }
         public string DownstateFlush { get; set; }
         public string TcpProfileName { get; set; }
         public string Comment { get; set; }
-        public string AppFlowLog { get; set; }
+        [JsonPropertyName("appflowlog")]public string AppFlowLogging { get; set; }
         public string NetProfile { get; set; }
         public string AutoScale { get; set; }
         public double? AutoDisableDelay { get; set; }
         public string AutoDisableGraceful { get; set; }
-        public string MonConnectionClose { get; set; }
+        [JsonPropertyName("monconnectionclose")]public string MonitorConnectionClose { get; set; }
     }
 }

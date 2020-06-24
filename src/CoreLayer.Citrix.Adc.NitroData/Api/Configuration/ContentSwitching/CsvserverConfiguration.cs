@@ -50,7 +50,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
         public string OracleServerVersion { get; set; }
         public string Comment { get; set; }
         public string MsSqlServerVersion { get; set; }
-        [JsonPropertyName("l2conn")]public string L2ConnectionParameters { get; set; }
+        [JsonPropertyName("l2conn")]public string UseL2ConnectionParameters { get; set; }
         public string MySqlProtocolVersion { get; set; }
         public string MySqlServerVersion { get; set; }
         public string MySqlCharacterSet { get; set; }

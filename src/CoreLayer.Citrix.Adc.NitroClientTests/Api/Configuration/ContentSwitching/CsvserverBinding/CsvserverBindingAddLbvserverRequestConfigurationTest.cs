@@ -32,7 +32,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitchi
                         new CsvserverBindingAddLbvserverRequestData("testName"),
                         new CsvserverBindingAddLbvserverRequestData("testName2")
                         {
-                            LbvServer= "testLbvserverName"
+                            LoadBalancingVirtualServer= "testLbvserverName"
                         }, 
                     })),
                 new Dictionary<string, string>()
