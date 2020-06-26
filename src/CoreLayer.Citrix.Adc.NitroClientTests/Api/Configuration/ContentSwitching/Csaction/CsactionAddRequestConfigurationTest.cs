@@ -61,7 +61,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitchi
                         },
                         new CsactionAddRequestData("test4")
                         {
-                            TargetLbvserver = "testTarget"
+                            TargetLoadBalancingVirtualServer = "testTarget"
                         }
                     })
                 ), 

@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
 {
     public class ServiceUpdateUdpRequestData : ServiceUpdateRequestData
@@ -7,7 +9,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
         }
         
         public string Cacheable { get; set; }
-        public string Sc { get; set; } 
-        public string Sp { get; set; }
+        [JsonPropertyName("sc")]public string SureConnect { get; set; } 
+        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
     }
 }

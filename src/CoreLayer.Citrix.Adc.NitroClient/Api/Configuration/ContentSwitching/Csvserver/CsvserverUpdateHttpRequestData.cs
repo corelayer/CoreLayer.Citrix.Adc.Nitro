@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.Csvserver
 {
     public class CsvserverUpdateHttpRequestData : CsvserverUpdateRequestData
@@ -9,18 +11,18 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.Cs
         public string Cacheable { get; set; } 
         public string RedirectUrl { get; set; } 
         public string RedirectPortRewrite { get; set; }
-        public string InsertVserverIpPort { get; set; } 
-        public string VipHeader { get; set; }
+        [JsonPropertyName("insertvserveripport")]public string InsertVirtualServerIpPort { get; set; } 
+        [JsonPropertyName("vipheader")]public string VirtualServerIpAndPortHeader { get; set; }
         public string AuthenticationHost { get; set; } 
         public string Authentication { get; set; }
-        public string Authn401 { get; set; }
-        public string AuthnVsName { get; set; }
+        [JsonPropertyName("authn401")]public string AuthenticationWithHttp401 { get; set; }
+        [JsonPropertyName("authnvsname")]public string AuthenticationVirtualServerName { get; set; }
         public string Push { get; set; }
-        public string PushVserver { get; set; }
+        [JsonPropertyName("pushvserver")]public string PushVirtualServer { get; set; }
         public string PushLabel { get; set; }
         public string PushMulticlients { get; set; }
         public string TcpProfileName { get; set; }
         public string HttpProfileName { get; set; }
-        public string AuthnProfile { get; set; }
+        [JsonPropertyName("authnprofile")]public string AuthenticationProfile { get; set; }
     }
 }

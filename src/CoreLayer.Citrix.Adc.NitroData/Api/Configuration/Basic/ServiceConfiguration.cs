@@ -13,9 +13,9 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
         public string CacheType { get; set; }
         public string MaxClient { get; set; }
         public string HealthMonitor { get; set; }
-        public string MaxReq { get; set; }
+        [JsonPropertyName("maxreq")]public string MaxRequests { get; set; }
         public string Cacheable { get; set; }
-        [JsonPropertyName("cip")]public string ClientIp { get; set; }
+        [JsonPropertyName("cip")]public string InjectClientIp { get; set; }
         [JsonPropertyName("cipheader")]public string ClientIpHeader { get; set; }
         [JsonPropertyName("usip")]public string UseSourceIp { get; set; }
         public string PathMonitor { get; set; }

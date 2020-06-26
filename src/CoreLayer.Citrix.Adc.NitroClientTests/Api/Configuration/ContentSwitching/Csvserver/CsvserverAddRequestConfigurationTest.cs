@@ -67,7 +67,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitchi
                         },
                         new CsvserverAddUdpRequestData("test4", "1.1.1.1", 40)
                         {
-                            AppFlowLog = "ENABLED"
+                            AppFlowLogging = "ENABLED"
                         }
                     })
                 ), 

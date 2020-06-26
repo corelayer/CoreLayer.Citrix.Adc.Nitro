@@ -11,7 +11,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
         public string Action { get; set; }
         public string LogAction { get; set; }
         public string NewName { get; set; }
-        [JsonPropertyName("vsname")]public string VirtualServerType { get; set; }
+        [JsonPropertyName("vstype")]public string VirtualServerType { get; set; }
         public string Hits { get; set; }
         public string BindHits { get; set; }
         public string PiHits { get; set; } //todo

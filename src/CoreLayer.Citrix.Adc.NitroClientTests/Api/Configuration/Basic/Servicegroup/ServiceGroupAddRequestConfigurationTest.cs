@@ -37,7 +37,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Serviceg
                         new ServicegroupAddSslRequestData("test3")
                         {
                             MaxBandwidth = 20,
-                            AppFlowLog = "YES"
+                            AppFlowLogging = "YES"
                         }
                     })
                 ), 
@@ -66,7 +66,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Serviceg
                         new ServicegroupAddSyslogTcpRequestData("test3")
                         {
                             MaxBandwidth = 20,
-                            AppFlowLog = "YES"
+                            AppFlowLogging = "YES"
                         }
                     })
                 ), 
@@ -95,11 +95,11 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Serviceg
                         new ServicegroupAddTcpRequestData("test3")
                         {
                             MaxBandwidth = 20,
-                            AppFlowLog = "YES"
+                            AppFlowLogging = "YES"
                         },
                         new ServicegroupAddDnsTcpRequestData("test4")
                         {
-                            SvrTimeout = 2,
+                            ServerTimeout = 2,
                             Comment = "testComment"
                         }, 
                     })

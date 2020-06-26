@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
 {
     public class ServiceUpdateDnsTcpRequestData : ServiceUpdateRequestData
@@ -5,7 +7,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
         public ServiceUpdateDnsTcpRequestData(string serviceName) : base(serviceName)
         {
         }
-        public string Sp { get; set; }
+        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
         public string TcpProfileName { get; set; }
     }
 }
