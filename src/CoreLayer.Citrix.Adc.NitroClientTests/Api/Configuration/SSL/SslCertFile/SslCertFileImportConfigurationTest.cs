@@ -43,7 +43,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.SSL.SslCertFil
                 new SslCertFileImportRequestConfiguration(new SslCertFileImportRequestDataRoot(new SslCertFileImportRequestData()
                 {
                     Name = "test",
-                    Src = "testSrc"
+                    Source = "testSrc"
                 })),
                 new Dictionary<string, string>
                 {

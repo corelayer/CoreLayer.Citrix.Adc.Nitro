@@ -7,10 +7,10 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Ssl
     {
         
         public string Name { get; set; }
-        [JsonPropertyName("dh")]public string DiffieHellmanKeyExchange { get; set; } 
-        [JsonPropertyName("dhfile")]public string DiffieHellmanFile { get; set; }
-        [JsonPropertyName("dhcount")]public string DiffieHellmanKeyPairInteractionsCount { get; set; }
-        [JsonPropertyName("dhkeyexpsizelimit")]public string DiffieHellmanKeySizeLimit { get; set; } 
+        [JsonPropertyName("dh")]public string DhKeyExchange { get; set; } 
+        [JsonPropertyName("dhfile")]public string DhFile { get; set; }
+        [JsonPropertyName("dhcount")]public string DhKeyPairInteractionsCount { get; set; }
+        [JsonPropertyName("dhkeyexpsizelimit")]public string DhKeySizeLimit { get; set; } 
         [JsonPropertyName("ersa")]public string EphemeralRsa { get; set; }
         [JsonPropertyName("ersacount")]public string EphemeralRsaCount { get; set; }
         [JsonPropertyName("sessreuse")]public string SessionReuse { get; set; }
@@ -63,7 +63,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Ssl
         [JsonPropertyName("ssliverifyservercertforreuse")]public string SslVerifyServerCertificateForReuse { get; set; }
         [JsonPropertyName("sslireneg")]public string SsliRenegotiation { get; set; } //todo
         public string SsliOcspCheck { get; set; } //todo
-        public string SsliMaxSessPerServer { get; set; } //todo
+        [JsonPropertyName("sslmaxsessperserver")]public string SslIMaxSessionPerServer { get; set; } //todo
         public string SessionTicket { get; set; }
         public string SessionTicketLifetime { get; set; }
         public string SessionTicketKeyRefresh { get; set; }

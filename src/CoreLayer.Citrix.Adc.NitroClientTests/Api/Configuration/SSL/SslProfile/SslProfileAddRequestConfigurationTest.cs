@@ -40,7 +40,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.SSL.SslProfile
             {
                 new SslProfileAddRequestConfiguration(new SslProfileAddRequestDataRoot(new SslProfileAddRequestData("test")
                 {
-                    SniEnable = "YES"
+                    ServerNameIndicationEnable = "YES"
                 })),
                 new Dictionary<string, string>
                 {

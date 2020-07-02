@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.SSL.SslProfile
@@ -11,55 +12,56 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.SSL.SslProfile
             Name = profileName;
         }
         
-        public double? DhCount { get; set; }
-        public string Dh { get; set; }
+        [JsonPropertyName("dhcount")]public double? DhKeyPairInteractionsCount { get; set; }
+        [JsonPropertyName("dh")]public string DhKeyExchange { get; set; }
         public string DhFile { get; set; }
-        public string Ersa { get; set; }
-        public double? ErsaCount { get; set; }
-        public string SessReUse { get; set; }
-        public double? SessTimeout { get; set; }
+        [JsonPropertyName("ersa")]public string EphemeralRsa { get; set; }
+        [JsonPropertyName("ersacount")]public double? EphemeralRsaCount { get; set; }
+        [JsonPropertyName("sessreuse")]public string SessionReuse { get; set; }
+        [JsonPropertyName("sesstimeout")]public double? SessionTimeout { get; set; }
         public string CipherRedirect { get; set; }
         public string CipherUrl { get; set; }
-        public string ClientAuth { get; set; }
-        public string ClientCert { get; set; }
-        public string DhKeyExpSizeLimit { get; set; }
+        [JsonPropertyName("clientauth")]public string ClientAuthentication { get; set; }
+        [JsonPropertyName("clientcert")]public string ClientCertificate { get; set; }
+        [JsonPropertyName("dhkeyexpsizelimit")]public string DhKeyExpSizeLimit { get; set; }
         public string SslRedirect { get; set; }
         public string RedirectPortReWrite { get; set; }
         public string Ssl3 { get; set; }
         public string Tls1 { get; set; }
         public string Tls11 { get; set; }
         public string Tls12 { get; set; }
-        public string SniEnable { get; set; }
+        public string Tls13 { get; set; }
+        [JsonPropertyName("snienable")]public string ServerNameIndicationEnable { get; set; }
         public string OcspStapling { get; set; }
-        public string ServerAuth { get; set; }
+        [JsonPropertyName("serverauth")]public string ServerAuthentication { get; set; }
         public string CommonName { get; set; }
-        public string PushEncTrigger { get; set; }
+        [JsonPropertyName("pushenctrigger")]public string PushEncTrigger { get; set; }
         public string SendCloseNotify { get; set; }
         public int? CleartextPort { get; set; }
         public string InsertionEncoding { get; set; }
-        public string DenySslReneg { get; set; }
+        [JsonPropertyName("denysslreneg")]public string DenySslRenegotiation { get; set; }
         public string QuantumSize { get; set; }
-        public string StrictCaChecks { get; set; }
-        public double? EncryptTriggerPktCount { get; set; }
+        [JsonPropertyName("strictcachecks")]public string StrictCertificateAuthorityChecks { get; set; }
+        [JsonPropertyName("encrypttriggerpktcount")]public double? EncryptTriggerPacketCount { get; set; }
         public double? PushFlag { get; set; }
-        public string DropReqWithNoHostHeader { get; set; }
-        public double? PushEncTriggerTimeout { get; set; }
+        [JsonPropertyName("dropreqwithnohostheader")]public string DropReqWithNoHostHeader { get; set; }
+        [JsonPropertyName("pushenctriggertimeout")]public double? PushEncryptionTriggerTimeout { get; set; }
         public double? SslTriggerTimeout { get; set; }
-        public string ClientAuthUseBoundCaChain { get; set; }
+        [JsonPropertyName("clientauthuseboundcachain")]public string ClientAuthenticationUseBoundCertificateAuthorityChain { get; set; }
         public string SslInterception { get; set; }
-        public string SslIreNeg { get; set; }
-        public string SslIocspCheck { get; set; }
-        public double? SslMMaxSessPerServer { get; set; }
+        [JsonPropertyName("sslireneg")]public string SslIRenegotiation { get; set; }
+        public string SslIOcspCheck { get; set; }
+        [JsonPropertyName("sslimaxsessperserver")]public double? SslIMaxSessionPerServer { get; set; }
         public string SessionTicket { get; set; }
         public double? SessionTicketLifetime { get; set; }
         public string SessionTicketKeyRefresh { get; set; }
         public string SessionTicketKeyData { get; set; }
         public double? SessionKeyLifetime { get; set; }
-        public double? PrevSessionKeyLifetime { get; set; }
+        [JsonPropertyName("prevsessionkeylifetime")]public double? PreviousSessionKeyLifetime { get; set; }
         public string Hsts { get; set; }
         public double? MaxAge { get; set; }
         public string IncludeSubDomains { get; set; }
-        public string SkipClientCertPolicyCheck { get; set; }
+        [JsonPropertyName("skipclientcertpolicycheck")]public string SkipClientCertificatePolicyCheck { get; set; }
         public string CipherName { get; set; }
         public double? CipherPriority { get; set; }
         public string StrictSigDigestCheck { get; set; }

@@ -4,8 +4,8 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Ssl
 {
     public class SslCertLinkConfiguration
     {
-        public string CertKeyName { get; set; }
-        public string LinkCertKeyName { get; set; }
+        [JsonPropertyName("certkeyname")]public string CertificateKeyName { get; set; }
+        [JsonPropertyName("linkcertkeyname")]public string LinkCertificateKeyName { get; set; }
         [JsonPropertyName("__count")]public int Count { get; set; }
     }
 }
