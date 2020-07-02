@@ -40,7 +40,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Network.IpSet
             {
                 new IpSetAddRequestConfiguration(new IpSetAddRequestDataRoot(new IpSetAddRequestData("test")
                 {
-                    Td = 5
+                    TrafficDomain = 5
                 })),
                 new Dictionary<string, string>
                 {

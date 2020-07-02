@@ -37,7 +37,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
         public string NetProfileName { get; set; }
         public string AutoScale { get; set; }
         public int? MemberPort { get; set; }
-        public string MonConnectionsClose { get; set; }
+        [JsonPropertyName("monconnectionclose")]public string MonitorConnectionClose { get; set; }
         public string ServerName { get; set; }
         public int? Port { get; set; }
         public string Weight { get; set; }

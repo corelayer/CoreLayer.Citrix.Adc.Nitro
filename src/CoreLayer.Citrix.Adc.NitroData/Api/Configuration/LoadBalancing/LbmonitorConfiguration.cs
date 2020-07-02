@@ -14,7 +14,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public string MaxForwards { get; set; }
         [JsonPropertyName("sipmethod")]public string SipMethod { get; set; } //todo
         public string SipUri { get; set; }
-        public string SipRegUri { get; set; }
+        [JsonPropertyName("sipreguri")]public string SipUriUser { get; set; }
         public string Send { get; set; }
         [JsonPropertyName("recv")]public string Receive { get; set; }
         public string Query { get; set; }
@@ -38,18 +38,18 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         [JsonPropertyName("radaccountsession")]public string RadiusAccountSession { get; set; }
         [JsonPropertyName("lrtm")]public string LeastResponseTime { get; set; }
         public string Deviation { get; set; }
-        [JsonPropertyName("units1")]public string UnitsDeviation { get; set; }
+        [JsonPropertyName("units1")]public string DeviationUnits { get; set; }
         public int? Interval { get; set; }
-        [JsonPropertyName("units3")]public string UnitsInterval { get; set; }
+        [JsonPropertyName("units3")]public string IntervalUnits { get; set; }
         [JsonPropertyName("resptimeout")]public int? ResponseTimeout { get; set; }
-        [JsonPropertyName("units4")]public string UnitsResponseTimeout { get; set; }
+        [JsonPropertyName("units4")]public string ResponseTimeoutUnits { get; set; }
         [JsonPropertyName("resptimeoutthresh")]public string ResponseTimeoutThreshold { get; set; }
         public int? Retries { get; set; }
         public int? FailureRetries { get; set; }
         public int? AlertRetries { get; set; }
         public int? SuccessRetries { get; set; }
         public int? DownTime { get; set; }
-        [JsonPropertyName("units2")]public string UnitsDownTime { get; set; }
+        [JsonPropertyName("units2")]public string DownTimeUnits { get; set; }
         [JsonPropertyName("destip")]public string DestinationIp { get; set; }
         [JsonPropertyName("destport")]public int? DestinationPort { get; set; }
         public string State { get; set; }
@@ -108,8 +108,8 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public string MetricWeight { get; set; }
         public string ServiceName { get; set; }
         public string ServicegroupName { get; set; }
-        [JsonPropertyName("lrtmconf")]public int? LrtmConfiguration { get; set; } //todo
-        [JsonPropertyName("lrtmconfstr")]public string LrtmConfigurationString { get; set; } //todo
+        [JsonPropertyName("lrtmconf")]public int? LeastResponseTimeConfiguration { get; set; } 
+        [JsonPropertyName("lrtmconfstr")]public string LeastResponseTimeConfigurationString { get; set; } 
         public int? DynamicResponseTimeout { get; set; }
         public int? DynamicInterval { get; set; }
         public string[] MultiMetricTable { get; set; }

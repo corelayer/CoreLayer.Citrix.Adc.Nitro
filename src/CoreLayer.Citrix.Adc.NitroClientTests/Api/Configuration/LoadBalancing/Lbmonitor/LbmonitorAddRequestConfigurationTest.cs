@@ -45,7 +45,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.LoadBalancing.
                         new LbmonitorAddHttpRequestData("testMonitor2")
                         {
                             Interval = 10,
-                            RespTimeout = 3,
+                            ResponseTimeout = 3,
                             State = "DISABLED"
                         } 
                     })

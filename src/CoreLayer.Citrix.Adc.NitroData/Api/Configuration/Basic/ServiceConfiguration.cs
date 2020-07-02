@@ -45,7 +45,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
         [JsonPropertyName("td")]public string TrafficDomain { get; set; }
         public string ProcessLocal { get; set; }
         public string DnsProfileName { get; set; }
-        [JsonPropertyName("Monconnectionclose")]public string MonitorConnectionClose { get; set; }
+        [JsonPropertyName("monconnectionclose")]public string MonitorConnectionClose { get; set; }
         public string IpAddress { get; set; }
         public double? Weight { get; set; }
         [JsonPropertyName("monitor_name_svc")]public string MonitorNameService { get; set; }

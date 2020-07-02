@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmonitor
 {
     public class LbmonitorAddHttpRequestData  :LbmonitorAddRequestData
@@ -10,18 +12,18 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmon
             MonitorName = monitorName;
         }    
         
-        public string[] RespCode { get; set; }
+        [JsonPropertyName("respcode")]public string[] ResponseCodes { get; set; }
         public string HttpRequest { get; set; }
         public string CustomHeaders { get; set; }
-        public string Lrtm { get; set; }
+        [JsonPropertyName("lrtm")]public string LeastResponseTime { get; set; }
         public double? Deviation { get; set; }
-        public string Units1 { get; set; } 
-        public string DestIp { get; set; }
-        public int? DestPort { get; set; }
+        [JsonPropertyName("units1")]public string DeviationUnits { get; set; } 
+        [JsonPropertyName("destip")]public string DestinationIp { get; set; }
+        [JsonPropertyName("destport")]public int? DestinationPort { get; set; }
         public string Transparent { get; set; } 
         public string IpTunnel { get; set; } 
         public string Tos { get; set; } 
-        public double? TosId { get; set; }
+        public double? TosId { get; set; } 
         public double? TrofsCode { get; set; }
         public string Trofsstring { get; set; }
     }

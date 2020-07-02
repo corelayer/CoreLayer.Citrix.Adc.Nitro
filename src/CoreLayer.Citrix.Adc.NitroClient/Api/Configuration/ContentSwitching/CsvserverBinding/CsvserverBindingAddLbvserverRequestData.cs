@@ -7,7 +7,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.Cs
     {
         public string Name { get; }
         [JsonPropertyName("lbvserver")]public string LoadBalancingVirtualServer { get; set; }
-        public string TargetVirtualServer { get; set; }
+        [JsonPropertyName("targetvserver")]public string TargetVirtualServer { get; set; }
 
         public CsvserverBindingAddLbvserverRequestData(string CsvserverName)
         {

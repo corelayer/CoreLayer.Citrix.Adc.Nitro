@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmonitor
 {
     public class LbmonitorAddHttpInlineRequestData : LbmonitorAddRequestData
@@ -11,7 +13,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmon
         }
         
         public string Action { get; set; }
-        public string[] RespCode { get; set; }
+        [JsonPropertyName("respcode")]public string[] ResponseCodes { get; set; }
         public string HttpRequest { get; set; }
         public string CustomHeaders { get; set; }
         

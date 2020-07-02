@@ -27,7 +27,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Servicegroup
         [JsonPropertyName("cka")]public string ClientKeepAlive { get; set; }
         [JsonPropertyName("tcpb")]public string TcpBuffering { get; set; }
         public double? MaxBandwidth { get; set; } 
-        public double? MonThreshold { get; set; } 
+        [JsonPropertyName("monthreshold")]public double? MonitorWeightThreshold { get; set; } 
         public string State { get; set; }
         public string DownstateFlush { get; set; }
         public string TcpProfileName { get; set; }

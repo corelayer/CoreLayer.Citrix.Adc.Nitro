@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbvserver
 {
     public class LbvserverUpdateSslRequestData : LbvserverUpdateRequestData
@@ -6,21 +8,21 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbvse
         {
         }
         
-        public string IpV46 { get; set; } 
+        [JsonPropertyName("ipv46")]public string IpVersion4Or6Value { get; set; } 
         public string IpPattern { get; set; }
         public string IpMask { get; set; }
         public string PersistenceType { get; set; }
-        public string RedirUrl { get; set; }
+        [JsonPropertyName("redirurl")]public string RedirectUrl { get; set; }
         public string Cacheable { get; set; }
-        public string InsertVserverIpPort { get; set; }
-        public string VipHeader { get; set; }
+        [JsonPropertyName("insertvserveripport")]public string InsertVirtualServerIpPort { get; set; }
+        [JsonPropertyName("vipheader")]public string VirtualServerIpAndPortHeader { get; set; }
         public string AuthenticationHost { get; set; }
         public string Authentication { get; set; } 
-        public string Authn401 { get; set; }
-        public string AuthnVsName { get; set; }
+        [JsonPropertyName("authn401")]public string AuthenticationWithHttp401 { get; set; }
+        [JsonPropertyName("authnvsname")]public string AuthenticationVirtualServerName { get; set; }
         public string TcpProfileName { get; set; }
         public string HttpProfileName { get; set; }
-        public string AuthnProfile { get; set; }
+        [JsonPropertyName("authnprofile")]public string AuthenticationProfile { get; set; }
         public int? RedirectFromPort { get; set; }
         public string HttpsRedirectUrl { get; set; }
     }
