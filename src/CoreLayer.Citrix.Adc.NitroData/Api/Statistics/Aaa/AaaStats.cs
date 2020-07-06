@@ -24,7 +24,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Aaa
         [JsonPropertyName("aaasessiontimeoutrate")]public double? AaaSessionsTimedOutRate { get; set; }    
         [JsonPropertyName("aaacuricasessions")]public string AaaCurrentIcaSessions { get; set; }    
         [JsonPropertyName("aaacuricasessionsrate")]public double? AaaCurrentIcaSessionsRate { get; set; }    
-        [JsonPropertyName("aaacuriceonlyconn")]public string AaaCurrentIcaOnlyConnections { get; set; }    
+        [JsonPropertyName("aaacuricaonlyconn")]public string AaaCurrentIcaOnlyConnections { get; set; }    
         [JsonPropertyName("aaacuricaonlyconnrate")]public double? AaaCurrentIcaOnlyConnectionsRate { get; set; }    
         [JsonPropertyName("aaacuricaconn")]public string AaaCurrentIcaConnections { get; set; }    
         [JsonPropertyName("aaacuricaconnrate")]public double? AaaCurrentIcaConnectionsRate { get; set; }    

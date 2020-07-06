@@ -34,7 +34,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.ContentSwitching
         public string TotalRequestBytes { get; set; }
         public string InvalidRequestResponse { get; set; }
         public string State { get; set; }
-        [JsonPropertyName("defferedreqrate")]public double? DeferredRequestsRate { get; set; }
+        [JsonPropertyName("deferredreqrate")]public double? DeferredRequestsRate { get; set; }
         [JsonPropertyName("totalpktsrecvd")]public string TotalPacketsReceived { get; set; }
         [JsonPropertyName("pktssentrate")]public double? PacketsSentRate { get; set; }
         [JsonPropertyName("frustratingttlbtransactions")]public string FrustratingTimeToLastByteTransactions { get; set; }

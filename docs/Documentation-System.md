@@ -7,9 +7,9 @@ Commands: Add, Create, Delete, Get
 + Add:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        FileName|string|Name of the backup file(*.tgz) to be restored. 
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        FileName|filename|string|Name of the backup file(*.tgz) to be restored. 
 
    * Creation of the command:  
 
@@ -39,11 +39,11 @@ Commands: Add, Create, Delete, Get
 + Create:
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        FileName|string|Name of the backup file(*.tgz) to be restored. 
-        Comment|string|Comment.
-        Level|string|Level of data to be backed up. Default value: basic. Possible values = basic, full 
+        Property   |Citrix doc name | DataType |  Description 
+        ---|---|---|---
+        FileName|filename|string|Name of the backup file(*.tgz) to be restored. 
+        Comment|content|string|Comment.
+        Level|level|string|Level of data to be backed up. Default value: basic. Possible values = basic, full 
 
    * Creation of the command:  
 
@@ -75,18 +75,18 @@ Commands: Add, Create, Delete, Get
 
         The following properties van be found in each SystemBackupConfiguration found in the array "SystemBackups" inside of a SystemBackupGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        FileName|string|Name of the backup file(*.tgz) to be restored. 
-        Level|string|Level of data to be backed up. Default value: basic. Possible values = basic, full 
-        IncludeKernel|string|Use this option to add kernel in the backup file. Default value: NO. Possible values = NO, YES 
-        Comment|string|Comment specified at the time of creation of the backup file(*.tgz). 
-        Size|double|Size of the backup file(*.tgz) in KB.
-        UseLocalTimezone|bool|This option will create backup file with local timezone timestamp. 
-        CreationTime|string|Creation time of the backup file(*.tgz). 
-        Version|string|Build version of the backup file(*.tgz). 
-        CreatedBy|string|Name of user who created the backup file(*.tgz). 
-        IpAddress|string|Ip of Citrix ADC box where the backup file(*.tgz) was created. 
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        FileName|filename|string|Name of the backup file(*.tgz) to be restored. 
+        Level|level|string|Level of data to be backed up. Default value: basic. Possible values = basic, full 
+        IncludeKernel|includekernel|string|Use this option to add kernel in the backup file. Default value: NO. Possible values = NO, YES 
+        Comment|comment|string|Comment specified at the time of creation of the backup file(*.tgz). 
+        Size|size|double|Size of the backup file(*.tgz) in KB.
+        UseLocalTimezone|uselocaltimezone|bool|This option will create backup file with local timezone timestamp. 
+        CreationTime|creationtime|string|Creation time of the backup file(*.tgz). 
+        Version|version|string|Build version of the backup file(*.tgz). 
+        CreatedBy|createdby|string|Name of user who created the backup file(*.tgz). 
+        IpAddress|ipaddress|string|Ip of Citrix ADC box where the backup file(*.tgz) was created. 
         
 
     * Creation of the Command:  
@@ -158,12 +158,12 @@ Commands: Add, Delete, Get
 + Add:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        FileName|string| Name of the file. It should not include filepath. 
-        FileContent|string|file content in Base64 format. 
-        FileLocation|string|location of the file on Citrix ADC. 
-        FileEncoding|string|encoding type of the file content. Default value: "BASE64" 
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        FileName|filename|string| Name of the file. It should not include filepath. 
+        FileContent|filecontent|string|file content in Base64 format. 
+        FileLocation|filelocation|string|location of the file on Citrix ADC. 
+        FileEncoding|fileencoding|string|encoding type of the file content. Default value: "BASE64" 
 
    * Creation of the command:  
 
@@ -195,16 +195,16 @@ Commands: Add, Delete, Get
 
         The following properties van be found in each SystemFileConfiguration found in the array "SystemFiles" inside of a SystemFileGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        FileName|string| Name of the file. It should not include filepath. 
-        FileContent|string|file content in Base64 format. 
-        FileLocation|string|location of the file on Citrix ADC. 
-        FileEncoding|string|encoding type of the file content. Default value: "BASE64" 
-        FileAccessTime|string|Last access time of the file. 
-        FileModifiedTime|string|last modified time of the file. 
-        FileMode|string|file mode. Possible values = DIRECTORY 
-        FileSize|double|Size of the file in BYTES. 
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        FileName|filename|string| Name of the file. It should not include filepath. 
+        FileContent|filecontent|string|file content in Base64 format. 
+        FileLocation|filelocation|string|location of the file on Citrix ADC. 
+        FileEncoding|fileencoding|string|encoding type of the file content. Default value: "BASE64" 
+        FileAccessTime|fileaccesstime|string|Last access time of the file. 
+        FileModifiedTime|filemodifiedtime|string|last modified time of the file. 
+        FileMode|filemode|string|file mode. Possible values = DIRECTORY 
+        FileSize|filesize|double|Size of the file in BYTES. 
         
 
     * Creation of the Command:  
@@ -277,11 +277,11 @@ Commands: Import, Delete, Get
 + Import:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        Name|string|Name of the SshKey.
-        SshKeyType|string|The type of the ssh key whether public or private key. Possible values = PRIVATE, PUBLIC 
-        Src|string|URL \(protocol, host, path, and file name\) from where the location file will be imported. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access. 
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        Name|name|string|Name of the SshKey.
+        SshKeyType|sshkeytype|string|The type of the ssh key whether public or private key. Possible values = PRIVATE, PUBLIC 
+        Source|src|string|URL \(protocol, host, path, and file name\) from where the location file will be imported. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access. 
 
 
    * Creation of the command:  
@@ -314,10 +314,10 @@ Commands: Import, Delete, Get
 
         The following properties van be found in each SystemSshKeyConfiguration found in the array "SystemSshKeys" inside of a SystemSshKeyGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        Name|string|Name of the SshKey.
-        SshKeyType|string|The type of the ssh key whether public or private key. Possible values = PRIVATE, PUBLIC 
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|Name of the SshKey.
+        SshKeyType|sshkeytype|string|The type of the ssh key whether public or private key. Possible values = PRIVATE, PUBLIC 
         
 
     * Creation of the Command:  
@@ -390,16 +390,16 @@ Commands: Add, Delete, Get, Update
 + Add:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        UserName|string|Name for a user. Must begin with a letter, number, or the underscore (_) character, and must contain only alphanumeric, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), and underscore characters. Cannot be changed after the user is added. 
-        Password|string|Password for the system user. Can include any ASCII character. 
-        ExternalAuth|string|Whether to use external authentication servers for the system user authentication or not. Default value: ENABLED. Possible values = ENABLED, DISABLED 
-        PromptString|string|String to display at the command-line prompt. Can consist of letters, numbers, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), underscore (_), and the following variables: %u - Will be replaced by the user name. %h - Will be replaced by the hostname of the Citrix ADC. %t - Will be replaced by the current time in 12-hour format. %T - Will be replaced by the current time in 24-hour format. %d - Will be replaced by the current date. %s - Will be replaced by the state of the Citrix ADC. 
-        Timeout|double|CLI session inactivity timeout, in seconds. If Restrictedtimeout argument of system parameter is enabled, Timeout can have values in the range [300-86400] seconds. If Restrictedtimeout argument of system parameter is disabled, Timeout can have values in the range [0, 10-100000000] seconds. Default value is 900 seconds. 
-        Logging|string|Users logging privilege. Default value: DISABLED. Possible values = ENABLED, DISABLED 
-        MaxSession|string|Maximum number of client connection allowed per user. 
-        AllowedManagementInterface|string[ ]|Allowed Management interfaces to the system user. By default user is allowed from both API and CLI interfaces. If management interface for a user is set to API, then user is not allowed to access NS through CLI. GUI interface will come under API interface. Default value: NS_INTERFACE_ALL. Possible values = CLI, API 
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        UserName|username|string|Name for a user. Must begin with a letter, number, or the underscore (_) character, and must contain only alphanumeric, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), and underscore characters. Cannot be changed after the user is added. 
+        Password|password|string|Password for the system user. Can include any ASCII character. 
+        ExternalAuthentication|externalauth|string|Whether to use external authentication servers for the system user authentication or not. Default value: ENABLED. Possible values = ENABLED, DISABLED 
+        PromptString|promptstring|string|String to display at the command-line prompt. Can consist of letters, numbers, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), underscore (_), and the following variables: %u - Will be replaced by the user name. %h - Will be replaced by the hostname of the Citrix ADC. %t - Will be replaced by the current time in 12-hour format. %T - Will be replaced by the current time in 24-hour format. %d - Will be replaced by the current date. %s - Will be replaced by the state of the Citrix ADC. 
+        Timeout|timeout|double|CLI session inactivity timeout, in seconds. If Restrictedtimeout argument of system parameter is enabled, Timeout can have values in the range [300-86400] seconds. If Restrictedtimeout argument of system parameter is disabled, Timeout can have values in the range [0, 10-100000000] seconds. Default value is 900 seconds. 
+        Logging|logging|string|Users logging privilege. Default value: DISABLED. Possible values = ENABLED, DISABLED 
+        MaxSession|maxsession|string|Maximum number of client connection allowed per user. 
+        AllowedManagementInterface|allowedmanagementinterface|string[ ]|Allowed Management interfaces to the system user. By default user is allowed from both API and CLI interfaces. If management interface for a user is set to API, then user is not allowed to access NS through CLI. GUI interface will come under API interface. Default value: NS_INTERFACE_ALL. Possible values = CLI, API 
 
 
    * Creation of the command:  
@@ -432,21 +432,21 @@ Commands: Add, Delete, Get, Update
 
         The following properties van be found in each SystemUserConfiguration found in the array "SystemUsers" inside of a SystemUserGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        UserName|string|Name for a user. Must begin with a letter, number, or the underscore (_) character, and must contain only alphanumeric, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), and underscore characters. Cannot be changed after the user is added. 
-        Password|string|Password for the system user. Can include any ASCII character. 
-        ExternalAuth|string|Whether to use external authentication servers for the system user authentication or not. Default value: ENABLED. Possible values = ENABLED, DISABLED 
-        PromptString|string|String to display at the command-line prompt. Can consist of letters, numbers, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), underscore (_), and the following variables: %u - Will be replaced by the user name. %h - Will be replaced by the hostname of the Citrix ADC. %t - Will be replaced by the current time in 12-hour format. %T - Will be replaced by the current time in 24-hour format. %d - Will be replaced by the current date. %s - Will be replaced by the state of the Citrix ADC. 
-        Timeout|double|CLI session inactivity timeout, in seconds. If Restrictedtimeout argument of system parameter is enabled, Timeout can have values in the range [300-86400] seconds. If Restrictedtimeout argument of system parameter is disabled, Timeout can have values in the range [0, 10-100000000] seconds. Default value is 900 seconds. 
-        Logging|string|Users logging privilege. Default value: DISABLED. Possible values = ENABLED, DISABLED 
-        MaxSession|string|Maximum number of client connection allowed per user. 
-        AllowedManagementInterface|string[ ]|Allowed Management interfaces to the system user. By default user is allowed from both API and CLI interfaces. If management interface for a user is set to API, then user is not allowed to access NS through CLI. GUI interface will come under API interface. Default value: NS_INTERFACE_ALL. Possible values = CLI, API 
-        Encrypted|bool|-
-        HashMethod|string|-
-        PromptInheritedFrom|string|From where the prompt has been inherited. Possible values = User, Group, Global, Climode 
-        TimeoutKind|string|From where the timeout has been inherited. Possible values = User, Group, Global, Climode 
-        AllowedManagementInterfaceKind|string|Value of allowed interface which can be inherited from Global, Group or User. Possible values = User, Group, Global, Climode 
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        UserName|username|string|Name for a user. Must begin with a letter, number, or the underscore (_) character, and must contain only alphanumeric, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), and underscore characters. Cannot be changed after the user is added. 
+        Password|password|string|Password for the system user. Can include any ASCII character. 
+        ExternalAuthentication|externalauth|string|Whether to use external authentication servers for the system user authentication or not. Default value: ENABLED. Possible values = ENABLED, DISABLED 
+        PromptString|promptstring|string|String to display at the command-line prompt. Can consist of letters, numbers, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), underscore (_), and the following variables: %u - Will be replaced by the user name. %h - Will be replaced by the hostname of the Citrix ADC. %t - Will be replaced by the current time in 12-hour format. %T - Will be replaced by the current time in 24-hour format. %d - Will be replaced by the current date. %s - Will be replaced by the state of the Citrix ADC.
+        Timeout|timeout|double|CLI session inactivity timeout, in seconds. If Restrictedtimeout argument of system parameter is enabled, Timeout can have values in the range [300-86400] seconds. If Restrictedtimeout argument of system parameter is disabled, Timeout can have values in the range [0, 10-100000000] seconds. Default value is 900 seconds. 
+        Logging|logging|string|Users logging privilege. Default value: DISABLED. Possible values = ENABLED, DISABLED 
+        MaxSession|maxsession|string|Maximum number of client connection allowed per user. 
+        AllowedManagementInterface|allowedmanagementinterface|string[ ]|Allowed Management interfaces to the system user. By default user is allowed from both API and CLI interfaces. If management interface for a user is set to API, then user is not allowed to access NS through CLI. GUI interface will come under API interface. Default value: NS_INTERFACE_ALL. Possible values = CLI, API 
+        Encrypted|encrypted|bool|-
+        HashMethod|hashmethod|string|-
+        PromptInheritedFrom|promptinheritedfrom|string|From where the prompt has been inherited. Possible values = User, Group, Global, Climode 
+        TimeoutKind|timeoutkind|string|From where the timeout has been inherited. Possible values = User, Group, Global, Climode 
+        AllowedManagementInterfaceKind|allowedmanagementinterfacekind|string|Value of allowed interface which can be inherited from Global, Group or User. Possible values = User, Group, Global, Climode 
         
 
     * Creation of the Command:  
@@ -520,12 +520,12 @@ Commands: Get
 
         The following properties van be found in each SystemUserBindingConfiguration found in the array "SystemUserBindings" inside of a SystemUserBindingGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        UserName|string|Name for a user. Must begin with a letter, number, or the underscore (_) character, and must contain only alphanumeric, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), and underscore characters. Cannot be changed after the user is added. 
-        SystemUserSystemGroupBinding|SystemUserSystemGroupBindingConfiguration[]|systemgroup that can be bound to systemuser. 
-        SystemUserNsPartition|SystemUserNsPartitionBindingConfiguration[]|nspartition that can be bound to systemuser. 
-        SystemUserSystemCmdPolicy|SystemUserSystemCmdPolicyBindingConfiguration[]|systemcmdpolicy that can be bound to systemuser.
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        UserName|username|string|Name for a user. Must begin with a letter, number, or the underscore (_) character, and must contain only alphanumeric, hyphen (-), period (.), hash (#), space ( ), at (@), equal (=), colon (:), and underscore characters. Cannot be changed after the user is added. 
+        SystemUserSystemGroupBinding|systemuser_systemgroup_binding|SystemUserSystemGroupBindingConfiguration[]|systemgroup that can be bound to systemuser. 
+        SystemUserNsPartitionBinding|systemuser_nspartition_binding|SystemUserNsPartitionBindingConfiguration[]|nspartition that can be bound to systemuser. 
+        SystemUserSystemCmdPolicyBinding|systemuser_systemcmdpolicy_binding|SystemUserSystemCmdPolicyBindingConfiguration[]|systemcmdpolicy that can be bound to systemuser.
 
         
 
@@ -572,10 +572,10 @@ Commands: Get
 
         The following properties van be found in each SystemUserNsPartitionBindingConfiguration found in the array "SystemUserNsPartitionBindings" inside of a SystemUserNsPartitionBindingGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        UserName|string|name of the user.
-        PartitionName|string|name of the partition.
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        UserName|username|string|name of the user.
+        PartitionName|partitionname|string|name of the partition.
 
 #### SystemUserSystemGroupBinding
 
@@ -586,10 +586,10 @@ Commands: Get
 
         The following properties van be found in each SystemUserSystemGroupBindingConfiguration found in the array "SystemUserSystemGroupBindings" inside of a SystemUserSystemGroupBindingGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        UserName|string|name of the user.
-        GroupName|string|name of the partition.
+        Property|citrix dox name|DataType|Description
+        ---|---|---|---
+        UserName|username|string|name of the user.
+        GroupName|groupname|string|name of the partition.
 
 #### SystemUserSystemCmdPolicyBinding
 
@@ -600,8 +600,8 @@ Commands: Get
 
         The following properties van be found in each SystemUserSystemCmdPolicyBindingConfiguration found in the array "SystemUserSystemCmdPolicyBindings" inside of a SystemUserSystemCmdPolicyBindingGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        UserName|string|name of the user.
-        Priority|string|-
-        PolicyName|string|-
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        UserName|username|string|name of the user.
+        Priority|priority|string|-
+        PolicyName|policyname|string|-
