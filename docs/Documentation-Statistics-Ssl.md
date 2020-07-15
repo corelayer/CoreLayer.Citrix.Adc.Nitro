@@ -430,3 +430,72 @@
         - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
         - Severity: the severity of the error, "NONE" if successful
         - SslStatistics: an array of SslStats-objects returned by the Get-Request, all of which contain the properties mentioned above.
+
+
+#### SslServer
+
++ Get
+    * Properties  
+
+        The following properties van be found in each SslServerStats found in the array "SslServerStatistics" inside of a SslServerStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        VirtualServerName|vservername|string|Name of the SSL virtual server for which to show detailed statistics.
+        VirtualServerHealth|vslbhealth|string|Health of the vserver. This gives percentage of UP services bound to this vserver.
+        PrimaryIpAddress|primaryipaddress|string|IP address of the vserver
+        PrimaryPort|primaryport|double|The port on which the service is running.
+        Type|type|string|Protocol associated with the vserver
+        State|state|string|Current state of the server. There are seven possible values: UP(7), DOWN(1), UNKNOWN(2), BUSY(3), OFS(Out of Service)(4), TROFS(Transition Out of Service)(5), TROFS_DOWN(Down When going Out of Service)(8)
+        ActiveServices|actsvcs|string|number of ACTIVE services bound to a vserver
+        SslTotalClientAuthenticationSuccess|ssltotclientauthsuccess|string|Number of successful client authentication on this vserver
+        SslClientAuthenticationSuccessRate|sslclientauthsuccessrate|double|Rate (/s) counter for ssltotclientauthsuccess
+        SslTotalClientAuthenticationFailure|ssltotclientauthfailure|string|Number of failure client authentication on this vserver
+        SslClientAuthenticationFailureRate|sslclientauthfailurerate|double|Rate (/s) counter for ssltotclientauthfailure
+        SslCtxTotalEncryptedBytes|sslCtxTotEncBytes|string|Number of encrypted bytes per SSL vserver
+        SslCtxEncryptedBytesRate|sslctxencbytesrate|double|Rate (/s) counter for sslctxtotencbytes
+        SslCtxTotalDecryptedBytes|sslctxtotdecbytes|string|	Number of decrypted bytes per SSL vserver
+        SslCtxDecryptedBytesRate|sslctxdecbytesrate|double|	Rate (/s) counter for sslctxtotdecbytes
+        SslCtxTotalHardwareEncryptedBytes|sslctxtothwencbytes|string|Number of hardware encrypted bytes per SSL vserver
+        SslCtxHardwareEncryptedBytesRate|sslctxhzencbytesrate|double|Rate (/s) counter for sslctxtothwencbytes
+        SslCtxTotalHardwareDecryptedBytes|sslctxtothwdec_bytes|string|Number of hw decrypted bytes per SSL vserver
+        SslCtxHardwareDecryptedBytesRate|sslctxhwdec_bytesrate|double|Rate (/s) counter for sslctxtothwdec_bytes
+        SslCtxTotalNewSessions|sslctxtotsessionnew|string|Number of new sessions created
+        SslCtxNewSessionsRate|sslctxsessionnewrate|double|Rate (/s) counter for sslctxtotsessionnew
+        SslCtxTotalSessionHits|sslctxtotsessionhits|string|Number of session hits
+        SslCtxSessionHitsRate|sslctxsessionhitsrate|double|Rate (/s) counter for sslctxtotsessionhits
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<SslServerStatCommand>(INitroServiceClient, New SslServerStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object SslServerStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  
+        <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of an object, and the value you want to see in the returned objects.  
+        eg. ResourceFilter = {{"Comment","Hello"}} will make it so only objects with "Hello" as their Comment will be returned. Not Defining this will return all objects.  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria.
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For SslServerStat, that object is <u>SslServerStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - SslServerStatistics: an array of SslServerStats-objects returned by the Get-Request, all of which contain the properties mentioned above.
