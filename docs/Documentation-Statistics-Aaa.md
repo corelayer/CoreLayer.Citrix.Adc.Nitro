@@ -50,7 +50,7 @@
         ```
         
         - Options:  
-        For this command, the Options are gathered in an Object LbvserverStatRequestOptions, which has following properties to be used as filters:  
+        For this command, the Options are gathered in an Object AaaStatRequestOptions, which has following properties to be used as filters:  
         <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  
         <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of an object, and the value you want to see in the returned objects.  
         eg. ResourceFilter = {{"Comment","Hello"}} will make it so only objects with "Hello" as their Comment will be returned. Not Defining this will return all objects.  
@@ -60,7 +60,7 @@
 
     * Usage of the Command:
 
-        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For LbvserverStat, that object is <u>LbvStatResponse</u>.
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For AaaStat, that object is <u>AaaStatResponse</u>.
 
         eg. 
         ```

@@ -49,7 +49,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Responder.Responder
                 new ResponderPolicyLabelStats()
                 {
                     LabelName = "Test",
-                    PiPolicyLabelHitsRate = 5
+                    PolicyLabelHitsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {

@@ -83,7 +83,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslbetotsessionmultiplexattempts")]public string SslBackendTotalSessionMultiplexAttempts { get; set; }    
         [JsonPropertyName("sslbesessionmultiplexattemptsrate")]public double? SslBackendSessionMultiplexAttemptsRate { get; set; }    
         [JsonPropertyName("sslbetotsessionmultiplexattemptsucces")]public string SslBackendTotalSessionMultiplexAttemptSuccess { get; set; }    
-        [JsonPropertyName("sslbesessionmultiplexattemptsucces")]public double? SslBackendSessionMultiplexAttemptSuccessRate { get; set; }    
+        [JsonPropertyName("sslbesessionmultiplexattemptsuccesrate")]public double? SslBackendSessionMultiplexAttemptSuccessRate { get; set; }    
         [JsonPropertyName("sslbetotsessionmultiplexattemptfails")]public string SslBackendTotalSessionMultiplexAttemptFails { get; set; }    
         [JsonPropertyName("sslbesessionmultiplexattemptfailsrate")]public double? SslBackendSessionMultiplexAttemptFailsRate { get; set; }    
         [JsonPropertyName("ssltotenc")]public string SslTotalEncryptedBytes { get; set; }    
@@ -110,7 +110,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         public double? SslRsa512KeyExchangesRate { get; set; }    
         [JsonPropertyName("ssltotrsa1024keyexchanges")]public string SslTotalRsa1024KeyExchanges { get; set; }    
         public double? SslRsa1024KeyExchangesRate { get; set; }    
-        [JsonPropertyName("ssltotrsa2048keyexhanges")]public string SslTotalRsa2048KeyExchanges { get; set; }    
+        [JsonPropertyName("ssltotrsa2048keyexchanges")]public string SslTotalRsa2048KeyExchanges { get; set; }    
         public double? SslRsa2048KeyExchangesRate { get; set; }    
         [JsonPropertyName("ssltotrsa3072keyexchanges")]public string SslTotalRsa3072KeyExchanges { get; set; }    
         public double? SslRsa3072KeyExchangesRate { get; set; }    
@@ -178,11 +178,11 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         public double? SslSslV3HandshakesRate { get; set; }    
         [JsonPropertyName("ssltottlsv1handshakes")]public string SslTotalTlsV1Handshakes { get; set; }    
         public double? SslTlsV1HandshakesRate { get; set; }    
-        [JsonPropertyName("ssltottlsv11handshakes")]public string SslTotTlsV11Handshakes { get; set; }    
+        [JsonPropertyName("ssltottlsv11handshakes")]public string SslTotalTlsV11Handshakes { get; set; }    
         public double? SslTlsV11HandshakesRate { get; set; }    
-        [JsonPropertyName("ssltottllsv12handshakes")]public string SslTotalTlsV12Handshakes { get; set; }    
+        [JsonPropertyName("ssltottlsv12handshakes")]public string SslTotalTlsV12Handshakes { get; set; }    
         public double? SslTlsV12HandshakesRate { get; set; }    
-        [JsonPropertyName("ssltottlsv12handshakes")]public string SslTotalTlsV13Handshakes { get; set; }    
+        [JsonPropertyName("ssltottlsv13handshakes")]public string SslTotalTlsV13Handshakes { get; set; }    
         public double? SslTlsV13HandshakesRate { get; set; }    
         [JsonPropertyName("ssltotdtlsv1handshakes")]public string SslTotalDtlsV1Handshakes { get; set; }    
         public double? SslDtlsV1HandshakesRate { get; set; }    
@@ -192,7 +192,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         public double? SslSslV2ClientAuthenticationsRate { get; set; }    
         [JsonPropertyName("ssltotsslv3clientauthentications")]public string SslTotalSslV3ClientAuthentications { get; set; }    
         public double? SslSslV3ClientAuthenticationsRate { get; set; }    
-        [JsonPropertyName("ssltottlsv1authentications")]public string SslTotalTlsV1ClientAuthentications { get; set; }    
+        [JsonPropertyName("ssltottlsv1clientauthentications")]public string SslTotalTlsV1ClientAuthentications { get; set; }    
         public double? SslTlsV1ClientAuthenticationsRate { get; set; }    
         [JsonPropertyName("ssltottlsv11clientauthentications")]public string SslTotalTlsV11ClientAuthentications { get; set; }    
         public double? SslTlsV11ClientAuthenticationsRate { get; set; }    
@@ -214,7 +214,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         public double? SslEcdsaAuthorizationsRate { get; set; }    
         [JsonPropertyName("ssltotnullauthorizations")]public string SslTotalNullAuthorizations { get; set; }    
         public double? SslNullAuthorizationsRate { get; set; }    
-        [JsonPropertyName("ssltotbkendsessionsrenegotiate")]public string SslTotalBackendSessionRenegotiate { get; set; }    
+        [JsonPropertyName("ssltotbkendsessionrenegotiate")]public string SslTotalBackendSessionRenegotiate { get; set; }    
         [JsonPropertyName("sslbkendsessionrenegotiaterate")]public double? SslBackendSessionRenegotiateRate { get; set; }    
         [JsonPropertyName("ssltotbkendsslv3renego")]public string SslTotalBackendSslV3Renegotiate { get; set; }    
         [JsonPropertyName("sslbkendsslv3renegorate")]public double? SslBackendSslV3RenegotiateRate { get; set; }    
@@ -268,7 +268,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslbe168bit3desciphersrate")]public double? SslBackend168Bit3DesCiphersRate { get; set; }    
         [JsonPropertyName("ssltotbkendcipheraes128")]public string SslTotalBackendCipherAes128 { get; set; }    
         [JsonPropertyName("sslbkendcipheraes128rate")]public double? SslBackendCipherAes128Rate { get; set; }    
-        [JsonPropertyName("ssltotbkendciperaes256")]public string SslTotalBackendCipherAes256 { get; set; }    
+        [JsonPropertyName("ssltotbkendcipheraes256")]public string SslTotalBackendCipherAes256 { get; set; }    
         [JsonPropertyName("sslbkendcipheraes256rate")]public double? SslBackendCipherAes256Rate { get; set; }    
         [JsonPropertyName("sslbetot40bitrc2ciphers")]public string SslBackendTotal40BitRc2Ciphers { get; set; }    
         [JsonPropertyName("sslbe40bitrc2ciphersrate")]public double? SslBackend40BitRc2CiphersRate { get; set; }    
@@ -288,7 +288,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslbeshamacrate")]public double? SslBackendShaMacRate { get; set; }    
         [JsonPropertyName("sslbetotsha256mac")]public string SslBackendTotalSha256Mac { get; set; }    
         [JsonPropertyName("sslbesha256macrate")]public double? SslBackendSha256MacRate { get; set; }    
-        [JsonPropertyName("sslbetotsha384mac")]public string SslBackendTotSha384Mac { get; set; }    
+        [JsonPropertyName("sslbetotsha384mac")]public string SslBackendTotalSha384Mac { get; set; }    
         [JsonPropertyName("sslbesha384macrate")]public double? SslBackendSha384MacRate { get; set; }    
         [JsonPropertyName("sslbetotsslv3handshakes")]public string SslBackendTotalSslV3Handshakes { get; set; }    
         [JsonPropertyName("sslbesslv3handshakesrate")]public double? SslBackendSslV3HandshakesRate { get; set; }    
@@ -297,7 +297,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslbetottlsv11handshakes")]public string SslBackendTotalTlsV11Handshakes { get; set; }    
         [JsonPropertyName("sslbetlsv11handshakesrate")]public double? SslBackendTlsV11HandshakesRate { get; set; }    
         [JsonPropertyName("sslbetottlsv12handshakes")]public string SslBackendTotalTlsV12Handshakes { get; set; }    
-        [JsonPropertyName("sslbetlsv12handshakes")]public double? SslBackendTlsV12HandshakesRate { get; set; }    
+        [JsonPropertyName("sslbetlsv12handshakesrate")]public double? SslBackendTlsV12HandshakesRate { get; set; }    
         [JsonPropertyName("sslbetotdtlsv1handshakes")]public string SslBackendTotalDtlsV1Handshakes { get; set; }    
         [JsonPropertyName("sslbedtlsv1handshakesrate")]public double? SslBackendDtlsV1HandshakesRate { get; set; }    
         [JsonPropertyName("sslbetotsslv3clientauthentications")]public string SslBackendTotalSslV3ClientAuthentications { get; set; }    
@@ -308,8 +308,8 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslbetlsv11clientauthenticationsrate")]public double? SslBackendTlsV11ClientAuthenticationsRate { get; set; }    
         [JsonPropertyName("sslbetottlsv12clientauthentications")]public string SslBackendTotalTlsV12ClientAuthentications { get; set; }    
         [JsonPropertyName("sslbetlsv12clientauthenticationsrate")]public double? SslBackendTlsV12ClientAuthenticationsRate { get; set; }    
-        [JsonPropertyName("sslbetotdtlsv1clientauthentications")]public string SslBackendTotDtlsV1ClientAuthentications { get; set; }    
-        [JsonPropertyName("sslbedtlsv1clienauthenticationsrate")]public double? SslBackendDtlsV1ClientAuthenticationsRate { get; set; }    
+        [JsonPropertyName("sslbetotdtlsv1clientauthentications")]public string SslBackendTotalDtlsV1ClientAuthentications { get; set; }    
+        [JsonPropertyName("sslbedtlsv1clientauthenticationsrate")]public double? SslBackendDtlsV1ClientAuthenticationsRate { get; set; }    
         [JsonPropertyName("sslbetotrsaauthorizations")]public string SslBackendTotalRsaAuthorizations { get; set; }    
         [JsonPropertyName("sslbersaauthorizationsrate")]public double? SslBackendRsaAuthorizationsRate { get; set; }    
         [JsonPropertyName("sslbetotdhauthorizations")]public string SslBackendTotalDhAuthorizations { get; set; }    
@@ -360,13 +360,13 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("ssldecferate")]public double? SslDecryptedBytesFrontendRate { get; set; }    
         [JsonPropertyName("ssltothwdecfe")]public string SslTotalHardwareDecryptedBytesFrontend { get; set; }    
         [JsonPropertyName("sslhwdecferate")]public double? SslHardwareDecryptedBytesFrontendRate { get; set; }    
-        [JsonPropertyName("ssltotswdevfe")]public string SslTotalSoftwareDecryptedBytesFrontend { get; set; }    
+        [JsonPropertyName("ssltotswdecfe")]public string SslTotalSoftwareDecryptedBytesFrontend { get; set; }    
         [JsonPropertyName("sslswdecferate")]public double? SslSoftwareDecryptedBytesFrontendRate { get; set; }    
         [JsonPropertyName("ssltotdecbe")]public string SslTotalDecryptedBytesBackend { get; set; }    
         [JsonPropertyName("ssldecberate")]public double? SslDecryptedBytesBackendRate { get; set; }    
         [JsonPropertyName("ssltothwdecbe")]public string SslTotalHardwareDecryptedBytesBackend { get; set; }    
         [JsonPropertyName("sslhwdecberate")]public double? SslHardwareDecryptedBytesBackendRate { get; set; }    
-        [JsonPropertyName("ssltotswdecbe")]public string SslTotalSoftwareDecryptedByesBackend { get; set; }    
+        [JsonPropertyName("ssltotswdecbe")]public string SslTotalSoftwareDecryptedBytesBackend { get; set; }    
         [JsonPropertyName("sslswdecberate")]public double? SslSoftwareDecryptedBytesBackendRate { get; set; }    
         [JsonPropertyName("sslcursslinfospcbinusecount")]public string SslCurrentSslInfoSpcbInUseCount { get; set; }    
         [JsonPropertyName("sslcursslinfospcdinusecountrate")]public double? SslCurrentSslInfoSpcbInUseCountRate { get; set; }    
@@ -374,12 +374,12 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         [JsonPropertyName("sslcursessionsrate")]public double? SslCurrentSessionsRate { get; set; }    
         [JsonPropertyName("sslcurqsize")]public string SslCurrentQueueSize { get; set; }    
         [JsonPropertyName("sslcurqsizerate")]public double? SslCurrentQueueSizeRate { get; set; }    
-        [JsonPropertyName("sslcursslinfonscardinqcount")]public string SslCurrentSslInfoNsCardInqCount { get; set; }    
-        [JsonPropertyName("sslcursslinfonscardinqcountrate")]public double? SslCurrentSslInfoNsCardInqCountRate { get; set; }    
-        [JsonPropertyName("sslcursllinfocardinblkq")]public string SslCurrentSslInfoCardInBulkQ { get; set; }    
-        [JsonPropertyName("sslcursslinfocardinblkqrate")]public double? SslCurrentSslInfoCardInBulkQRate { get; set; }    
-        [JsonPropertyName("sslcursslinfocardinkeyq")]public string SslCurrentSslInfoCardInKeyQ { get; set; }    
-        [JsonPropertyName("sslcursslinfocardinkeyqrate")]public double? SslCurrentSslInfoCardInKeyQRate { get; set; }    
+        [JsonPropertyName("sslcursslinfonscardinqcount")]public string SslCurrentSslInfoNsCardInQueueCount { get; set; }    
+        [JsonPropertyName("sslcursslinfonscardinqcountrate")]public double? SslCurrentSslInfoNsCardInQueueCountRate { get; set; }    
+        [JsonPropertyName("sslcursllinfocardinblkq")]public string SslCurrentSslInfoCardInBulkQueue { get; set; }    
+        [JsonPropertyName("sslcursslinfocardinblkqrate")]public double? SslCurrentSslInfoCardInBulkQueueRate { get; set; }    
+        [JsonPropertyName("sslcursslinfocardinkeyq")]public string SslCurrentSslInfoCardInKeyQueue { get; set; }    
+        [JsonPropertyName("sslcursslinfocardinkeyqrate")]public double? SslCurrentSslInfoCardInKeyQueueRate { get; set; }    
         [JsonPropertyName("sslbemaxmultiplexedsessions")]public string SslBackendMaxMultiplexedSessions { get; set; }    
         [JsonPropertyName("sslbemaxmultiplexedsessionsrate")]public double? SslBackendMaxMultiplexedSessionsRate { get; set; }    
         [JsonPropertyName("ssltot128bitideaciphers")]public string SslTotal128BitIdeaCiphers { get; set; }    

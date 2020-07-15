@@ -49,7 +49,7 @@ namespace CoreLayer.Citrix.Adc.NitroDataTests.Api.Statistics.Rewrite.RewritePoli
                 new RewritePolicyLabelStats()
                 {
                     LabelName = "Test",
-                    PiPolicyLabelHitsRate = 5
+                    PolicyLabelHitsRate = 5
                 }, 
                 new Dictionary<string, string>
                 {
