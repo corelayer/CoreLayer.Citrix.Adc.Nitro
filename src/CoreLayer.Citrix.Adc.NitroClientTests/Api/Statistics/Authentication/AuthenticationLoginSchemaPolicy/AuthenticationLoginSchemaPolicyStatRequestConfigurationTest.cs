@@ -3,7 +3,7 @@ using System.Collections;
 using CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Authentication.AuthenticationLoginSchemaPolicy;
 using Xunit;
 
-namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Statistics.AuthenticationLoginSchemaPolicy.AuthenticationLoginSchemaPolicy
+namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Statistics.Authentication.AuthenticationLoginSchemaPolicy
 {
     public class AuthenticationLoginSchemaPolicyStatRequestConfigurationTest
     {
