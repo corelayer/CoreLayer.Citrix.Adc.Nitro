@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.LoadBalancing.Lbvserve
     public class LbvserverStatResponse : NitroResponse
     {
         [JsonPropertyName("lbvserver")]
-        public LbvserverStats[] LbvserversStats { get; set; }
+        public LbvserverStats LbvserversStats { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Vpn.Vpn
 {
     public class VpnStatResponse : NitroResponse
     {
-        [JsonPropertyName("vpn")]public VpnStats[] VpnStatistics { get; set; }
+        [JsonPropertyName("vpn")]public VpnStats VpnStatistics { get; set; }
             
     }
 }

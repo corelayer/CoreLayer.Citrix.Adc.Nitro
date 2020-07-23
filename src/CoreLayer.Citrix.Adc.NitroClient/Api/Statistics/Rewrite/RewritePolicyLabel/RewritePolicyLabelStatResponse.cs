@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Rewrite.RewritePolicyL
     public class RewritePolicyLabelStatResponse : NitroResponse
     {
         [JsonPropertyName("rewritepolicylabel")]
-        public RewritePolicyLabelStats[] RewritePolicyLabelStatistics { get; set; }
+        public RewritePolicyLabelStats RewritePolicyLabelStatistics { get; set; }
     }
 }

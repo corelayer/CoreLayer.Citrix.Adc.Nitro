@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.ContentSwitching.Csvse
     public class CsvserverStatResponse : NitroResponse
     {
         [JsonPropertyName("csvserver")]
-        public CsvserverStats[] CsvserversStats { get; set; }
+        public CsvserverStats CsvserversStats { get; set; }
     }
 }

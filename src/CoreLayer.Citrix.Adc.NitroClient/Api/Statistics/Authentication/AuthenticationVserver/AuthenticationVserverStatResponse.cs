@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Authentication.Authent
 {
     public class AuthenticationVserverStatResponse : NitroResponse
     {
-        [JsonPropertyName("authenticationvserver")]public AuthenticationVserverStats[] AuthenticationVserverStatistics
+        [JsonPropertyName("authenticationvserver")]public AuthenticationVserverStats AuthenticationVserverStatistics
         {
             get;
             set;

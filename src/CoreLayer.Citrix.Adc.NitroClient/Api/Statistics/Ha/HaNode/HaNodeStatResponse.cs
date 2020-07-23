@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Ha.HaNode
     public class HaNodeStatResponse : NitroResponse
     {
         [JsonPropertyName("hanode")]
-        public HaNodeStats[] HaNodeStatistics { get; set; }
+        public HaNodeStats HaNodeStatistics { get; set; }
     }
 }

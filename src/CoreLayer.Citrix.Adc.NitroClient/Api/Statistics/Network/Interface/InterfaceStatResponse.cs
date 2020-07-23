@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Network.Interface
     public class InterfaceStatResponse : NitroResponse
     {
         [JsonPropertyName("interface")]
-        public InterfaceStats[] InterfaceStatistics { get; set; }
+        public InterfaceStats InterfaceStatistics { get; set; }
     }
 }

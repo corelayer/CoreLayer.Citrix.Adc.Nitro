@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Ssl.Ssl
     public class SslStatResponse : NitroResponse
     {
         [JsonPropertyName("ssl")]
-        public SslStats[] SslStatistics { get; set; }
+        public SslStats SslStatistics { get; set; }
     }
 }
