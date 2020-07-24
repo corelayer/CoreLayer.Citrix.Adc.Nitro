@@ -5,6 +5,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Dns.DnsPolicyLabel
 {
     public class DnsPolicyLabelStatResponse : NitroResponse
     {
-        [JsonPropertyName("dnspolicylabel")]public DnsPolicyLabelStats DnsPolicyLabelStatistics { get; set; }
+        [JsonPropertyName("dnspolicylabel")]public DnsPolicyLabelStats[] DnsPolicyLabelStatistics { get; set; }
     }
 }

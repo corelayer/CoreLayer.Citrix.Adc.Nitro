@@ -5,7 +5,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Authentication.Authent
 {
     public class AuthenticationPolicyLabelStatResponse : NitroResponse
     {
-        [JsonPropertyName("authenticationpolicylabel")]public AuthenticationPolicyLabelStats AuthenticationPolicyLabelStatistics
+        [JsonPropertyName("authenticationpolicylabel")]public AuthenticationPolicyLabelStats[] AuthenticationPolicyLabelStatistics
         {
             get;
             set;

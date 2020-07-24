@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Network.Vlan
     public class VlanStatResponse : NitroResponse
     {
         [JsonPropertyName("vlan")]
-        public VlanStats VlanStatistics { get; set; }
+        public VlanStats[] VlanStatistics { get; set; }
     }
 }

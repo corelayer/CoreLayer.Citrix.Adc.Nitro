@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Responder.ResponderPol
     public class ResponderPolicyLabelStatResponse : NitroResponse
     {
         [JsonPropertyName("responderpolicylabel")]
-        public ResponderPolicyLabelStats ResponderPolicyLabelStatistics { get; set; }
+        public ResponderPolicyLabelStats[] ResponderPolicyLabelStatistics { get; set; }
     }
 }

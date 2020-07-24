@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Basic.ServicegroupMemb
     public class ServicegroupMemberStatResponse : NitroResponse
     {
         [JsonPropertyName("servicegroupmember")]
-        public ServicegroupMemberStatistics ServicegroupMemberStatistics { get; set; }
+        public ServicegroupMemberStatistics[] ServicegroupMemberStatistics { get; set; }
     }
 }

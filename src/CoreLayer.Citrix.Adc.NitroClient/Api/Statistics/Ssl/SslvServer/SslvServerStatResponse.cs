@@ -6,6 +6,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Ssl.SslvServer
     public class SslvServerStatResponse : NitroResponse
     {
         [JsonPropertyName("sslvserver")]
-        public SslvServerStats SslvServerStatistics { get; set; }
+        public SslvServerStats[] SslvServerStatistics { get; set; }
     }
 }
