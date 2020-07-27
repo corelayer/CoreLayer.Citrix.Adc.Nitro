@@ -25,7 +25,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Statistics.Bot.BotPolicyLabe
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-             yield return new object[]
+            yield return new object[]
             {
                 new BotPolicyLabelStatRequestConfiguration(),
                 new Dictionary<string, string>
