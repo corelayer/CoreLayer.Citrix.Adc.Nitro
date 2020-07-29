@@ -5,6 +5,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Gslb.GslbServiceGroupM
 {
     public class GslbServiceGroupMemberStatResponse : NitroResponse
     {
-        [JsonPropertyName("gslbservicegroupmember")]public GslbServiceGroupMemberStats GslbServiceGroupMemberStatistics { get; set; }
+        [JsonPropertyName("gslbservicegroupmember")]public GslbServiceGroupMemberStats[] GslbServiceGroupMemberStatistics { get; set; }
     }
 }
