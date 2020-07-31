@@ -6,7 +6,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ha
     {
         [JsonPropertyName("hacurstatus")]public string HighAvailabilityCurrentStatus { get; set; }
         [JsonPropertyName("hacurstate")]public string HighAvailabilityCurrentState { get; set; }
-        [JsonPropertyName("hacurmasterstate")]public string HighAvailabilityCurrentMasterState { get; set; }
+        [JsonPropertyName("hacurmasterstate")]public string HighAvailabilityCurrentPrimaryState { get; set; }
         [JsonPropertyName("transtime")]public string LastTransitionTime { get; set; }
         [JsonPropertyName("hatotpktrx")]public string HighAvailabilityTotalPacketReceive { get; set; }
         [JsonPropertyName("hapktrxrate")]public double? HighAvailabilityPacketReceiveRate { get; set; }

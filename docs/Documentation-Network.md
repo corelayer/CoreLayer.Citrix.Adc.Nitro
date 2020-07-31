@@ -7,10 +7,10 @@ Commands: add, get, remove, update
 + Add:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        Name|string|name of the IpSet
-        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        Name|name|string|name of the IpSet
+        TrafficDomain|td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
 
    * Creation of the command:  
 
@@ -42,10 +42,10 @@ Commands: add, get, remove, update
 
         The following properties van be found in each IpSetConfiguration found in the array "IpSets" inside of a IpSetGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        Name|string|name of the IpSet
-        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|name of the IpSet
+        TrafficDomain|td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
 
     * Creation of the Command:  
 
@@ -112,10 +112,10 @@ Commands: add, get, remove, update
 + Update:
     * Properties:
 
-        Property|ValueType|Description
+        Property|Citrix doc name|ValueType|Description
         ---|---|---
-        Name|string|name of the IpSet
-        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        Name|name|string|name of the IpSet
+        TrafficDomain|td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
 
     * Creation of the Command
 
@@ -154,13 +154,13 @@ Commands: add, get, remove, update
 + Add:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        Name|string|name of the NetProfile
-        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
-        SrcIp|string|IP address or the name of an IP set.
-        SrcIpPersitency|string|When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server. Default value: DISABLED. Possible values = ENABLED, DISABLED
-        OverrideLsn|string|USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. . Default value: DISABLED Possible values = ENABLED, DISABLED
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        Name|name|string|name of the NetProfile
+        TrafficDomain|td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        SourceIp|srcip|string|IP address or the name of an IP set.
+        SourceIpPersistency|srcippersistency|string|When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server. Default value: DISABLED. Possible values = ENABLED, DISABLED
+        OverrideLsn|overridelsn|string|USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. . Default value: DISABLED Possible values = ENABLED, DISABLED
 
    * Creation of the command:  
 
@@ -192,14 +192,19 @@ Commands: add, get, remove, update
 
         The following properties van be found in each IpSetConfiguration found in the array "IpSets" inside of a IpSetGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        Name|string|name of the NetProfile
-        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
-        SrcIp|string|IP address or the name of an IP set.
-        SrcIpPersitency|string|When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server. Default value: DISABLED. Possible values = ENABLED, DISABLED
-        OverrideLsn|string|USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. . Default value: DISABLED Possible values = ENABLED, DISABLED
-        Count|double|Count Parameter.
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|name of the NetProfile
+        TrafficDomain|td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        SourceIp|srcip|string|IP address or the name of an IP set.
+        SourceIpPersistency|srcippersistency|string|When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server. Default value: DISABLED. Possible values = ENABLED, DISABLED
+        OverrideLsn|overridelsn|string|USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. . Default value: DISABLED Possible values = ENABLED, DISABLED
+        Netmask|netmask|string|-
+        RewriteIp|rewriteip|string|-
+        Mbf|mbf|string|Response will be sent using learnt info if enabled. When creating a netprofile, if you do not set this parameter, the netprofile inherits the global MBF setting (available in the enable ns mode and disable ns mode CLI commands, or in the System > Settings > Configure modes > Configure Modes dialog box). However, you can override this setting after you create the netprofile. Possible values = ENABLED, DISABLED
+        ProtocolProxy|protocolproxy|string|-
+        ProtocolProxyTxversion|protocolproxytxversion|string|-
+        Count|__count|double|Count Parameter.
 
     * Creation of the Command:  
 
@@ -263,16 +268,16 @@ Commands: add, get, remove, update
         - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
         - Severity: the severity of the error, "NONE" if successful  
 
-+ Update:
-    * Properties:
++ Update:  -NYI
+    * Properties: 
 
-        Property|ValueType|Description
-        ---|---|---
-        Name|string|name of the NetProfile
-        Td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
-        SrcIp|string|IP address or the name of an IP set.
-        SrcIpPersitency|string|When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server. Default value: DISABLED. Possible values = ENABLED, DISABLED
-        OverrideLsn|string|USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. . Default value: DISABLED Possible values = ENABLED, DISABLED
+        Property|Citrix doc name|ValueType|Description
+        ---|---|---|---
+        Name|name|string|name of the NetProfile
+        TrafficDomain|td|double|Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.
+        SourceIp|srcip|string|IP address or the name of an IP set.
+        SourceIpPersistency|srcippersistency|string|When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server. Default value: DISABLED. Possible values = ENABLED, DISABLED
+        OverrideLsn|overridelsn|string|USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. . Default value: DISABLED Possible values = ENABLED, DISABLED
 
 
     * Creation of the Command

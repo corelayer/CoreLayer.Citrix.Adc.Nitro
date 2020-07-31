@@ -1,0 +1,88 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Bot.BotPolicy;
+using Xunit;
+
+
+namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Statistics.Bot.BotPolicy
+{
+    public class BotPolicyStatRequestConfigurationTest
+    {
+        [Theory]
+        [ClassData(typeof(BotPolicyStatRequestConfigurationValidationTestData))]
+        public void BotPolicyStatRequestConfigurationValidationTest(BotPolicyStatRequestConfiguration configuration,
+            Dictionary<string, string> expected)
+        {
+            Assert.Equal(expected["ResourcePath"], configuration.ResourcePath);
+            Assert.Equal(expected["RequestUri"], configuration.GenerateHttpRequestMessageAsync().Result.RequestUri.ToString());
+            Assert.Equal(expected["Method"], configuration.Method.ToString());
+            Assert.Equal(expected["Method"], configuration.GenerateHttpRequestMessageAsync().Result.Method.ToString());
+            Assert.Equal(expected["Options"], configuration.Options.ToString());
+        }
+    }
+
+    public class BotPolicyStatRequestConfigurationValidationTestData : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
+        {
+            yield return new object[]
+            {
+                new BotPolicyStatRequestConfiguration(),
+                new Dictionary<string, string>
+                {
+                    {"ResourcePath", "/nitro/v1/stat/botpolicy"},
+                    {"Method", "GET"},
+                    {"Options", ""},
+                    {"RequestUri", "/nitro/v1/stat/botpolicy"}
+                } 
+            };
+            yield return new object[]
+            {
+                new BotPolicyStatRequestConfiguration
+                {
+                    Options = new BotPolicyStatRequestOptions
+                    {
+                        ResourceName = "resourceName",
+                        PropertyFilter = new List<string>
+                        {
+                            "wrongFilter"
+                        }
+                    }
+                }, 
+                new Dictionary<string, string>
+                {
+                    {"ResourcePath", "/nitro/v1/stat/botpolicy"},
+                    {"Method", "GET"},
+                    {"Options", "/resourceName?attrs=wrongFilter"},
+                    {"RequestUri", "/nitro/v1/stat/botpolicy/resourceName?attrs=wrongFilter"}
+                } 
+            };
+            yield return new object[]
+            {
+                new BotPolicyStatRequestConfiguration
+                {
+                    Options = new BotPolicyStatRequestOptions
+                    {
+                        ResourceName = "resourceName",
+                        PropertyFilter = new List<string>
+                        {
+                            "Name"
+                        }
+                    }
+                }, 
+                new Dictionary<string, string>
+                {
+                    {"ResourcePath", "/nitro/v1/stat/botpolicy"},
+                    {"Method", "GET"},
+                    {"Options", "/resourceName?attrs=Name"},
+                    {"RequestUri", "/nitro/v1/stat/botpolicy/resourceName?attrs=Name"}
+                } 
+            };
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+}

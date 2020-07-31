@@ -4,13 +4,13 @@
 
 Commands: add, get, remove, update
 
-+ Add:  
++ Add:  - NYI
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        Name|string|Name of the PolicyStringMap.
-        Comment|string|Extra information.
+        Property   |citrix doc name| DataType |  Description 
+        ---|---|---|---
+        Name|name|string|Name of the PolicyStringMap.
+        Comment|comment|string|Extra information.
 
    * Creation of the command:  
 
@@ -42,10 +42,10 @@ Commands: add, get, remove, update
 
         The following properties van be found in each PolicyStringMapConfiguration found in the array "PolicyStringMaps" inside of a PolicyStringMapGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        Name|string|Name of the policy
-        Comment|string|Extra information.
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|Name of the policy
+        Comment|comment|string|Extra information.
 
     * Creation of the Command:  
 
@@ -113,10 +113,10 @@ Commands: add, get, remove, update
 + Update:
     * Properties:
 
-        Property|ValueType|Description
-        ---|---|---
-        Name|string|Name of the PolicyStringMap.
-        Comment|string|Extra information.
+        Property|citrix doc name|ValueType|Description
+        ---|---|---|---
+        Name|name|string|Name of the PolicyStringMap.
+        Comment|comment|string|Extra information.
 
     * Creation of the Command
 
@@ -202,12 +202,12 @@ Commands: add, get, remove, update
 + Add:  
     * Properties:
 
-        Property   | DataType |  Description 
-        ---|---|---
-        Name|string|Name of the PolicyStringMap.
-        Key|string|Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes '\xNN'. For example, the UTF-8 character 'ü' can be encoded as '\xC3\xBC'. 
-        Value|string|Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.
-        Comment|string|Extra information.
+        Property   |Citrix doc name| DataType |  Description 
+        ---|---|---|---
+        Name|name|string|Name of the PolicyStringMap.
+        Key|key|string|Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes '\xNN'. For example, the UTF-8 character 'ü' can be encoded as '\xC3\xBC'. 
+        Value|value|string|Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.
+        Comment|comment|string|Extra information.
 
    * Creation of the command:  
 
@@ -239,12 +239,12 @@ Commands: add, get, remove, update
 
         The following properties van be found in each PolicyStringMapPatternBindingConfiguration found in the array "PolicyStringMapPatternBindings" inside of a PolicyStringMapPatternBindingGetResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        Name|string|Name of the PolicyStringMap.
-        Key|string|Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes '\xNN'. For example, the UTF-8 character 'ü' can be encoded as '\xC3\xBC'. 
-        Value|string|Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.
-        Comment|string|Extra information.
+        Property|citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|Name of the PolicyStringMap.
+        Key|key|string|Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes '\xNN'. For example, the UTF-8 character 'ü' can be encoded as '\xC3\xBC'. 
+        Value|value|string|Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.
+        Comment|comment|string|Extra information.
 
     * Creation of the Command:  
 
@@ -313,12 +313,12 @@ Commands: add, get, remove, update
 + Update:
     * Properties:
 
-        Property|ValueType|Description
-        ---|---|---
-        Name|string|Name of the PolicyStringMap.
-        Key|string|Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes '\xNN'. For example, the UTF-8 character 'ü' can be encoded as '\xC3\xBC'. 
-        Value|string|Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.
-        Comment|string|Extra information.
+        Property|Citrix doc name|ValueType|Description
+        ---|---|---|---
+        Name|name|string|Name of the PolicyStringMap.
+        Key|key|string|Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes '\xNN'. For example, the UTF-8 character 'ü' can be encoded as '\xC3\xBC'. 
+        Value|value|string|Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.
+        Comment|comment|string|Extra information.
 
     * Creation of the Command
 

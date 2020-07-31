@@ -47,7 +47,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.LoadBalancing
         [JsonPropertyName("curmptcpsessions")]public string CurrentMultiPathTcpSessions { get; set; }
         [JsonPropertyName("cursubflowconn")]public string CurrentMultiPathTcpSubFlowConnections { get; set; }
         [JsonPropertyName("totcltttlbtransactions")]public string TotalClientTimeToLastByteTransactions { get; set; }
-        [JsonPropertyName("cltttlbtransactionsrate")]public double? TotalClientTimeToLastByteTransactionsRate { get; set; }
+        [JsonPropertyName("cltttlbtransactionsrate")]public double? ClientTimeToLastByteTransactionsRate { get; set; }
         [JsonPropertyName("toleratingttlbtransactions")]public string ToleratingTimeToLastByteTransactions { get; set; }
         [JsonPropertyName("toleratingttlbtransactionsrate")]public double? ToleratingTimeToLastByteTransactionsRate { get; set; }
         [JsonPropertyName("frustratingttlbtransactions")]public string FrustratingTimeToLastByteTransactions { get; set; }

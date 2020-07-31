@@ -9,9 +9,9 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.System
         public SystemUserSystemGroupBindingConfiguration[] SystemUserSystemGroupBinding { get; set; }
         
         [JsonPropertyName("systemuser_nspartition_binding")]
-        public SystemUserNsPartitionBindingConfigurationConfiguration[] SystemUserNsPartition { get; set; }
+        public SystemUserNsPartitionBindingConfigurationConfiguration[] SystemUserNsPartitionBinding { get; set; }
         
         [JsonPropertyName("systemuser_systemcmdpolicy_binding")]
-        public SystemUserSystemCmdPolicyBindingConfiguration[] SystemUserSystemCmdPolicy { get; set; }
+        public SystemUserSystemCmdPolicyBindingConfiguration[] SystemUserSystemCmdPolicyBinding { get; set; }
     }
 }

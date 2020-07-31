@@ -11,7 +11,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ns
         [JsonPropertyName("delcmpratio")]public double? CompressionRatio { get; set; }
         [JsonPropertyName("rescpuusage")]public string AverageCpuUsage { get; set; }
         public string CpuUsage { get; set; }
-        [JsonPropertyName("resmemusage")]public string MemUsagePercent { get; set; }
+        [JsonPropertyName("resmemusage")]public string ResponseMemoryUsagePercent { get; set; }
         [JsonPropertyName("comptotaldatacompressionratio")]public double? CompressionTotalDataCompressionRatio { get; set; }
         [JsonPropertyName("compratio")]public double? CompressionRatioServerToClient { get; set; }
         public string CacheUtilizedMemoryKb { get; set; }
@@ -33,10 +33,10 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ns
         [JsonPropertyName("hacurstate")]public string HighAvailabilityCurrentState { get; set; }
         [JsonPropertyName("hacurmasterstate")]public string HighAvailabilityCurrentMasterState { get; set; }
         public string SslCards { get; set; }
-        [JsonPropertyName("disk0perusage")]public double? Disk0PercentUsage { get; set; }
-        [JsonPropertyName("disk1perusage")]public double? Disk1PercentUsage { get; set; }
-        [JsonPropertyName("disk0avail")]public double? Disk0Available { get; set; }
-        [JsonPropertyName("disk1avail")]public double? Disk1Available { get; set; }
+        [JsonPropertyName("disk0perusage")]public double? DiskFlashPercentUsage { get; set; }
+        [JsonPropertyName("disk1perusage")]public double? DiskVarPercentUsage { get; set; }
+        [JsonPropertyName("disk0avail")]public double? DiskFlashAvailable { get; set; }
+        [JsonPropertyName("disk1avail")]public double? DiskVarAvailable { get; set; }
         [JsonPropertyName("totrxmbits")]public string TotalReceiveMbits { get; set; }
         [JsonPropertyName("rxmbitsrate")]public double? ReceiveMbitsRate { get; set; }
         [JsonPropertyName("tottxmbits")]public string TotalTransmitMbits { get; set; }

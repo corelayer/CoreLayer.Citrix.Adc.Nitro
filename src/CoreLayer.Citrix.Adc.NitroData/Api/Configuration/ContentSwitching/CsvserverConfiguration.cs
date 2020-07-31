@@ -57,16 +57,16 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.ContentSwitching
         public string MySqlServerCapabilities { get; set; }
         [JsonPropertyName("appflowlog")]public string AppFlowLogging { get; set; }
         public string NetProfile { get; set; }
-        [JsonPropertyName("icmpvsrresponse")]public string IcmpVirtualServerResponse { get; set; } //todo
+        [JsonPropertyName("icmpvsrresponse")]public string IcmpVirtualServerResponse { get; set; }
         [JsonPropertyName("rhistate")]public string RouteHostInjectionState { get; set; }
         [JsonPropertyName("authnprofile")]public string AuthenticationProfile { get; set; }
         public string DnsProfileName { get; set; }
         public string DomainName { get; set; }
-        [JsonPropertyName("ttl")]public double? Ttl { get; set; } //todo
+        [JsonPropertyName("ttl")]public double? TimeToLive { get; set; }
         public string BackupIp { get; set; }
         public string CookieDomain { get; set; }
         public double? CookieTimeout { get; set; }
-        public double? SiteDomainTtl { get; set; } //ttl
+        [JsonPropertyName("sitedomainttl")]public double? SiteDomainTimeToLive { get; set; }
         public string NewName { get; set; }
         public string Ip { get; set; }
         public string Value { get; set; }

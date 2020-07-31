@@ -6,7 +6,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
     {
         public string Name { get; set; }
         public string ServiceType { get; set; }
-        [JsonPropertyName("ipv46")]public string IpVersion4Or6 { get; set; }
+        [JsonPropertyName("ipv46")]public string IpVersion4Or6Value { get; set; }
         public string IpPattern { get; set; }
         public string IpMask { get; set; }
         public int? Port { get; set; }
@@ -18,7 +18,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         [JsonPropertyName("lbmethod")]public string LoadBalancingMethod { get; set; }
         public string HashLength { get; set; }
         public string NetMask { get; set; }
-        public double? V6NetMaskLen { get; set; }
+        [JsonPropertyName("v6netmasklen")]public double? V6NetMaskLength { get; set; }
         [JsonPropertyName("backuplbmethod")]public string BackupLoadBalancingMethod { get; set; }
         public string CookieName { get; set; }
         public string Rule { get; set; }
@@ -38,7 +38,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public string TrofsPersistence { get; set; }
         public string State { get; set; }
         [JsonPropertyName("connfailover")]public string ConnectionFailover { get; set; }
-        [JsonPropertyName("redirurl")]public string RedirectionUrl { get; set; }
+        [JsonPropertyName("redirurl")]public string RedirectUrl { get; set; }
         public string Cacheable { get; set; }
         [JsonPropertyName("clttimeout")]public string ClientTimeout{ get; set; }
         [JsonPropertyName("somethod")]public string SpillOverMethod { get; set; }
@@ -65,7 +65,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public string HttpProfileName { get; set; }
         public string DbProfileName { get; set; }
         public string Comment { get; set; }
-        [JsonPropertyName("l2conn")]public string L2ConnectionParameters { get; set; }
+        [JsonPropertyName("l2conn")]public string UseL2ConnectionParameters { get; set; }
         public string OracleServerVersion { get; set; }
         public string MsSqlServerVersion { get; set; }
         public string MySqlProtocolVersion { get; set; }
@@ -81,7 +81,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.LoadBalancing
         public string NewServiceRequestIncrementInterval { get; set; }
         public string MinAutoScaleMembers { get; set; }
         public string MaxAutoScaleMembers { get; set; }
-        [JsonPropertyName("persistavpno")]public string[] PersistenceAvpNumbers { get; set; }
+        [JsonPropertyName("persistavpno")]public string[] PersistAvpNumber { get; set; }
         public string SkipPersistency { get; set; }
         [JsonPropertyName("td")]public string TrafficDomain { get; set; }
         [JsonPropertyName("authnprofile")]public string AuthenticationProfile { get; set; }

@@ -7,62 +7,62 @@
 
         The following properties van be found in each CsvserverStatistics found in the array "CsvserverStats" inside of a CsvserverStatResponse.
 
-        Property|DataType|Description
-        ---|---|---
-        Name|string|Name of the virtual server. If no name is provided, statistical data of all configured virtual servers is displayed. 
-        AverageClientTimeToLastByte|string|Average TTLB between the client and the server. TTLB is the time interval between sending the request packet to a service and receiving the ACK for response from client. 
-        ClientResponseTimeApdexIndex|double|Vserver APDEX index based on client response times. 
-        VirtualServerSurgeCount|string|Number of requests waiting on this vserver. 
-        EstablishedConn|string|Number of client connections in ESTABLISHED state. 
-        InactiveServices|string|number of INACTIVE services bound to a vserver 
-        VirtualServerHealth|string|Health of the vserver. This gives percentage of UP services bound to this vserver. 
-        PrimaryIpAddress|string|IP address of the vserver 
-        PrimaryPort|int|The port on which the service is running. 
-        Type|string|Protocol associated with the vserver 
-        State|string|Current state of the server. There are seven possible values: UP(7), DOWN(1), UNKNOWN(2), BUSY(3), OFS(Out of Service)(4), TROFS(Transition Out of Service)(5), TROFS_DOWN(Down When going Out of Service)(8) 
-        ActiveServices|string|number of ACTIVE services bound to a vserver 
-        TotalHits|string|Total vserver hits 
-        HitsRate|double|Rate (/s) counter for tothits 
-        TotalRequest|string|Total number of requests received on this service or virtual server. (This applies to HTTP/SSL services and servers.) 
-        RequestsRate|double|Rate (/s) counter for totalrequests 
-        TotalResponses|string|Number of responses received on this service or virtual server. (This applies to HTTP/SSL services and servers.) 
-        ResponsesRate|double|Rate (/s) counter for totalresponses 
-        TotalRequestBytes|string|Total number of request bytes received on this service or virtual server. 
-        RequestBytesRate|double|Rate (/s) counter for totalrequestbytes 
-        TotalResponseBytes|string|Number of response bytes received by this service or virtual server. 
-        ResponseBytesRate|double|Rate (/s) counter for totalresponsebytes 
-        TotalPacketsReceived|string|Total number of packets received by this service or virtual server. 
-        PacketsReceivedRate|double|Rate (/s) counter for totalpktsrecvd 
-        TotalPacketsSent|string|Total number of packets sent. 
-        PacketsSentRate|double|Rate (/s) counter for totalpktssent 
-        CurrentClientConnections|string|Number of current client connections. 
-        CurrentServerConnections|string|Number of current connections to the actual servers behind the virtual server.
-        CurrentPersistenceSessions|string|current vserver owned persistence sessions 
-        SurgeCount|string|Number of requests in the surge queue. 
-        ServicesSurgeCount|string|Total number of requests in the surge queues of all the services bound to this LB-vserver. 
-        SpillOverThreshold|string|Spill Over Threshold set on the VServer. 
-        TotalSpillOvers|string|Number of times vserver experienced spill over. 
-        LabelledConnections|string|Number of Labeled connection on this vserver 
-        PushLabels|string|Number of labels for this push vserver. 
-        DeferredRequests|string|Number of deferred request on this vserver 
-        DeferredRequestRate|double|Rate (/s) counter for deferredreq 
-        InvalidRequestResponse|string|Number invalid requests/responses on this vserver 
-        InvalidRequestResponseDropped|string|Number invalid requests/responses dropped on this vserver 
-        TotalVirtualserverDownBackupHits|string|Number of times traffic was diverted to backup vserver since primary vserver was DOWN. 
-        CurrentMultiPathTcpSessions|string|Current Multipath TCP sessions 
-        CurrentMultiPathTcpSubFlowConnections|string|Current Multipath TCP subflows 
-        TotalClientTimeToLastByteTransactions|string|Total transactions where client TTLB is calculated. 
-        TotalClientTimeToLastByteTransactionsRate|double|-
-        ToleratingTtlbTransactions|string|Tolerable transactions based on APDEX threshold (>T ;; <4T). 
-        ToleratingTtlbTransactionsRate|double|-
-        FrustratingTtlbTransactions|string|Frustrating transactions based on APDEX threshold (>4T). 
-        FrustratingTtlbTransactionsRate|double|-
-        TotalConnReassemblyQueue75|string|Total no of connections with 75% TCP reassembly queue 
-        TotalConnReassemblyQueueFlush|string|Total no of connections incurred TCP reassembly queue flush 
-        TotalSvrBusyerr|string|Total no of server busy error 
-        SvrBusyerrRate|double|Rate (/s) counter for totalsvrbusyerr 
-        HttpMaxHdrszPkts|string|Number of http max header size packet parsing failures 
-        TcpMaxOooPkts|string|No of times max out of order packets reached 
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|Name of the virtual server. If no name is provided, statistical data of all configured virtual servers is displayed. 
+        AverageClientTimeToLastByte|avgcltttlb|string|Average TTLB between the client and the server. TTLB is the time interval between sending the request packet to a service and receiving the ACK for response from client. 
+        ClientResponseTimeApdexIndex|cltresponsetimeapdex|double|Vserver APDEX index based on client response times. 
+        VirtualServerSurgeCount|vsvrsurgecount|string|Number of requests waiting on this vserver. 
+        EstablishedConnections|establishedconn|string|Number of client connections in ESTABLISHED state. 
+        InactiveServices|inactsvcs|string|number of INACTIVE services bound to a vserver 
+        VirtualServerHealth|vslbhealth|string|Health of the vserver. This gives percentage of UP services bound to this vserver. 
+        PrimaryIpAddress|primaryipaddress|string|IP address of the vserver 
+        PrimaryPort|primaryport|int|The port on which the service is running. 
+        Type|type|string|Protocol associated with the vserver 
+        State|state|string|Current state of the server. There are seven possible values: UP(7), DOWN(1), UNKNOWN(2), BUSY(3), OFS(Out of Service)(4), TROFS(Transition Out of Service)(5), TROFS_DOWN(Down When going Out of Service)(8) 
+        ActiveServices|actsvcs|string|number of ACTIVE services bound to a vserver 
+        TotalHits|tothits|string|Total vserver hits 
+        HitsRate|hitsrate|double|Rate (/s) counter for tothits 
+        TotalRequest|totalrequests|string|Total number of requests received on this service or virtual server. (This applies to HTTP/SSL services and servers.) 
+        RequestsRate|requestsrate|double|Rate (/s) counter for totalrequests 
+        TotalResponses|totalresponses|string|Number of responses received on this service or virtual server. (This applies to HTTP/SSL services and servers.) 
+        ResponsesRate|responsesrate|double|Rate (/s) counter for totalresponses 
+        TotalRequestBytes|totalrequestbytes|string|Total number of request bytes received on this service or virtual server. 
+        RequestBytesRate|requestbytesrate|double|Rate (/s) counter for totalrequestbytes 
+        TotalResponseBytes|totalresponsebytes|string|Number of response bytes received by this service or virtual server. 
+        ResponseBytesRate|responsebytesrate|double|Rate (/s) counter for totalresponsebytes 
+        TotalPacketsReceived|totalpktsrecvd|string|Total number of packets received by this service or virtual server. 
+        PacketsReceivedRate|pktsrecvdrate|double|Rate (/s) counter for totalpktsrecvd 
+        TotalPacketsSent|totalpktssent|string|Total number of packets sent. 
+        PacketsSentRate|pktssentrate|double|Rate (/s) counter for totalpktssent 
+        CurrentClientConnections|curclntconnections|string|Number of current client connections. 
+        CurrentServerConnections|cursrvrconnections|string|Number of current connections to the actual servers behind the virtual server.
+        CurrentPersistenceSessions|curpersistencesessions|string|current vserver owned persistence sessions 
+        SurgeCount|surgecount|string|Number of requests in the surge queue. 
+        ServicesSurgeCount|svcsurgecount|string|Total number of requests in the surge queues of all the services bound to this LB-vserver. 
+        SpillOverThreshold|sothreshold|string|Spill Over Threshold set on the VServer. 
+        TotalSpillOvers|totspillovers|string|Number of times vserver experienced spill over. 
+        LabelledConnections|labelledconn|string|Number of Labeled connection on this vserver 
+        PushLabels|pushlabel|string|Number of labels for this push vserver. 
+        DeferredRequests|deferredreq|string|Number of deferred request on this vserver 
+        DeferredRequestRate|deferredreqrate|double|Rate (/s) counter for deferredreq 
+        InvalidRequestResponse|invalidarequestresponse|string|Number invalid requests/responses on this vserver 
+        InvalidRequestResponseDropped|invalidrequestresponsedropped|string|Number invalid requests/responses dropped on this vserver 
+        TotalVirtualserverDownBackupHits|totalvserverdownbackuphits|string|Number of times traffic was diverted to backup vserver since primary vserver was DOWN. 
+        CurrentMultiPathTcpSessions|curmptcpsessions|string|Current Multipath TCP sessions 
+        CurrentMultiPathTcpSubFlowConnections|cursubflowconn|string|Current Multipath TCP subflows 
+        TotalClientTimeToLastByteTransactions|totalcltttlbtransactions|string|Total transactions where client TTLB is calculated. 
+        ClientTimeToLastByteTransactionsRate|cltttlbtransactionsrate|double|-
+        ToleratingTimeToLastByteTransactions|toleratingttlbtransactions|string|Tolerable transactions based on APDEX threshold (>T ;; <4T). 
+        ToleratingTimeToLastByteTransactionsRate|toleratingttlbtransactionsrate|double|-
+        FrustratingTimeToLastByteTransactions|frustratingttlbtransactions|string|Frustrating transactions based on APDEX threshold (>4T). 
+        FrustratingTimeToLastByteTransactionsRate|frustringttlbtransactionsrate|double|-
+        TotalConnectionReassemblyQueue75|totalconnreassemblyqueue75|string|Total no of connections with 75% TCP reassembly queue 
+        TotalConnectionReassemblyQueueFlush|totalconnreassemblyqueueflush|string|Total no of connections incurred TCP reassembly queue flush 
+        TotalServerBusyError|totalsvrbusyerr|string|Total no of server busy error 
+        ServerBusyErrorRate|svrbusyerrrate|double|Rate (/s) counter for totalsvrbusyerr 
+        HttpMaxHeaderSizePackets|httpmaxhdrszpkts|string|Number of http max header size packet parsing failures 
+        TcpMaxOutOfOrderPackets|tcpmaxooopkts|string|No of times max out of order packets reached 
 
 
     * Creation of the Command:  

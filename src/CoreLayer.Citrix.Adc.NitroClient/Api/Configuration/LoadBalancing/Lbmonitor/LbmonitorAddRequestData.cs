@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmonitor
@@ -29,17 +30,17 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.Lbmon
 //        string RadApn { get; }
 //        string RadMsisdn { get; }
 //        string RadAccountSession { get; }
-        public int? Interval { get; set; } 
-        public string Units3 { get; set; }
-        public int? RespTimeout { get; set; } 
-        public string Units4 { get; set; }
-        public double? RespTimeoutThresh { get; set; }
+        public int? Interval { get; set; }
+        [JsonPropertyName("units3")] public string IntervalUnits { get; set; }
+        [JsonPropertyName("resptimeout")]public int? ResponseTimeout { get; set; } 
+        [JsonPropertyName("units4")]public string ResponseTimeoutUnits { get; set; }
+        [JsonPropertyName("resptimeoutthresh")]public double? ResponseTimeoutThreshold { get; set; }
         public int? Retries { get; set; } 
         public int? FailureRetries { get; set; } 
         public int? AlertRetries { get; set; } 
         public int? SuccessRetries { get; set; } 
         public int? Downtime { get; set; }
-        public string Units2 { get; set; }
+        [JsonPropertyName("units2")]public string DowntimeUnits { get; set; }
         public string State { get; set; } 
         public string Reverse { get; set; }
         public string Secure { get; set; }

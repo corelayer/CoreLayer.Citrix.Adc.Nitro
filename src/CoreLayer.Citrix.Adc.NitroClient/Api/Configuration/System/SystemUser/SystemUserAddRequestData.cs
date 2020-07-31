@@ -1,4 +1,5 @@
-﻿using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
+﻿using System.Text.Json.Serialization;
+using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
 
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.System.SystemUser
 {
@@ -6,7 +7,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.System.SystemUser
     {
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string ExternalAuth { get; set; }
+        [JsonPropertyName("externalauth")]public string ExternalAuthentication { get; set; }
         public string PromptString { get; set; }
         public double? Timeout { get; set; }
         public string Logging { get; set; }

@@ -11,7 +11,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ssl
         public string Type { get; set; }    
         public string State { get; set; }    
         [JsonPropertyName("actsvcs")]public string ActiveServices { get; set; }    
-        [JsonPropertyName("ssltotclientauthsucces")]public string SslTotalClientAuthenticationSuccess { get; set; }    
+        [JsonPropertyName("ssltotclientauthsuccess")]public string SslTotalClientAuthenticationSuccess { get; set; }    
         [JsonPropertyName("sslclientauthsuccessrate")]public double? SslClientAuthenticationSuccessRate { get; set; }    
         [JsonPropertyName("ssltotclientauthfailure")]public string SslTotalClientAuthenticationFailure { get; set; }    
         [JsonPropertyName("sslclientauthfailurerate")]public double? SslClientAuthenticationFailureRate { get; set; }    

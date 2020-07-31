@@ -42,7 +42,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.System.SystemS
                 new SystemSshKeyImportRequestConfiguration(new SystemSshKeyImportRequestDataRoot(new SystemSshKeyImportRequestData()
                 {
                     Name = "test",
-                    Src = "testSrc"
+                    Source = "testSrc"
                 })),
                 new Dictionary<string, string>
                 {

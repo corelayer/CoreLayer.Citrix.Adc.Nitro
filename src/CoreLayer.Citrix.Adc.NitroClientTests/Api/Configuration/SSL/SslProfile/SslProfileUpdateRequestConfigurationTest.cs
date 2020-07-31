@@ -41,7 +41,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.SSL.SslProfile
             {
                 new SslProfileUpdateRequestConfiguration(new SslProfileUpdateRequestDataRoot(new SslProfileUpdateRequestData("test")
                 {
-                    Ersa = "ENABLE"
+                    EphemeralRsa = "ENABLE"
                 })),
                 new Dictionary<string, string>
                 {

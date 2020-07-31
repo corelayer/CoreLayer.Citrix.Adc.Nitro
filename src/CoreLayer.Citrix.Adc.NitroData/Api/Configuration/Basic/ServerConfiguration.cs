@@ -23,7 +23,7 @@
         public string Graceful { get; set; }
         public string StateChangeTimeSec { get; set; }
         public string TicksSinceLastStateChange { get; set; }
-        public string IpV6Address { get; set; }
+        [JsonPropertyName("ipv6address")]public string SupportIpV6Address { get; set; }
         [JsonPropertyName("td")]public string TrafficDomain { get; set; }
         public string AutoScale { get; set; }
         [JsonPropertyName("usip")]public string UseSourceIp { get; set; }
@@ -34,10 +34,10 @@
         [JsonPropertyName("sc")]public string SureConnect { get; set; }
         [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
         [JsonPropertyName("svrcfgflags")]public string ServerCfgFlags { get; set; }  //todo
-        public string MaxReq { get; set; } //todo
+        [JsonPropertyName("maxreq")]public string MaxRequest { get; set; } 
         public string MaxBandWidth { get; set; }
-        public string Svcitmactsvcs { get; set; } //todo
-        public string Svcitmboundsvcs { get; set; } //todo
+        [JsonPropertyName("svcitmactsvcs")]public string ServiceItemActiveServices { get; set; } 
+        [JsonPropertyName("svcitmboundsvcs")]public string ServiceItemBoundServices { get; set; } 
         public string Weight { get; set; }
         public string QueryType { get; set; }
         [JsonPropertyName("__count")]public double? Count { get; set; }

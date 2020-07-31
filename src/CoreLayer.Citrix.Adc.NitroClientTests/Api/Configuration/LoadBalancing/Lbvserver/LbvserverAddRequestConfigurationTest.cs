@@ -36,7 +36,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.LoadBalancing.
                         },
                         new LbvserverAddHttpRequestData("test3")
                         {
-                            AppFlowLog = "ENABLED"
+                            AppFlowLogging = "ENABLED"
                         }
                     })
                 ), 
@@ -94,7 +94,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.LoadBalancing.
                         },
                         new LbvserverAddUdpRequestData("test4")
                         {
-                            LbMethod = "testMethod"
+                            LoadBalancingMethod = "testMethod"
                         }, 
                     })
                 ), 
