@@ -13,7 +13,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ns
         [JsonPropertyName("aclpktsallowedrate")]public double? AclPacketsAllowedRate { get; set; }
         [JsonPropertyName("acltotpktsnat")]public string AclTotalPacketsNat { get; set; }
         [JsonPropertyName("aclpktsnatrate")]public double? AclPacketsNatRate { get; set; }
-        [JsonPropertyName("acltothits")]public string AlcTotalHits { get; set; }
+        [JsonPropertyName("acltothits")]public string AclTotalHits { get; set; }
         [JsonPropertyName("aclhitsrate")]public double? AclHitsRate { get; set; }
         [JsonPropertyName("acltotmisses")]public string AclTotalMisses { get; set; }
         [JsonPropertyName("aclmissesrate")]public double? AclMissesRate { get; set; }

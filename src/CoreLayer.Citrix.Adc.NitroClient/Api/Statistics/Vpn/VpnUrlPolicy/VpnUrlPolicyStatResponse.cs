@@ -5,6 +5,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Statistics.Vpn.VpnUrlPolicy
 {
     public class VpnUrlPolicyStatResponse : NitroResponse
     {
-        [JsonPropertyName("vpnurlpolicy")]public VpnUrlPolicyStats VpnUrlPolicyStatistics { get; set; }
+        [JsonPropertyName("vpnurlpolicy")]public VpnUrlPolicyStats[] VpnUrlPolicyStatistics { get; set; }
     }
 }

@@ -111,3 +111,685 @@
         - Severity: the severity of the error, "NONE" if successful
         - NsStats: an array of NsStats-objects returned by the Get-Request, all of which contain the properties mentioned above.
 
+
+
+#### NsAcl
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsAclStats-objects-array inside of a NsAclStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        AclName|aclname|string|Name of the extended ACL rule whose statistics you want the Citrix ADC to display.
+        AclTotalPacketsBridged|acltotpktsbridged|string|Packets matching a bridge ACL, which is in transparent mode and bypasses service processing.
+        AclPacketsBridgedRate|aclpktsbridgedrate|double|Rate (/s) counter for acltotpktsbridged
+        AclTotalPacketsDenied|acltotpktsdenied|string|Packets dropped because they match ACLs with processing mode set to DENY.
+        AclPacketsDeniedRate|aclpktsdeniedrate|double|Rate (/s) counter for acltotpktsdenied
+        AclTotalPacketsAllowed|acltotpktsallowed|string|Packets matching ACLs with processing mode set to ALLOW. Citrix ADC processes these packets.
+        AclPacketsAllowedRate|aclpktsallowedrate|double|Rate (/s) counter for acltotpktsallowed
+        AclTotalPacketsNat|acltotpktsnat|string|Packets matching a NAT ACL, resulting in a NAT session.
+        AclPacketsNatRate|aclpktsnatrate|double|Rate (/s) counter for acltotpktsnat
+        AclTotalHits|acltothits|string|Packets matching an ACL.
+        AclHitsRate|aclhitsrate|double|Rate (/s) counter for acltothits
+        AclTotalMisses|acltotmisses|string|Packets not matching any ACL.
+        AclMissesRate|aclmissesrate|double|Rate (/s) counter for acltotmisses
+        AclTotalCount|acltotcount|string|Total number of ACL rules configured.
+        DfAclTotalHits|dfdacltothits|string|Packets matching an dfd ACL.
+        DfAclHitsRate|dfdaclhitsrate|double|Rate (/s) counter for dfdacltothits
+        DfAclTotalMisses|dfdacltotmisses|string|Packets not matching any DFD ACL.
+        DfAclMissesRate|dfdaclmissesrate|double|Rate (/s) counter for dfdacltotmisses
+        DfAclTotalCount|dfdacltotcount|string|Total number of DFD ACL rules configured.
+        AclPerHits|aclperhits|string|Number of times the acl was hit
+        AclPerHitsRate|aclperhitsrate|double|Rate (/s) counter for aclperhits
+        
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsAclStatCommand>(INitroServiceClient, New NsAclStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsAclStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:aclname, value: string
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsAclStat, that object is <u>NsAclStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsAclStatistics: a NsAclStats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+#### NsAcl6
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsAcl6Stats-objects-array inside of a NsAcl6StatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Acl6Name|acl6name|string|Name of the extended ACL6 rule whose statistics you want the Citrix ADC to display.
+        Acl6TotalPacketsBridged|acl6totpktsbridged|string|Packets matching a bridge ACL6, which is in transparent mode and bypasses service processing.
+        Acl6PacketsBridgedRate|acl6pktsbridgedrate|double|Rate (/s) counter for acl6totpktsbridged
+        Acl6TotalPacketsDenied|acl6totpktsdenied|string|Packets dropped because they match ACL6s with processing mode set to DENY.
+        Acl6PacketsDeniedRate|acl6pktsdeniedrate|double|Rate (/s) counter for acl6totpktsdenied
+        Acl6TotalPacketsAllowed|acl6totpktsallowed|string|Packets matching ACL6s with processing mode set to ALLOW. Citrix ADC processes these packets.
+        Acl6PacketsAllowedRate|acl6pktsallowedrate|double|Rate (/s) counter for acl6totpktsallowed
+        Acl6TotalPacketsNat|acl6totpktsnat|string|Packets matching a NAT ACL6, resulting in a NAT session.
+        Acl6PacketsNatRate|acl6pktsnatrate|double|Rate (/s) counter for acl6totpktsnat
+        Acl6TotalHits|acl6tothits|string|Packets matching an ACL6.
+        Acl6HitsRate|acl6hitsrate|double|Rate (/s) counter for acl6tothits
+        Acl6TotalMisses|acl6totmisses|string|Packets not matching any ACL6.
+        Acl6MissesRate|acl6missesrate|double|Rate (/s) counter for acl6totmisses
+        Acl6TotalCount|acl6totcount|string|Total number of ACL6 rules configured.
+        DfAcl6TotalHits|dfdacl6tothits|string|Packets matching an dfd ACL6.
+        DfAcl6HitsRate|dfdacl6hitsrate|double|Rate (/s) counter for dfdacl6tothits
+        DfAcl6TotalMisses|dfdacl6totmisses|string|Packets not matching any DFD ACL6.
+        DfAcl6MissesRate|dfdacl6missesrate|double|Rate (/s) counter for dfdacl6totmisses
+        DfAcl6TotalCount|dfdacl6totcount|string|Total number of DFD ACL6 rules configured.
+        Acl6PerHits|acl6perhits|string|Number of times the acl6 was hit
+        Acl6PerHitsRate|acl6perhitsrate|double|Rate (/s) counter for acl6perhits
+        
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsAcl6StatCommand>(INitroServiceClient, New NsAcl6StatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsAcl6StatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:acl6name, value: string
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsAcl6Stat, that object is <u>NsAcl6StatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsAcl6Statistics: a NsAcl6Stats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+#### NsLimitIdentifier
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsLimitIdentifierStats-objects-array inside of a NsLimitIdentifierStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|The name of the identifier.
+        RateLimitObjectHits|ratelmtobjhits|string|Total hits.
+        RateLimitObjectDrops|ratelmtobjdrops|string|Total drops
+        RateLimitSessionObjectHits|ratelmtsessionobjhits|string|Total hits.
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsLimitIdentifierStatCommand>(INitroServiceClient, New NsLimitIdentifierStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsLimitIdentiefierStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:name, value: string
+            - key:pattern, value: string[]
+
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsLimitIdentifierStat, that object is <u>NsLimitIdentifierStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsLimitIdentifierStatistics: a NsLimitIdentifierStats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+
+#### NsMemory
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsMemoryStats-objects-array inside of a NsMemoryStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Pool|pool|string|Feature name for which to display memory statistics.
+        MemoryCurrentAvailableInKb|memcurinkb|string|Total current Citrix ADC memory available for use by the feature, in kilobytes.
+        AllocationFailure|allocf|double|Memory allocation failure for particular feature.
+        MemoryCurrentFeatureAllocatedPercent|memcurallocper|double|Percentage of Citrix ADC memory used by the feature.
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsMemoryStatCommand>(INitroServiceClient, New NsMemoryStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsMemoryStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:pool, value: string
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsMemoryStat, that object is <u>NsMemoryStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsMemoryStatistics: a NsMemoryStats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+#### NsPartition
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsPartitionStats-objects-array inside of a NsPartitionStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        PartitionName|partitionname|string|Name of the partition.
+        TotalTokenDrops|totaltokendrops|string|Total drops(KB) for the partition.
+        TokenDropsRate|tokendropsrate|double|Rate (/s) counter for totaltokendrops
+        TotalDrops|totaldrops|string|Total packet drops for the partition.
+        DropsRate|dropsrate|double|Rate (/s) counter for totaldrops
+        TotalConnectionDrops|totalconnectiondrops|string|Total connection drops for the partition.
+        ConnectionDropsRate|connectiondropsrate|double|Rate (/s) counter for totalconnectiondrops
+        CurrentConnections|currentconnections|string|Current Connections on this partition.
+        CurrentBandwidth|currentbandwidth|string|Current Bandwidth usage for the partition.
+        MaxConnection|maxconnection|string|Maximum Connection allowed for the partition.
+        MaxBandwidth|maxbandwidth|string|Maximum Banwidth allowed for the partition.
+        MaxMemory|maxmemory|string|Maximum memory limit for the partition.
+        MemoryUsagePercent|memoryusagepcnt|double|Memory usage(%) on this partition.
+
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsPartitionStatCommand>(INitroServiceClient, New NsPartitionStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsPartitionStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:partitionname, value: string
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsPartitionStat, that object is <u>NsPartitionStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsPartitionStatistics: a NsPartitionStats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+#### NsPbr
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsPbrStats-objects-array inside of a NsPbrStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|Name of the PBR whose statistics you want the Citrix ADC to display.
+        PbrTotalPacketsAllowed|pbrtotpktsallowed|string|Total packets that matched the PBR (Policy-Based Routes) with action ALLOW
+        PbrPacketsAllowedRate|pbrpktsallowedrate|double|Rate (/s) counter for pbrtotpktsallowed
+        PbrTotalPacketsDenied|pbrtotpktsdenied|string|Total packets that matched the PBR with action DENY
+        PbrPacketsDeniedRate|pbrpktsdeniedrate|double|Rate (/s) counter for pbrtotpktsdenied
+        PbrTotalHits|pbrtothits|string|Total packets that matched one of the configured PBR
+        PbrTotalHitsRate|pbrhitsrate|double|Rate (/s) counter for pbrtothits
+        PbrTotalMisses|pbrtotmisses|string|Total packets that did not match any PBR
+        PbrMissesRate|pbrmissesrate|double|Rate (/s) counter for pbrtotmisses
+        PbrTotalNullDrop|pbrtotnulldrop|string|Total packets that are dropped due to null nexthop
+        PbrNullDropRate|pbrnulldroprate|double|Rate (/s) counter for pbrtotnulldrop
+        PbrHits|pbrperhits|string|Number of times the pbr was hit
+        PbrHitsRate|pbrperhitsrate|double|Rate (/s) counter for pbrperhits
+
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsPbrStatCommand>(INitroServiceClient, New NsPbrStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsPbrStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:name, value: string
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsPbrStat, that object is <u>NsPbrStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsPbrStatistics: a NsPbrStats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+
+#### NsPbr6
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsPbr6Stats-objects-array inside of a NsPbr6StatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        Name|name|string|Name of the PBR6 whose statistics you want the Citrix ADC to display.
+        Pbr6TotalPacketsAllowed|pbr6totpktsallowed|string|Total packets that matched the PBR6 (Policy-Based Routes) with action ALLOW
+        Pbr6PacketsAllowedRate|pbr6pktsallowedrate|double|Rate (/s) counter for pbr6totpktsallowed
+        Pbr6TotalPacketsDenied|pbr6totpktsdenied|string|Total packets that matched the PBR6 with action DENY
+        Pbr6PacketsDeniedRate|pbr6pktsdeniedrate|double|Rate (/s) counter for pbr6totpktsdenied
+        Pbr6TotalHits|pbr6tothits|string|Total packets that matched one of the configured PBR6
+        Pbr6TotalHitsRate|pbr6hitsrate|double|Rate (/s) counter for pbr6tothits
+        Pbr6TotalMisses|pbr6totmisses|string|Total packets that did not match any PBR6
+        Pbr6MissesRate|pbr6missesrate|double|Rate (/s) counter for pbr6totmisses
+        Pbr6TotalNullDrop|pbr6totnulldrop|string|Total packets that are dropped due to null nexthop
+        Pbr6NullDropRate|pbr6nulldroprate|double|Rate (/s) counter for pbr6totnulldrop
+        Pbr6Hits|pbr6perhits|string|Number of times the pbr6 was hit
+        Pbr6HitsRate|pbr6perhitsrate|double|Rate (/s) counter for pbr6perhits
+
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsPbr6StatCommand>(INitroServiceClient, New NsPbr6StatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsPbr6StatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:name, value: string
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsPbr6Stat, that object is <u>NsPbr6StatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsPbr6Statistics: a NsPbr6Stats-object-array returned by the Get-Request, containing the properties mentioned above.
+
+
+
+
+#### NsSimpleAcl
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsSimpleAclStats-objects inside of a NsSimpleAclStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        SimpleAclTotalHits|sacltothits|string|Packets matching a SimpleACL.
+        SimpleAclHitsRate|saclhitsrate|double|Rate (/s) counter for sacltothits
+        SimpleAclTotalMisses|sacltotmisses|string|Packets not matching any SimpleACL.
+        SimpleAclMissesRate|saclmissesrate|double|Rate (/s) counter for sacltotmisses
+        SimpleAclsCount|saclscount|string|Number of SimpleACLs configured.
+        SimpleAclTotalPacketsAllowed|sacltotpktsallowed|string|Total packets that matched a SimpleACL with action ALLOW and got consumed by Citrix ADC.
+        SimpleAclPacketsAllowedRate|saclpktsallowedrate|double|Rate (/s) counter for sacltotpktsallowed
+        SimpleAclTotalPacketsBridged|sacltotpktsbridged|string|Total packets that matched a SimpleACL with action BRIDGE and got bridged by Citrix ADC.
+        SimpleAclPacketsBridgedRate|saclpktsbridgedrate|double|	Rate (/s) counter for sacltotpktsbridged
+        SimpleAclTotalPacketsDenied|sacltotpktsdenied|string|Packets dropped because they match SimpleACL (Access Control List) with processing mode set to DENY.
+        SimpleAclPacketsDeniedRate|saclpktsdeniedrate|double|Rate (/s) counter for sacltotpktsdenied
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsSimpleAclStatCommand>(INitroServiceClient, New NsSimpleAclStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsSimpleAclStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsSimpleAclStat, that object is <u>NsSimpleAclStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsSimpleAclStatistics: a NsSimpleAclStats-object returned by the Get-Request, containing the properties mentioned above.
+
+
+
+#### NsSimpleAcl6
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsSimpleAcl6Stats-objects inside of a NsSimpleAcl6StatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        SimpleAcl6TotalHits|sacl6tothits|string|Packets matching a SimpleACL6.
+        SimpleAcl6HitsRate|sacl6hitsrate|double|Rate (/s) counter for sacl6tothits
+        SimpleAcl6TotalMisses|sacl6totmisses|string|Packets not matching any SimpleACL6.
+        SimpleAcl6MissesRate|sacl6missesrate|double|Rate (/s) counter for sacl6totmisses
+        SimpleAcl6sCount|sacl6scount|string|Number of SimpleACL6s configured.
+        SimpleAcl6TotalPacketsAllowed|sacl6totpktsallowed|string|Total packets that matched a SimpleACL6 with action ALLOW and got consumed by Citrix ADC.
+        SimpleAcl6PacketsAllowedRate|sacl6pktsallowedrate|double|Rate (/s) counter for sacl6totpktsallowed
+        SimpleAcl6TotalPacketsBridged|sacl6totpktsbridged|string|Total packets that matched a SimpleACL6 with action BRIDGE and got bridged by Citrix ADC.
+        SimpleAcl6PacketsBridgedRate|sacl6pktsbridgedrate|double|Rate (/s) counter for sacl6totpktsbridged
+        SimpleAcl6TotalPacketsDenied|sacl6totpktsdenied|string|Packets dropped because they match SimpleACL6 (Access Control List) with processing mode set to DENY.
+        SimpleAcl6PacketsDeniedRate|sacl6pktsdeniedrate|double|Rate (/s) counter for sacl6totpktsdenied
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsSimpleAcl6StatCommand>(INitroServiceClient, New NsSimpleAcl6StatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsSimpleAcl6StatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsSimpleAcl6Stat, that object is <u>NsSimpleAcl6StatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsSimpleAcl6Statistics: a NsSimpleAcl6Stats-object returned by the Get-Request, containing the properties mentioned above.
+
+
+
+
+#### NsTrafficDomain
+
++ Get
+    * Properties  
+
+        The following properties can be found in the NsTrafficDomainStats-objects-array inside of a NsTrafficDomainStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        TrafficDomain|td|string|An integer specifying the Traffic Domain ID. 
+        NsTrafficDomainTotalReceivePackets|nstdtotrxpkts|string|Packets received on this TD.
+        NsTrafficDomainReceivePacketsRate|nstdrxpktsrate|double|Rate (/s) counter for nstdtotrxpkts
+        NsTrafficDomainTotalTransmitPackets|nstdtottxpkts|string|Packets transmitted from this TD.
+        NsTrafficDomainTransmitPacketsRate|nstdtxpktsrate|double|Rate (/s) counter for nstdtottxpkts
+        NsTrafficDomainTotalDroppedPackets|nstdtotdroppedpkts|string|Inbound packets dropped on this TD by reception.
+        NsTrafficDomainDroppedPacketsRate|nstddroppedpktsrate|double|Rate (/s) counter for nstdtotdroppedpkts
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<NsTrafficDomainStatCommand>(INitroServiceClient, New NsTrafficDomainStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object NsTrafficDomainStatRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  <b>(not applicable to this request)</b>
+        <u>ResourceFilter</u>: No effect on this resource  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria. <b>(not applicable to this request)</b>  
+        <u>Arguments</u>: a dictionary<string, string> that holds specific possible arguments, these are(even if a bool or double is required, they will be passed as string (so true => "true")):  
+            - key:td, value: double
+            - key:detail, value: bool  
+            - key:fullvalues, value: bool  
+            - key:ntimes, value: double  
+            - key:logfile, value: string  
+            - key:clearstats, value: string  
+        
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For NsTrafficDomainStat, that object is <u>NsTrafficDomainStatResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - NsTrafficDomainStatistics: a NsTrafficDomainStats-object-arrays returned by the Get-Request, containing the properties mentioned above.

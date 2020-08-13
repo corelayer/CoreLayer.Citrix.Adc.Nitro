@@ -113,6 +113,104 @@
 
 
 
+#### SystemBw
+
++ Get
+    * Properties  
+
+        The following properties van be found in SystemBwStats "SystemBwStatistics" inside of a SystemBwStatResponse.
+
+        Property|Citrix doc name|DataType|Description
+        ---|---|---|---
+        HttpClientPoolInactive|httpcltpoolinactive|string|No of requests sent from BW client.
+        HttpClientPoolOutactive|httpcltpooloutactive|string|No of responses Received.
+        HttpServer200OkResponse|httpsvr200okresp|string|Number of 200 Ok response sent from the BW appliance.
+        HttpServer200OkResponseRate|httpsvr200okresprate|double|Rate (/s) counter for httpsvr200okresp
+        HttpServer404NotFound|httpsvr404notfound|string|Number of 404 Not Found responses sent
+        HttpServer404NotFoundRate|httpsvr404notfoundrate|double|Rate (/s) counter for httpsvr404notfound
+        HttpClientErrorStray|httpclterrstray|string|Number of stray packets received from server without HTTP request
+        HttpClientErrorStrayRate|httpclterrstrayrate|double|Rate (/s) counter for httpclterrstray
+        HttpClientTtfpLwmFailures|httpcltttfplwm|string|Number of Responses Falling on LWM for TTFP.
+        HttpCltTtfpLwmFailuresRate|httpcltttfplwmrate|double|Rate (/s) counter for httpcltttfplwm
+        HttpClientTtfpBand0Failures|httpcltttfp_0|string|Number of Responses Falling on Band-0 for TTFP.
+        HttpClientTtfpBand0FailuresRate|httpcltttfp_0rate|double|Rate (/s) counter for httpcltttfp_0
+        HttpClientTtfpBand1Failures|httpcltttfp_1|string|Number of Responses Falling on Band-1 for TTFP.
+        HttpClientTtfpBand1FailuresRate|httpcltttfp_1rate|double|Rate (/s) counter for httpcltttfp_1
+        HttpClientTtfpBand2Failures|httpcltttfp_2|string|Number of Responses Falling on Band-2 for TTFP.
+        HttpClientTtfpBand2FailuresRate|httpcltttfp_2rate|double|Rate (/s) counter for httpcltttfp_2
+        HttpClientTtfpBand3Failures|httpcltttfp_3|string|Number of Responses Falling on Band-3 for TTFP.
+        HttpClientTtfpBand3FailuresRate|httpcltttfp_3rate|double|Rate (/s) counter for httpcltttfp_3
+        HttpClientTtfpBand4Failures|httpcltttfp_4|string|Number of Responses Falling on Band-4 for TTFP.
+        HttpClientTtfpBand4FailuresRate|httpcltttfp_4rate|double|Rate (/s) counter for httpcltttfp_4
+        HttpClientTtfpBand5Failures|httpcltttfp_5|string|Number of Responses Falling on Band-5 for TTFP.
+        HttpClientTtfpBand5FailuresRate|httpcltttfp_5rate|double|Rate (/s) counter for httpcltttfp_5
+        HttpClientTtfpBand6Failures|httpcltttfp_6|string|Number of Responses Falling on Band-6 for TTFP.
+        HttpClientTtfpBand6FailuresRate|httpcltttfp_6rate|double|Rate (/s) counter for httpcltttfp_6
+        HttpClientTtfpBand7Failures|httpcltttfp_7|string|Number of Responses Falling on Band-7 for TTFP.
+        HttpClientTtfpBand7FailuresRate|httpcltttfp_7rate|double|Rate (/s) counter for httpcltttfp_7
+        HttpClientTtfpHwmFailures|httpcltttfphwm|string|Number of Responses Falling on HWM for TTFP.
+        HttpClientTtfpHwmFailuresRate|httpcltttfphwmrate|double|Rate (/s) counter for httpcltttfphwm
+        HttpClientTtfpMax|httpcltttfpmax|string|Peak RTT observed for Time to First response packet.
+        HttpClientTtlpLwmFailures|httpcltttlplwm|string|Number of Responses Falling on LWM for TTLP.
+        HttpClientTtlpLwmFailuresRate|httpcltttlplwmrate|double|Rate (/s) counter for httpcltttlplwm
+        HttpCltTtlpBand0Failures|httpcltttlp_0|string|Number of Responses Falling on Band-0 for TTLP.
+        HttpClientTtlpBand0Failuresrate|httpcltttlp_0rate|double|Rate (/s) counter for httpcltttlp_0
+        HttpClientTtlpBand1Failures|httpcltttlp_1|string|Number of Responses Falling on Band-1 for TTLP.
+        HttpClientTtlpBand1FailuresRate|httpcltttlp_1rate|double|Rate (/s) counter for httpcltttlp_1
+        HttpClientTtlpBand2Failures|httpcltttlp_2|string|Number of Responses Falling on Band-2 for TTLP.
+        HttpClientTtlpBand2FailuresRate|httpcltttlp_2rate|double|Rate (/s) counter for httpcltttlp_2
+        HttpClientTtlpBand3Failures|httpcltttlp_3|string|Number of Responses Falling on Band-3 for TTLP.
+        HttpClientTtlpBand3FailuresRate|httpcltttlp_3rate|double|Rate (/s) counter for httpcltttlp_3
+        HttpClientTtlpBand4Failures|httpcltttlp_4|string|Number of Responses Falling on Band-4 for TTLP.
+        HttpClientTtlpBand4FailuresRate|httpcltttlp_4rate|double|Rate (/s) counter for httpcltttlp_4
+        HttpClientTtlpBand5Failures|httpcltttlp_5|string|Number of Responses Falling on Band-5 for TTLP.
+        HttpClientTtlpBand5FailuresRate|httpcltttlp_5rate|double|Rate (/s) counter for httpcltttlp_5
+        HttpClientTtlpBand6Failures|httpcltttlp_6|string|Number of Responses Falling on Band-6 for TTLP.
+        HttpClientTtlpBand6FailuresRate|httpcltttlp_6rate|double|Rate (/s) counter for httpcltttlp_6
+        HttpClientTtlpBand7Failures|httpcltttlp_7|string|Number of Responses Falling on Band-7 for TTLP.
+        HttpClientTtlpBand7FailuresRate|httpcltttlp_7rate|double|Rate (/s) counter for httpcltttlp_7
+        HttpClientTtlpHwmFailures|httpcltttlphwm|string|Number of Responses Falling on HWM for TTLP.
+        HttpClientTtlpHwmRate|httpcltttlphwmrate|double|Rate (/s) counter for httpcltttlphwm
+        HttpClientTtlpMax|httpcltttlpmax|string|Peak RTT observed for Time to Last response packet.
+
+
+
+
+    * Creation of the Command:  
+
+        To create a command, one tells NitroCommandFactory to create and passes the type of command to create, as wel as the parameters Client(INitroServiceClient) and the Options to filter by.  
+
+        eg. 
+        ```
+        var command = NitroCommandFactory.Create\<SystemBwCommand>(INitroServiceClient, New SystemBwStatRequestOptions(){ });
+        ```
+        
+        - Options:  
+        For this command, the Options are gathered in an Object SystemBwRequestOptions, which has following properties to be used as filters:  
+        <u>ResourceName</u>: The name of the resource you want to Get, if none is specified, all resources matching the criteria will be returned.  Not Defining this will return all objects.  
+        <u>ResourceFilter</u>: a Key-Value Pair with the name (key) of a property of an object, and the value you want to see in the returned objects.  
+        eg. ResourceFilter = {{"Comment","Hello"}} will make it so only objects with "Hello" as their Comment will be returned. Not Defining this will return all objects.  
+        <u>PropertyFilter</u>: A List of properties that should be returned when Getting the response of the Get Request.  
+        eg. PropertyFilter = {"Name"} will make it so only the names of the objects matching the criteria are returned. Not Defining this will return all properties.  
+        <u>Count</u>: A bool when if sets to true, will make it so the response to your query contains only the property Count that contains a double-value representing the amount of objects that match your search-criteria.
+
+    * Usage of the Command:
+
+        You can let the Command run and Get the reponse by storing it into a premade object using the commands GetResponse Method. For SystemBwStat, that object is <u>SystemBwResponse</u>.
+
+        eg. 
+        ```
+        var response = command.GetResponse(); 
+        ```
+
+        Response will then hold all the information from the request in following properties:   
+        - StatusCode: a combination of the statuscode and statuscodemessage. eg. "200 OK" if successful
+        - ErrorCode: the errorcode of the request, 0 if successful.
+        - ErrorMessage: the Message accompanying the ErrorCode, "Done" if successful.
+        - Severity: the severity of the error, "NONE" if successful
+        - SystemBwStats: an array of SystemBwStats-objects returned by the Get-Request, all of which contain the properties mentioned above.
+
+
 #### SystemCpu
 
 + Get

@@ -14,6 +14,6 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Ns
         [JsonPropertyName("sacltotpktsbridged")]public string SimpleAclTotalPacketsBridged { get; set; }
         [JsonPropertyName("saclpktsbridgedrate")]public double? SimpleAclPacketsBridgedRate { get; set; }
         [JsonPropertyName("sacltotpktsdenied")]public string SimpleAclTotalPacketsDenied { get; set; }
-        [JsonPropertyName("saclpktsdeniedrate")]public double? SimpleAclPacketsDenied { get; set; }
+        [JsonPropertyName("saclpktsdeniedrate")]public double? SimpleAclPacketsDeniedRate { get; set; }
     }
 }

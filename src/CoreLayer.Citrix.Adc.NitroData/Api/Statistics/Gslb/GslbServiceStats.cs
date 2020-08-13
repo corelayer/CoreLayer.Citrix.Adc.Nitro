@@ -17,7 +17,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Statistics.Gslb
         [JsonPropertyName("totalrequests")]public string TotalRequests { get; set; }
         [JsonPropertyName("requestsrate")]public double? RequestsRate { get; set; }
         [JsonPropertyName("totalresponses")]public string TotalResponses { get; set; }
-        [JsonPropertyName("responsesRate")]public double? ResponsesRate { get; set; }
+        [JsonPropertyName("responsesrate")]public double? ResponsesRate { get; set; }
         [JsonPropertyName("totalrequestbytes")]public string TotalRequestBytes { get; set; }
         [JsonPropertyName("requestbytesrate")]public double? RequestBytesRate { get; set; }
         [JsonPropertyName("totalresponsebytes")]public string TotalResponseBytes { get; set; }
