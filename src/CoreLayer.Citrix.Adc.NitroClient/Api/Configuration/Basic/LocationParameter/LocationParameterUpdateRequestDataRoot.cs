@@ -6,12 +6,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.LocationParam
     {
         public LocationParameterUpdateRequestDataRoot(dynamic data)
         {
-            LocationParameter = new dynamic[] {data};
-        }
-        public LocationParameterUpdateRequestDataRoot(dynamic[] data)
-        {
             LocationParameter = data;
         }
-        public dynamic[] LocationParameter { get; set; }
+        public dynamic LocationParameter { get; set; }
     }
 }

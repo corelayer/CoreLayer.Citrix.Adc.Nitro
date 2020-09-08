@@ -38,27 +38,25 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Location
                     {"Method", "PUT"},
                     {"ResourcePath", "/nitro/v1/config/locationparameter"},
                     {"RequestUri", "/nitro/v1/config/locationparameter"},
-                    {"RequestContent", "{\"locationparameter\":[{\"context\":\"5\",\"q1label\":\"label\"}]}"},
+                    {"RequestContent", "{\"locationparameter\":{\"context\":\"5\",\"q1label\":\"label\"}}"},
                     {"Options", ""}
                 }
             };
             yield return new object[]
             {
                 new LocationParameterUpdateRequestConfiguration(
-                    new LocationParameterUpdateRequestDataRoot(new dynamic[]
-                    {
-                        new LocationParameterUpdateRequestData()
+                    new LocationParameterUpdateRequestDataRoot(new LocationParameterUpdateRequestData()
                         {
                             
                         }
-                    } )
+                     )
                 ),
                 new Dictionary<string, string>
                 {
                     {"Method", "PUT"},
                     {"ResourcePath", "/nitro/v1/config/locationparameter"},
                     {"RequestUri", "/nitro/v1/config/locationparameter"},
-                    {"RequestContent", "{\"locationparameter\":[{}]}"},
+                    {"RequestContent", "{\"locationparameter\":{}}"},
                     {"Options", ""}
                 }
             };
