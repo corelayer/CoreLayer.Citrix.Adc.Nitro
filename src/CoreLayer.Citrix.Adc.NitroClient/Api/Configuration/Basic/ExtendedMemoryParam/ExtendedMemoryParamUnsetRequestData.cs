@@ -5,6 +5,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ExtendedMemor
 {
     public class ExtendedMemoryParamUnsetRequestData : INitroRequestData
     {
-        [JsonPropertyName("memlimit")]public bool MemoryLimit => true;
+        public bool MemLimit => true; //public bool MemoryLimit => true;
     }
 }

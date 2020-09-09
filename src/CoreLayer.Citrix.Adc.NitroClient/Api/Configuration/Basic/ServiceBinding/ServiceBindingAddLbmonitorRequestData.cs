@@ -6,8 +6,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ServiceBindin
     public class ServiceBindingAddLbmonitorRequestData : INitroRequestData
     {
         public string Name { get; }
-        [JsonPropertyName("monitor_name")]public string MonitorName { get; set; }
-        [JsonPropertyName("monstate")]public string MonitorState { get; set; }
+        public string Monitor_Name { get; set; }//MonitorName { get; set; }
+        public string MonState { get; set; }//MonitorState { get; set; }
         public double? Weight { get; set; }
         public bool? Passive { get; set; }
 

@@ -11,9 +11,9 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server
         public string TranslationMask { get; set; }
         public int DomainResolveRetry { get; }
         public string State { get; set; }
-        [JsonPropertyName("ipv6address")]public string SupportIpv6Address { get; set; }
+        public string IpV6Address { get; set; }//public string SupportIpv6Address { get; set; }
         public string Comment { get; set; }
-        [JsonPropertyName("td")]public double TrafficDomain { get; set; }
+        public double Td { get; set; }//TrafficDomain { get; set; }
         public string QueryType { get; }
 
         public ServerAddByDomainRequestData(string serverName, string domainName, int domainResolveRetry = 5,

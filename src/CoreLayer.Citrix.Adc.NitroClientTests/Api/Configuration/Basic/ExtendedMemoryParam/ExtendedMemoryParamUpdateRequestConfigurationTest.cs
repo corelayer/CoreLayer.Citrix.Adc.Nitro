@@ -43,7 +43,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Extended
                     new ExtendedMemoryParamUpdateRequestDataRoot(
                         new ExtendedMemoryParamUpdateRequestData()
                             {
-                                MemoryLimit = 5
+                                MemLimit = 5
                             }
                     )
                 ),

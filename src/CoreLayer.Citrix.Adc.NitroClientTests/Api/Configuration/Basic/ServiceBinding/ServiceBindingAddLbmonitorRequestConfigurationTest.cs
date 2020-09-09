@@ -32,7 +32,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.ServiceB
                         new ServiceBindingAddLbmonitorRequestData("test1"), 
                         new ServiceBindingAddLbmonitorRequestData("test2")
                         {
-                            MonitorName = "testMon"
+                            Monitor_Name = "testMon"
                         }
                     })
                 ), 

@@ -12,7 +12,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
         public override string ServiceType { get; } = "DNS_TCP";
         public override int Port { get; }
         
-        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
+        public string Sp { get; set; } //SurgeProtection { get; set; }
         public string TcpProfileName { get; set; }
     }
 }

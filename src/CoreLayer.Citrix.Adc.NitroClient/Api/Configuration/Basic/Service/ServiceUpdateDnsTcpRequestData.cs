@@ -7,7 +7,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
         public ServiceUpdateDnsTcpRequestData(string serviceName) : base(serviceName)
         {
         }
-        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
+        public string Sp { get; set; }//SurgeProtection { get; set; }
         public string TcpProfileName { get; set; }
     }
 }

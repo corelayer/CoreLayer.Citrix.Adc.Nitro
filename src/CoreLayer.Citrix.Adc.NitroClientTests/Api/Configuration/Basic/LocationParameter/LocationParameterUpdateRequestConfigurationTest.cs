@@ -31,7 +31,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Location
                 new LocationParameterUpdateRequestConfiguration(new LocationParameterUpdateRequestDataRoot(new LocationParameterUpdateRequestData()
                 {
                     Context = "5",
-                    Qualifier1Label = "label"
+                    Q1Label = "label"
                 })),
                 new Dictionary<string, string>
                 {

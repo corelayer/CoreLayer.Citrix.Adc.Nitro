@@ -15,8 +15,8 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Service
         public string ClearTextPort { get; set; } 
         public string CacheType { get; set; } 
         public string Cacheable { get; set; }
-        [JsonPropertyName("sc")]public string SureConnect { get; set; } 
-        [JsonPropertyName("sp")]public string SurgeProtection { get; set; }
+        public string Sc { get; set; }//SureConnect { get; set; } 
+        public string Sp { get; set; }//SurgeProtection { get; set; }
         public string TcpProfileName { get; set; }
     }
 }

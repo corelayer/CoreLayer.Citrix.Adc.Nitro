@@ -5,6 +5,6 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ExtendedMemor
 {
     public class ExtendedMemoryParamUpdateRequestData : INitroRequestData
     {
-        [JsonPropertyName("memlimit")]public double? MemoryLimit { get; set; }
+        public double? MemLimit { get; set; }//public double? MemoryLimit { get; set; }
     }
 }

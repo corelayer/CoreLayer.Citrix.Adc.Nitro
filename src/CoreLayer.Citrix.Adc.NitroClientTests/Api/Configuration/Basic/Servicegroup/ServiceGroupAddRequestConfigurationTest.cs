@@ -99,7 +99,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Serviceg
                         },
                         new ServicegroupAddDnsTcpRequestData("test4")
                         {
-                            ServerTimeout = 2,
+                            SvrTimeout = 2,
                             Comment = "testComment"
                         }, 
                     })
