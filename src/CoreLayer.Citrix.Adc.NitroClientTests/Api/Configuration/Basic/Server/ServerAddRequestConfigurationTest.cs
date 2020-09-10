@@ -45,7 +45,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"Method", "POST"},
                     {"ResourcePath", "/nitro/v1/config/server"},
                     {"RequestUri", "/nitro/v1/config/server"},
-                    {"RequestContent", "{\"server\":[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"td\":0}]}"},
+                    {"RequestContent", "{\"server\":[{\"name\":\"test\",\"ipaddress\":\"testIp\"}]}"},
                     {"Options", ""}
                 }
             };
@@ -66,7 +66,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"Method", "POST"},
                     {"ResourcePath", "/nitro/v1/config/server"},
                     {"RequestUri", "/nitro/v1/config/server"},
-                    {"RequestContent", "{\"server\":[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"state\":\"Enabled\",\"comment\":\"testComment\",\"td\":0}]}"},
+                    {"RequestContent", "{\"server\":[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"state\":\"Enabled\",\"comment\":\"testComment\"}]}"},
                     {"Options", ""}
                 }
             };
@@ -93,7 +93,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Server
                     {"ResourcePath", "/nitro/v1/config/server"},
                     {"RequestUri", "/nitro/v1/config/server"},
                     {"RequestContent", "{\"server\":" +
-                                       "[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"state\":\"Enabled\",\"comment\":\"testComment\",\"td\":0}," +
+                                       "[{\"name\":\"test\",\"ipaddress\":\"testIp\",\"state\":\"Enabled\",\"comment\":\"testComment\"}," +
                                        "{\"name\":\"testByDom\",\"domain\":\"testDom\",\"domainresolveretry\":5,\"comment\":\"domTestComment\",\"td\":0,\"querytype\":\"A\"}]}"},
                     {"Options", ""} 
                 } 

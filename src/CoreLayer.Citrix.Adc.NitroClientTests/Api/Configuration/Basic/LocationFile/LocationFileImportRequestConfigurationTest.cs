@@ -30,7 +30,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Location
             {
                 new LocationFileImportRequestConfiguration(new LocationFileImportRequestDataRoot(new LocationFileImportRequestData()
                 {
-                    Src = "5",
+                    Source = "5",
                     LocationFile = "file"
                 })),
                 new Dictionary<string, string>
