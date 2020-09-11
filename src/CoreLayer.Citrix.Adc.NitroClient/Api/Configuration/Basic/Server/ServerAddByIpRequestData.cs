@@ -9,7 +9,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.Server
         public string IpAddress { get; }
         public string State { get; set; }
         public string Comment { get; set; }
-        [JsonPropertyName("td")]public double TrafficDomain { get; set; }
+        [JsonPropertyName("td")]public double? TrafficDomain { get; set; }
 
         public ServerAddByIpRequestData(string serverName, string ipAddress)
         {
