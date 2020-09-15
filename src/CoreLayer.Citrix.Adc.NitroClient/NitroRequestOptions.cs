@@ -18,15 +18,15 @@ namespace CoreLayer.Citrix.Adc.NitroClient
         
         public override string ToString()
         {
-            var queryParameters = GenerateQueryParameterList(new List<string>());
+            var queryParameters = GenerateQueryParameterList();
 
             return AddResourceNameToRequestPath() + AddQueryParametersToRequestQuery(queryParameters);
         }
 
-        public List<string> GenerateQueryParameterList(List<string> list)
+        protected virtual List<string> GenerateQueryParameterList()
         {
-            var queryParameters = list;
-
+            List<string> queryParameters = new List<string>();
+            
             if (!Action.Equals(string.Empty))
                 queryParameters.Add("action=" + Action);
             else
@@ -53,14 +53,14 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             return ResourceName;
         }
         
-        public static string AddQueryParametersToRequestQuery(ICollection<string> queryParameters)
+        protected static string AddQueryParametersToRequestQuery(ICollection<string> queryParameters)
         {
             return queryParameters.Count > 0
                 ? ConvertListParametersToString(queryParameters, "?", "&") 
                 : string.Empty;
         }
 
-        private string ResourceFilterToString()
+        protected string ResourceFilterToString()
         {
             return ResourceFilter.Count > 0
                 ? ConvertDictionaryParametersToString(ResourceFilter, "filter=", ",")
@@ -91,7 +91,7 @@ namespace CoreLayer.Citrix.Adc.NitroClient
             return result.ToString().TrimEnd(',');
         }
 
-        private string PropertyFilterToString()
+        protected string PropertyFilterToString()
         {
             return PropertyFilter.Count > 0
                 ? ConvertListParametersToString(PropertyFilter, "attrs=", ",")
