@@ -32,8 +32,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.ServerBi
                 {
                     {"ResourcePath", "/nitro/v1/config/server_gslbservicegroup_binding"},
                     {"Method", "GET"},
-                    {"Options", ""},
-                    {"RequestUri", "/nitro/v1/config/server_gslbservicegroup_binding"}
+                    {"Options", "?bulkbindings=yes"},
+                    {"RequestUri", "/nitro/v1/config/server_gslbservicegroup_binding?bulkbindings=yes"}
                 } 
             };
             yield return new object[]
