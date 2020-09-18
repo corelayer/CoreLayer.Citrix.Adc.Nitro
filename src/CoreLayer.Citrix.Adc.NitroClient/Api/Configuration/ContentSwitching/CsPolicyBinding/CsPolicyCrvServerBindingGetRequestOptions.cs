@@ -1,6 +1,6 @@
 ﻿namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.CsPolicyBinding
 {
-    public class CsPolicyCrvServerBindingGetRequestOptions : NitroRequestOptions
+    public class CsPolicyCrvServerBindingGetRequestOptions : NitroRequestBulkBindingsOptions
     {
         
     }
