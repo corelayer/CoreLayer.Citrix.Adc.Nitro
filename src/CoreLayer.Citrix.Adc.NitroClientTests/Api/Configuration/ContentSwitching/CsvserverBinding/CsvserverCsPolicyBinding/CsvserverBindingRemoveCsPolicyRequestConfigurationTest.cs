@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.CsvserverBinding.CsvserverCsPolicyBinding;
 using Xunit;
 
-namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitching.CsvserverBinding
+namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitching.CsvserverBinding.CsvserverCsPolicyBinding
 {
     public class CsvserverBindingRemoveCsPolicyRequestConfigurationTest
     {
