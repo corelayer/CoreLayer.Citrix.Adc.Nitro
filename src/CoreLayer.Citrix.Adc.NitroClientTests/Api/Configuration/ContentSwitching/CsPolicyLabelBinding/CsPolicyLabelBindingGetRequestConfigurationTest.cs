@@ -30,9 +30,9 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitchi
                 new Dictionary<string, string>
                 {
                     {"ResourcePath", "/nitro/v1/config/cspolicylabel_binding"},
-                    {"RequestUri", "/nitro/v1/config/cspolicylabel_binding"},
+                    {"RequestUri", "/nitro/v1/config/cspolicylabel_binding?bulkbindings=yes"},
                     {"Method", "GET"},
-                    {"Options", ""}
+                    {"Options", "?bulkbindings=yes"}
                 }
             };
             
