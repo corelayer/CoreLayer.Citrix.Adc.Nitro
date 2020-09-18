@@ -1,11 +1,10 @@
+using System.Collections.Generic;
+
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Basic.ServicegroupBinding
 {
-    public class ServicegroupBindingGetServicegroupMemberRequestOptions : NitroRequestOptions
+    public class ServicegroupBindingGetServicegroupMemberRequestOptions : NitroRequestBulkBindingsOptions
     {
-        public override string ToString()
-        {
-            return base.ToString() == string.Empty ? "?bulkbindings=yes" : base.ToString();
-        }
+        
     }
 
     public enum ServicegroupBindingGetServicegroupMemberRequestOptionsProperties

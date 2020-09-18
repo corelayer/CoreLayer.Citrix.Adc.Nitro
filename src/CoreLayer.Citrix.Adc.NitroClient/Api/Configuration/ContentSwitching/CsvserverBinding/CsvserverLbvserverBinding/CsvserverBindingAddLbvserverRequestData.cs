@@ -1,0 +1,17 @@
+using System.Text.Json.Serialization;
+using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
+
+namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.CsvserverBinding.CsvserverLbvserverBinding
+{
+    public class CsvserverBindingAddLbvserverRequestData : INitroRequestData
+    {
+        public string Name { get; }
+        [JsonPropertyName("lbvserver")]public string LoadBalancingVirtualServer { get; set; }
+        [JsonPropertyName("targetvserver")]public string TargetVirtualServer { get; set; }
+
+        public CsvserverBindingAddLbvserverRequestData(string CsvserverName)
+        {
+            Name = CsvserverName;
+        }
+    }
+}

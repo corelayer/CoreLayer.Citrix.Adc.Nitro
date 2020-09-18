@@ -1,11 +1,8 @@
 namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.LoadBalancing.LbvserverBinding
 {
-    public class LbvserverBindingGetServicegroupRequestOptions : NitroRequestOptions
+    public class LbvserverBindingGetServicegroupRequestOptions : NitroRequestBulkBindingsOptions
     {
-        public override string ToString()
-        {
-            return base.ToString() == string.Empty ? "?bulkbindings=yes" : base.ToString();
-        }
+        
     }
 
     public enum LbvserverBindingGetServicegroupRequestOptionsProperties

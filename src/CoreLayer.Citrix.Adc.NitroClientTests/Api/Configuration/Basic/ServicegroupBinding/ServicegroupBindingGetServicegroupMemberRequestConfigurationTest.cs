@@ -53,8 +53,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Serviceg
                 {
                     {"Method", "GET"},
                     {"ResourcePath", "/nitro/v1/config/servicegroup_servicegroupmember_binding"},
-                    {"RequestUri", "/nitro/v1/config/servicegroup_servicegroupmember_binding?count=yes&attrs=Filter"},
-                    {"Options", "?count=yes&attrs=Filter"}
+                    {"RequestUri", "/nitro/v1/config/servicegroup_servicegroupmember_binding?bulkbindings=yes&count=yes&attrs=Filter"},
+                    {"Options", "?bulkbindings=yes&count=yes&attrs=Filter"}
                     
                 }
             };
@@ -74,8 +74,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Basic.Serviceg
                 {
                     {"Method", "GET"},
                     {"ResourcePath", "/nitro/v1/config/servicegroup_servicegroupmember_binding"},
-                    {"RequestUri", "/nitro/v1/config/servicegroup_servicegroupmember_binding?attrs=Filter"},
-                    {"Options", "?attrs=Filter"}
+                    {"RequestUri", "/nitro/v1/config/servicegroup_servicegroupmember_binding?bulkbindings=yes&attrs=Filter"},
+                    {"Options", "?bulkbindings=yes&attrs=Filter"}
                 }
             };        }
 

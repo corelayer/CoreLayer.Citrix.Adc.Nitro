@@ -33,8 +33,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Policy.PolicyS
                 {
                     {"Method", "GET"},
                     {"ResourcePath", "/nitro/v1/config/policystringmap_binding"},
-                    {"RequestUri", "/nitro/v1/config/policystringmap_binding"},
-                    {"Options", ""},
+                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?bulkbindings=yes"},
+                    {"Options", "?bulkbindings=yes"},
                     {"ValidationResult", "True"}
                 }, 
             };
@@ -54,8 +54,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Policy.PolicyS
                 {
                     {"Method", "GET"},
                     {"ResourcePath", "/nitro/v1/config/policystringmap_binding"},
-                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?attrs=wrongFilter"},
-                    {"Options", "?attrs=wrongFilter"},
+                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?bulkbindings=yes&attrs=wrongFilter"},
+                    {"Options", "?bulkbindings=yes&attrs=wrongFilter"},
                     {"ValidationResult", "False"}
                 }
             };
@@ -75,8 +75,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.Policy.PolicyS
                 {
                     {"Method", "GET"},
                     {"ResourcePath", "/nitro/v1/config/policystringmap_binding"},
-                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?attrs=Name"},
-                    {"Options", "?attrs=Name"},
+                    {"RequestUri", "/nitro/v1/config/policystringmap_binding?bulkbindings=yes&attrs=Name"},
+                    {"Options", "?bulkbindings=yes&attrs=Name"},
                     {"ValidationResult", "True"}
                 }
             };

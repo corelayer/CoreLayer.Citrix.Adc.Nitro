@@ -32,8 +32,8 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.System.SystemU
                 {
                     {"ResourcePath", "/nitro/v1/config/systemuser_binding"},
                     {"Method", "GET"},
-                    {"Options", ""},
-                    {"RequestUri", "/nitro/v1/config/systemuser_binding"}
+                    {"Options", "?bulkbindings=yes"},
+                    {"RequestUri", "/nitro/v1/config/systemuser_binding?bulkbindings=yes"}
                 } 
             };
             yield return new object[]
