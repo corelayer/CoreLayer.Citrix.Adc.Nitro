@@ -5,7 +5,7 @@ using Xunit;
 
 namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitching.CsvserverBinding.CsvserverAppFwPolicyBinding
 {
-    public class CsvAFwpBindingGetRequestConfigurationTest
+    public class CsvAFwPBindingGetRequestConfigurationTest
     {
         [Theory]
         [ClassData(typeof(CsvAFwPBindingGetRequestConfigurationValidationTestData))]
