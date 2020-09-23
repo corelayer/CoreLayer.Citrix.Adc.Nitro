@@ -5,11 +5,11 @@ using Xunit;
 
 namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitching.CsvserverBinding.CsvserverAuditNsLogPolicyBinding
 {
-    public class CsvserverUNLPBindingGetRequestConfigurationTest
+    public class CsvserverANLPBindingGetRequestConfigurationTest
     {
         [Theory]
-        [ClassData(typeof(CsvserverUNLPBindingGetRequestConfigurationValidationTestData))]
-        public void CsvserverUNLPBindingGetRequestConfigurationValidationTest(
+        [ClassData(typeof(CsvserverANLPBindingGetRequestConfigurationValidationTestData))]
+        public void CsvserverANLPBindingGetRequestConfigurationValidationTest(
             CsvserverAuditNsLogPolicyBindingGetRequestConfiguration configuration, Dictionary<string, string> expected)
         {
             Assert.Equal(expected["ResourcePath"], configuration.ResourcePath);
@@ -20,7 +20,7 @@ namespace CoreLayer.Citrix.Adc.NitroClientTests.Api.Configuration.ContentSwitchi
         }
     }
 
-    public class CsvserverUNLPBindingGetRequestConfigurationValidationTestData : IEnumerable<object[]>
+    public class CsvserverANLPBindingGetRequestConfigurationValidationTestData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {
