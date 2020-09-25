@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.CsvserverBinding;
 using CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.ContentSwitching.CsvserverBinding.CsvserverCsPolicyBinding;
 using Xunit;
 
