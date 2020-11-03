@@ -10,7 +10,7 @@ namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Basic
         public int? Port { get; set; }
         public string NameServer { get; set; }
         public string State { get; set; }
-        public double? HashId { get; set; }
+        public string HashId { get; set; }
         public string ServerId { get; set; }
         public string ServerName { get; set; }
         public string CustomServerId { get; set; }
