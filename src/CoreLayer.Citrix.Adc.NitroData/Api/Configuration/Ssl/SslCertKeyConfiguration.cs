@@ -1,9 +1,8 @@
-using System.Text.Json.Serialization;
-using CoreLayer.Citrix.Adc.NitroClient.Interfaces;
+﻿using System.Text.Json.Serialization;
 
-namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.SSL.SslCertKey
+namespace CoreLayer.Citrix.Adc.NitroData.Api.Configuration.Ssl
 {
-    public class SslCertKeyAddRequestData : INitroRequestData
+    public class SslCertKeyConfiguration
     {
         [JsonPropertyName("certkey")]
         public string CertKey { get; set; }
