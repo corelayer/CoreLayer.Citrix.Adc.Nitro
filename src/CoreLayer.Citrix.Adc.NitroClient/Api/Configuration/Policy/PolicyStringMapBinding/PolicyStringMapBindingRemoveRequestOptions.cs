@@ -2,7 +2,9 @@ namespace CoreLayer.Citrix.Adc.NitroClient.Api.Configuration.Policy.PolicyString
 {
     public class PolicyStringMapBindingRemoveRequestOptions : NitroRequestRemoveOptions
     {
-        
+        public PolicyStringMapBindingRemoveRequestOptions() { }
+
+        public PolicyStringMapBindingRemoveRequestOptions(string resourceName) : base(resourceName) { }
     }
     public enum PolicyStringMapBindingRemoveRequestOptionsProperties
     {
